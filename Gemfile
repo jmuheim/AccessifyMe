@@ -48,6 +48,12 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "slim-rails" # Awesome template language that replaces ERB
+
+gem "pandoc-ruby" # Markdown parser and format converter (from/to Markdown, HTML, Docx, PDF, Epub, ODT...)
+
+gem "material_icons" # Wrapper for Material Design Icons (+900 icons)
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

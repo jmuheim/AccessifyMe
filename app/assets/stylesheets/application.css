@@ -10,6 +10,52 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require material_icons
  *= require_tree .
  *= require_self
  */
+
+/* See https://css-tricks.com/inclusively-hidden/ */
+.visually_hidden {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+.lead {
+  font-weight: bold;
+}
+
+.material-icons {
+  vertical-align: middle;
+}
+
+.video_player {
+  position: relative;
+}
+
+.video_player i.material-icons {
+  font-size: 300px;
+  opacity: .75;
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video_player:hover {
+  cursor: pointer;
+}
+
+.video_player:hover i.material-icons {
+  color: black;
+}
+
+label {
+  display: inline;
+}

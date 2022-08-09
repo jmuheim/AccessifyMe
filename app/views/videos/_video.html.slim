@@ -1,0 +1,102 @@
+article id=dom_id(video)
+  h1 = video.title
+  
+  - if video.lead?
+    .lead = markdown(video.lead, 1)
+  
+  ul
+    li
+      | Published:
+      =<> time_ago_in_words(video.created_at)
+      | ago
+    li
+      | Audience:
+      =< link_to "Designers"
+      |,
+      =< link_to "Developers"
+      |, and
+      =< link_to "Testers"
+    li
+      | Level:
+      =< link_to "Beginners"
+    li
+      | Priority:
+      =< link_to "High"
+
+  figure.video_player
+    == material_icon.play_circle_outline
+    = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+
+  h2.visually_hidden Transcript and slides
+
+  ul
+    li
+      == material_icon.description
+      | Transcript:
+      =< link_to video_transcript_path(video)
+        => visually_hidden("View transcript as")
+        | HTML
+      |,
+      =< link_to video_transcript_path(video, format: :pdf)
+        => visually_hidden("Download transcript as")
+        | PDF
+    li
+      == material_icon.slideshow
+      | Slides:
+      =< link_to video_slides_path(video, format: :keynote)
+        => visually_hidden("Download slides as")
+        | Keynote
+      |,
+      =< link_to video_slides_path(video, format: :pdf)
+        => visually_hidden("Download slides as")
+        | PDF
+
+  h2 Used tools
+
+  ul
+    li
+      == material_icon.laptop
+      =<> link_to video_transcript_path(video)
+        | Desktop browser
+      | to navigate websites
+    li
+      == material_icon.keyboard
+      =<> link_to video_transcript_path(video)
+        | Keyboard
+      | to interact with the computer (without a mouse)
+    li
+      == material_icon.crop_free
+      =<> link_to video_transcript_path(video)
+        | NerdeFocus (Chrome extension)
+      | to visually highlight the keyboard focus
+    li
+      == material_icon.filter_tilt_shift
+      =<> link_to video_transcript_path(video)
+        | What has focus? (bookmarklet)
+      | to print the currently focused element to the console
+    li
+      == material_icon.format_list_numbered
+      =<> link_to video_transcript_path(video)
+        | Focus order (bookmarklet)
+      | to highlight the order of focusable elements
+
+  h2 Related <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> criteria
+
+  p
+    label
+      | WCAG level:&nbsp;
+      select
+        option A
+        option selected=true AA
+        option AAA
+
+  ul
+    li = link_to "2.1.1 Keyboard (A)"
+    li = link_to "2.4.1 Bypass blocks (A)"
+    li = link_to "2.4.3 Focus order (A)"
+    li = link_to "2.1.2 No Keyboard Trap (A)"
+    li = link_to "2.1.4 Character Key Shortcuts (A)"
+    li = link_to "2.4.7 Focus Visible (AA)"
+    li = link_to "2.4.11 Focus Appearance (Minimum) → WCAG 2.2 (draft)"
+
+  h2 Other related videos
