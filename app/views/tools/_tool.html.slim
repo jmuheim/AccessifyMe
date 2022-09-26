@@ -1,0 +1,13 @@
+article id="#{dom_id tool}"
+  h1
+    - if tool.icon?
+      == material_icon.send(tool.icon).md_48
+    =< tool.name
+
+  = markdown tool.description, 1
+
+  h2 Used in these videos
+
+  ul
+    - tool.video_to_tools.each do |through|
+      li = link_to through.video.title, through.video

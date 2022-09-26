@@ -1,5 +1,9 @@
 # See http://stackoverflow.com/questions/30018652/slim-template-doesnt-render-markdown-stored-in-a-variable
 module MarkdownHelper
+  def inline_markdown(string)
+    markdown(string)
+  end
+
   # TODO: Would be great to use the Tilt default mechanism instead!
   def markdown(string, heading_level = 0, visual_heading_level = nil)
     string ||= '' # If nil is supplied, Pandoc waits for input and nothing is returned

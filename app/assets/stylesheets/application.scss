@@ -59,3 +59,41 @@
 label {
   display: inline;
 }
+
+/* From https://github.com/auth0/kbd */
+strong code {
+  font-family: Consolas, "Lucida Console", monospace;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0px 4px;
+  box-shadow: 1px 1px 1px #777;
+  margin: 2px;
+  font-size: small;
+  vertical-align: text-bottom;
+  background: #eee;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  /* This two work */
+  /* letter-spacing: 0.5px; */
+  letter-spacing: 1px;
+}
+
+nav#breadcrumbs::before {
+  content: attr(aria-label) ": ";
+}
+
+nav#breadcrumbs {
+  ol, li {
+    padding: 0;
+    display: inline;
+  }
+
+  li {
+    &:not(:last-child)::after {
+      content: " > ";
+    }
+  }
+}

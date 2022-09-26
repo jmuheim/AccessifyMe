@@ -1,70 +1,41 @@
 class VideosController < ApplicationController
-  before_action :set_video, only: %i[ show edit update destroy ]
+  respond_to :html
+  before_action :verify_requested_format!
+  load_and_authorize_resource
+  before_action :enforce_slugged_param, only: :show
 
-  # GET /videos or /videos.json
-  def index
-    @videos = Video.all
-  end
-
-  # GET /videos/1 or /videos/1.json
-  def show
-  end
-
-  def transcript
-    @video = Video.find(params[:video_id])
-  end
-
-  # GET /videos/new
-  def new
-    @video = Video.new
-  end
-
-  # GET /videos/1/edit
-  def edit
-  end
-
-  # POST /videos or /videos.json
   def create
     @video = Video.new(video_params)
 
-    respond_to do |format|
-      if @video.save
-        format.html { redirect_to video_url(@video), notice: "Video was successfully created." }
-        format.json { render :show, status: :created, location: @video }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @video.errors, status: :unprocessable_entity }
-      end
-    end
+    @video.save
+    respond_with @video
   end
 
-  # PATCH/PUT /videos/1 or /videos/1.json
   def update
-    respond_to do |format|
-      if @video.update(video_params)
-        format.html { redirect_to video_url(@video), notice: "Video was successfully updated." }
-        format.json { render :show, status: :ok, location: @video }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @video.errors, status: :unprocessable_entity }
-      end
-    end
+    @video.update(video_params)
+    respond_with @video
   end
 
-  # DELETE /videos/1 or /videos/1.json
   def destroy
     @video.destroy
+    respond_with @video
+  end
+
+  def transcript
+    # TODO: Use load_and_authorize_resource for this!
+    @video = Video.find(params[:video_id])
 
     respond_to do |format|
-      format.html { redirect_to videos_url, notice: "Video was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { }
+      format.pdf { redirect_to @video, notice: "Not implemented yet!" }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_video
+    def enforce_slugged_param
       @video = Video.find(params[:id])
+      redirect_to @video if params[:id] =~ /^\d+$/ # Redirect to slugged URL if only ID was provided, i.e. videos/123 => videos/123-introduction-to-accessibility
     end
 
     # Only allow a list of trusted parameters through.

@@ -54,9 +54,23 @@ gem "pandoc-ruby" # Markdown parser and format converter (from/to Markdown, HTML
 
 gem "material_icons" # Wrapper for Material Design Icons (+900 icons)
 
+gem "devise" # Flexible authentication solution
+
+gem "cancancan" # Authorization library which restricts what resources a given user is allowed to access
+
+gem "enumerize" # Enumerated attributes
+
+gem "acts_as_tree" # Organize ActiveRecord items into parent–children relationships
+
+gem "acts_as_list" # An ActiveRecord plugin for managing lists
+
+gem "sass-rails" # Use Sass for stylesheets
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  
+  gem "pry-rails" # Awesome debugger
 end
 
 group :development do

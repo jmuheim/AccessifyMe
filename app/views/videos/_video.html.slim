@@ -1,3 +1,10 @@
+/ ul
+/   li https://www.bitvtest.de/bitv_test/das_testverfahren_im_detail/pruefschritte.html
+/   li https://www.bit-inklusiv.de/bitv-softwaretest/
+/   li A11y Checkliste 2.1
+/   li Wuhcag
+/   li Weitere?
+
 article id=dom_id(video)
   h1 = video.title
   
@@ -6,21 +13,24 @@ article id=dom_id(video)
   
   ul
     li
-      | Published:
+      strong Published:
       =<> time_ago_in_words(video.created_at)
       | ago
     li
-      | Audience:
-      =< link_to "Designers"
+      strong> Duration:
+      | 5:27"
+    li
+      strong Target audience:
+      =< link_to "Designers (?)"
       |,
       =< link_to "Developers"
       |, and
       =< link_to "Testers"
     li
-      | Level:
+      strong Level:
       =< link_to "Beginners"
     li
-      | Priority:
+      strong Priority:
       =< link_to "High"
 
   figure.video_player
@@ -51,36 +61,19 @@ article id=dom_id(video)
         => visually_hidden("Download slides as")
         | PDF
 
-  h2 Used tools
+  h2 Used tools 🛠
+
+  p The following tools have proven useful when developing for and testing keyboard-only accessibility:
 
   ul
-    li
-      == material_icon.laptop
-      =<> link_to video_transcript_path(video)
-        | Desktop browser
-      | to navigate websites
-    li
-      == material_icon.keyboard
-      =<> link_to video_transcript_path(video)
-        | Keyboard
-      | to interact with the computer (without a mouse)
-    li
-      == material_icon.crop_free
-      =<> link_to video_transcript_path(video)
-        | NerdeFocus (Chrome extension)
-      | to visually highlight the keyboard focus
-    li
-      == material_icon.filter_tilt_shift
-      =<> link_to video_transcript_path(video)
-        | What has focus? (bookmarklet)
-      | to print the currently focused element to the console
-    li
-      == material_icon.format_list_numbered
-      =<> link_to video_transcript_path(video)
-        | Focus order (bookmarklet)
-      | to highlight the order of focusable elements
+    - video.video_to_tools.each do |through|
+      li
+        == material_icon.send(through.tool.icon)
+        =<> link_to through.tool.name, through.tool
+        | to
+        =< through.purpose
 
-  h2 Related <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> criteria
+  h2 Related <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> criteria 📜
 
   p
     label
@@ -91,12 +84,47 @@ article id=dom_id(video)
         option AAA
 
   ul
-    li = link_to "2.1.1 Keyboard (A)"
-    li = link_to "2.4.1 Bypass blocks (A)"
-    li = link_to "2.4.3 Focus order (A)"
-    li = link_to "2.1.2 No Keyboard Trap (A)"
-    li = link_to "2.1.4 Character Key Shortcuts (A)"
-    li = link_to "2.4.7 Focus Visible (AA)"
-    li = link_to "2.4.11 Focus Appearance (Minimum) → WCAG 2.2 (draft)"
+    - video.video_to_wcag_elements.each do |through|
+      li
+        =<> link_to through.wcag_element.name_with_tree_prefix, through.wcag_element
+        =< through.wcag_element.explains_why
 
-  h2 Other related videos
+  h2 Reactions 🙋‍♀️🙋‍♂️
+
+  p The following people benefit tremendously from keyboard-only accessibility:
+
+  ul
+    li #{link_to 'Petra Ritter'}, who cannot use a mouse due to ???.
+    li #{link_to 'Oldtimer Bill'}, who suffers from tremors (shaking hands) due to Parkinson's Disease.
+    li Power users
+
+  h2 Requirements ❣️
+
+  p The following <strong>good examples (Dos 👍)</strong> give you concise advise on how to painlessly meet the requirements around keyboard-only accessibility. The <strong>bad examples (Don'ts 👎)</strong>, however, demonstrate typical failures.
+
+  ul
+    - video.requirements.each do |requirement|
+      li
+        = link_to requirement.title, requirement
+
+        - if requirement.examples.any?
+          ul
+            - requirement.examples.each do |example|
+              li
+                = example.good? ? "👍" : "👎"
+                =< link_to example.title
+        
+
+  h3 Real world
+
+  h4 Good examples
+
+  h4 Bad examples
+
+  h2 Related videos 🎬
+
+  h2 External resources 📍
+
+  h3 Written
+
+  h3 Videos

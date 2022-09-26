@@ -1,0 +1,8 @@
+en:
+  enumerize:
+    wcag_element:
+      level:
+        a: A
+        aa: AA
+        aaa: AAA
+        none: Empty

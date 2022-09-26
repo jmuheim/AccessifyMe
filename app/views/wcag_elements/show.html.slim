@@ -1,0 +1,47 @@
+article id=dom_id(@wcag_element)
+  nav#breadcrumbs aria-label="You are here"
+    ol
+      li = link_to wcag_elements_path do
+        abbr title="Web Content Accessibility Guidelines" WCAG
+
+      - @wcag_element.ancestors.reverse.each do |ancestor|
+        li = link_to ancestor.name_with_details, ancestor
+
+  h1 = @wcag_element.name_with_details
+
+  - if @wcag_element.explains_why?
+    = markdown(@wcag_element.explains_why.capitalize)
+
+  - if @wcag_element.description?
+    blockquote
+      = markdown(@wcag_element.description)
+      p: cite
+        | From the
+        =<> link_to "https://a11y.digitaldialog.swiss/de/#{@wcag_element.tree_prefix}" do
+          strong Accessibility Checklist 2.1
+        | by the
+        strong< Swiss Government
+
+  figure.video_player
+    == material_icon.play_circle_outline
+    = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+
+  h2 Discussed in videos:
+
+  ul
+    - @wcag_element.video_to_wcag_elements.each do |through|
+      li
+        => link_to through.video.title, through.video
+        =< through.wcag_element.explains_why
+
+  h2 You should check out:
+  
+  ul
+    li = link_to "https://www.wuhcag.com/keyboard/"
+
+div
+  => link_to "Edit this wcag element", edit_wcag_element_path(@wcag_element)
+  '|
+  =< link_to "Back to wcag elements", wcag_elements_path
+
+  = button_to "Destroy this wcag element", @wcag_element, method: :delete

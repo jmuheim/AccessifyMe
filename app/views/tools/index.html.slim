@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Tools
+
+#tools
+  - @tools.each do |tool|
+    == render tool
+    p
+      = link_to "Show this tool", tool
+
+= link_to "New tool", new_tool_path

@@ -1,0 +1,7 @@
+tr id=dom_id(wcag_element)
+  td.tree_prefix
+		= wcag_element.tree_prefix
+  th.name
+    = link_to wcag_element.name, wcag_element, style: "margin-left: #{wcag_element.ancestors.count * 20}px"
+	td.level
+		= wcag_element.level_text

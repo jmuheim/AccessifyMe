@@ -1,0 +1,34 @@
+= form_with(model: @wcag_element) do |form|
+  - if @wcag_element.errors.any?
+    div style="color: red"
+      h2 = "#{pluralize(@wcag_element.errors.count, "error")} prohibited this wcag_element from being saved:"
+      ul
+        - @wcag_element.errors.each do |error|
+          li = error.full_message
+
+  div
+    = form.label :name, style: "display: block"
+    = form.text_field :name
+
+  div
+    = form.label :level, style: "display: block"
+    = form.text_field :level
+
+  div
+    = form.label :description, style: "display: block"
+    = form.text_area :description
+
+  div
+    = form.label :parent_id, style: "display: block"
+    = form.number_field :parent_id
+
+  div
+    = form.label :position, style: "display: block"
+    = form.number_field :position
+
+  div
+    = form.label :type, style: "display: block"
+    = form.text_field :type
+
+  div
+    = form.submit

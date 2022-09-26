@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Requirements
+
+#requirements
+  - @requirements.each do |requirement|
+    == render requirement
+    p
+      = link_to "Show this requirement", requirement
+
+= link_to "New requirement", new_requirement_path

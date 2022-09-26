@@ -1,0 +1,14 @@
+h1 Wcag elements
+
+#wcag_elements
+  table
+    thead
+      tr
+        th.tree_prefix = WcagElement.human_attribute_name(:tree_prefix)
+        th.name        = WcagElement.human_attribute_name(:name)
+        th.level       = WcagElement.human_attribute_name(:level)
+
+    tbody
+      = render @wcag_elements
+
+= link_to "New wcag element", new_wcag_element_path

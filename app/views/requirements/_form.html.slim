@@ -1,0 +1,22 @@
+= form_with(model: @requirement) do |form|
+  - if @requirement.errors.any?
+    div style="color: red"
+      h2 = "#{pluralize(@requirement.errors.count, "error")} prohibited this requirement from being saved:"
+      ul
+        - @requirement.errors.each do |error|
+          li = error.full_message
+
+  div
+    = form.label :video_id, style: "display: block"
+    = form.text_field :video_id
+
+  div
+    = form.label :title, style: "display: block"
+    = form.text_field :title
+
+  div
+    = form.label :description, style: "display: block"
+    = form.text_area :description
+
+  div
+    = form.submit
