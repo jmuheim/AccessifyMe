@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_26_170234) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_27_195558) do
   create_table "examples", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "requirement_id", null: false
     t.string "title"
@@ -28,6 +28,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_26_170234) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["video_id"], name: "index_requirements_on_video_id"
+  end
+
+  create_table "skills", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "teaser"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tools", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -75,6 +83,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_26_170234) do
     t.index ["video_id"], name: "index_videos_to_tools_on_video_id"
   end
 
+  create_table "video_to_wcag_elements", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.bigint "wcag_element_id", null: false
+    t.string "purpose"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["video_id"], name: "index_videos_to_wcag_criteria_on_video_id"
+    t.index ["wcag_element_id"], name: "index_videos_to_wcag_criteria_on_wcag_criterion_id"
+  end
+
   create_table "videos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.string "short_title", null: false
@@ -85,21 +103,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_26_170234) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "videos_to_wcag_criteria", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "video_id", null: false
-    t.bigint "wcag_criterion_id", null: false
-    t.string "purpose"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["video_id"], name: "index_videos_to_wcag_criteria_on_video_id"
-    t.index ["wcag_criterion_id"], name: "index_videos_to_wcag_criteria_on_wcag_criterion_id"
-  end
-
   create_table "wcag_elements", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.string "level"
-    t.text "teaser"
+    t.string "explains_why"
     t.text "description"
+    t.string "level"
     t.bigint "parent_id"
     t.integer "position"
     t.float "wcag_version"
@@ -113,7 +121,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_26_170234) do
   add_foreign_key "requirements", "videos"
   add_foreign_key "video_to_tools", "tools"
   add_foreign_key "video_to_tools", "videos"
-  add_foreign_key "videos_to_wcag_criteria", "videos"
-  add_foreign_key "videos_to_wcag_criteria", "wcag_elements", column: "wcag_criterion_id"
+  add_foreign_key "video_to_wcag_elements", "videos"
+  add_foreign_key "video_to_wcag_elements", "wcag_elements"
   add_foreign_key "wcag_elements", "wcag_elements", column: "parent_id", name: "success_criteria_parent_id_fk"
 end

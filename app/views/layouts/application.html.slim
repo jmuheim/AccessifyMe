@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title AccessifyMe
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag "https://cdn.simplecss.org/simple.min.css"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+
+  body
+    header
+      h1 Accessify - Expert in Digital Inclusion.
+
+      p
+        | Accessibility consulting and teaching, remote and in person.
+        br aria-hidden="true"
+        | By a senior web developer and accessibility geek.
+
+      nav
+        ul
+          li
+            = link_to root_path, "aria-current": (:page if request.path == root_path)
+               | Welcome
+
+          li
+            = link_to videos_path, "aria-current": (:page if request.path.starts_with? videos_path)
+              | Build <u>your</u> skills
+
+          / li
+          /   = link_to wcag_elements_path, "aria-current": (:page if request.path.starts_with? wcag_elements_path)
+          /     abbr title="Web Content Accessibility Guidelines" WCAG
+          /     |  - what?
+
+          li
+            = link_to requirements_path, "aria-current": (:page if request.path.starts_with? requirements_path)
+              | Hire <u>my</u> skills
+
+    main
+      - if notice.present? || alert.present?
+        p.notice = notice
+        p.alert  = alert
+
+      = yield

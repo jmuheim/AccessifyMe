@@ -97,3 +97,8 @@ nav#breadcrumbs {
     }
   }
 }
+
+header nav a[aria-current="page"] {
+  font-weight: bold;
+  border-color: black;
+}

@@ -1,0 +1,133 @@
+article id=dom_id(@video)
+  nav#breadcrumbs aria-label="You are here"
+    ol
+      li = link_to "Videos", videos_path
+
+  h1 = @video.title
+  
+  - if @video.lead?
+    .lead = markdown(@video.lead, 1)
+
+  ul
+    li
+      strong Published:
+      =<> time_ago_in_words(@video.created_at)
+      | ago
+    li
+      strong> Duration:
+      | 5:27"
+    li
+      strong Target audience:
+      =< link_to "Designers (?)"
+      |,
+      =< link_to "Developers"
+      |, and
+      =< link_to "Testers"
+    li
+      strong Level:
+      =< link_to "Beginners"
+    li
+      strong Priority:
+      =< link_to "High"
+
+  figure.video_player
+    == material_icon.play_circle_outline
+    = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+
+  h2.visually_hidden Transcript and slides
+
+  ul
+    li
+      == material_icon.description
+      | Transcript:
+      =< link_to video_transcript_path(@video)
+        => visually_hidden("View transcript as")
+        | HTML
+      |,
+      =< link_to video_transcript_path(@video, format: :pdf)
+        => visually_hidden("Download transcript as")
+        | PDF
+    li
+      == material_icon.slideshow
+      | Slides:
+      =< link_to video_slides_path(@video, format: :keynote)
+        => visually_hidden("Download slides as")
+        | Keynote
+      |,
+      =< link_to video_slides_path(@video, format: :pdf)
+        => visually_hidden("Download slides as")
+        | PDF
+
+  h2 Used tools 🛠
+
+  p The following tools have proven useful when developing for and testing keyboard-only accessibility:
+
+  ul
+    - @video.video_to_tools.each do |through|
+      li
+        == material_icon.send(through.tool.icon)
+        =<> link_to through.tool.name, through.tool
+        | to
+        =< through.purpose
+
+  h2 Related <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> criteria 📜
+
+  p
+    label
+      | WCAG level:&nbsp;
+      select
+        option A
+        option selected=true AA
+        option AAA
+
+  ul
+    - @video.video_to_wcag_elements.each do |through|
+      li
+        =<> link_to through.wcag_element.name_with_tree_prefix, through.wcag_element
+        =< through.wcag_element.explains_why
+
+  h2 Reactions 🙋‍♀️🙋‍♂️
+
+  p The following people benefit tremendously from keyboard-only accessibility:
+
+  ul
+    li #{link_to 'Petra Ritter'}, who cannot use a mouse due to ???.
+    li #{link_to 'Oldtimer Bill'}, who suffers from tremors (shaking hands) due to Parkinson's Disease.
+    li Power users
+
+  h2 Requirements ❣️
+
+  p The following <strong>good examples (Dos 👍)</strong> give you concise advise on how to painlessly meet the requirements around keyboard-only accessibility. The <strong>bad examples (Don'ts 👎)</strong>, however, demonstrate typical failures.
+
+  ul
+    - @video.requirements.each do |requirement|
+      li
+        = link_to requirement.title, requirement
+
+        - if requirement.examples.any?
+          ul
+            - requirement.examples.each do |example|
+              li
+                = example.good? ? "👍" : "👎"
+                =< link_to example.title
+        
+
+  h3 Real world
+
+  h4 Good examples
+
+  h4 Bad examples
+
+  h2 Related @videos 🎬
+
+  h2 External resources 📍
+
+  h3 Written
+
+  h3 Videos
+
+nav ara-label="Video management"
+  ul
+    li = link_to "Edit this video", edit_video_path(@video)
+    li = link_to "Back to videos", @videos_path
+    li = button_to "Destroy this video", @video, method: :delete
