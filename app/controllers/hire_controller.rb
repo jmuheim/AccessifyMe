@@ -1,0 +1,2 @@
+class HireController < ApplicationController
+end

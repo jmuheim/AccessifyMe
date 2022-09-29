@@ -1,0 +1,4 @@
+nav#breadcrumbs aria-label="You are here"
+  ol
+    - items.each do |item|
+      li = link_to item.first, item.last

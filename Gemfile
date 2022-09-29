@@ -52,7 +52,7 @@ gem "slim-rails" # Awesome template language that replaces ERB
 
 gem "pandoc-ruby" # Markdown parser and format converter (from/to Markdown, HTML, Docx, PDF, Epub, ODT...)
 
-gem "material_icons" # Wrapper for Material Design Icons (+900 icons)
+gem "font_awesome5_rails" # Font Awesome 5
 
 gem "devise" # Flexible authentication solution
 

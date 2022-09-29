@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
-  resources :wcag_elements, path: :wcag
   devise_for :users
+
+  root "welcome#index"
+
+  resources :wcag_elements, path: :wcag
   resources :requirements
   resources :tools
-  resources :videos do
-    get 'transcript'
-    get 'slides'
-  end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  root "welcome#index"
+  get "learn", to: "learn#index"
+  scope "learn" do
+    resources :virtues
+
+    resources :videos do
+      get 'transcript'
+      get 'slides'
+    end
+  end
+  get "video/:id", to: "videos#show"
+  get "virtue/:id", to: "virtues#show"
+
+  get "hire", to: "hire#index"
 end

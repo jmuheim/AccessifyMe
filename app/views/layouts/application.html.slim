@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title AccessifyMe
+    title Accessify - Accessibility consulting and teaching
     meta name="viewport" content="width=device-width,initial-scale=1"
     = csrf_meta_tags
     = csp_meta_tag
@@ -12,22 +12,24 @@ html
 
   body
     header
-      h1 Accessify - Expert in Digital Inclusion.
+      h1
+        | Accessify -
+        small< Expert in Digital Inclusion.
 
       p
-        | Accessibility consulting and teaching, remote and in person.
-        br aria-hidden="true"
-        | By a senior web developer and accessibility geek.
+        | Accessibility <mark>consulting and teaching</mark>, remote and in person.
+        br> aria-hidden="true"
+        | By a full stack <mark>web developer</mark> and <mark>accessibility geek</mark>.
 
       nav
         ul
           li
             = link_to root_path, "aria-current": (:page if request.path == root_path)
-               | Welcome
+               | Welcome 🤗
 
           li
-            = link_to videos_path, "aria-current": (:page if request.path.starts_with? videos_path)
-              | Build <u>your</u> skills
+            = link_to learn_path, "aria-current": (:page if request.path.starts_with? learn_path)
+              | Learn 🧠
 
           / li
           /   = link_to wcag_elements_path, "aria-current": (:page if request.path.starts_with? wcag_elements_path)
@@ -35,8 +37,8 @@ html
           /     |  - what?
 
           li
-            = link_to requirements_path, "aria-current": (:page if request.path.starts_with? requirements_path)
-              | Hire <u>my</u> skills
+            = link_to hire_path, "aria-current": (:page if request.path.starts_with? hire_path)
+              | Hire 💵
 
     main
       - if notice.present? || alert.present?

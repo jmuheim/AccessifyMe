@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require material_icons
+ *= require font_awesome5_webfont
  *= require_tree .
  *= require_self
  */
@@ -30,15 +30,11 @@
   font-weight: bold;
 }
 
-.material-icons {
-  vertical-align: middle;
-}
-
 .video_player {
   position: relative;
 }
 
-.video_player i.material-icons {
+.video_player i.fa-play-circle {
   font-size: 300px;
   opacity: .75;
   color: red;
@@ -52,7 +48,7 @@
   cursor: pointer;
 }
 
-.video_player:hover i.material-icons {
+.video_player:hover i.fa-play-circle {
   color: black;
 }
 

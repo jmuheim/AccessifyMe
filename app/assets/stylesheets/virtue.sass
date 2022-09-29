@@ -1,0 +1,52 @@
+.virtue
+  h4
+    margin-top: 0
+    margin-bottom: 0.5em
+    padding-left: 1em
+    position: relative
+
+    sup
+      position: absolute
+      left: 0
+
+  .left
+    width: 60%
+
+  .right
+    width: 40%
+
+  blockquote
+    margin: 0
+
+  .video_player
+    i.fa-play-circle
+      font-size: 120px
+
+  .video_stats,
+  .relevant_for
+    bottom: 0
+
+    a
+      text-decoration: none
+
+      .name
+        text-decoration: underline
+
+        &:hover
+          text-decoration: none
+
+    ul,
+    p
+      margin: 0
+      padding: 0
+      display: inline
+
+    li
+      display: inline
+
+      &:not(:last-child)::after
+        content: " | "
+        color: var(--text-light)
+
+  .video_stats
+    margin-top: 0.5em
