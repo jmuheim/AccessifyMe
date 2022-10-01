@@ -1,58 +1,20 @@
-== render "shared/breadcrumbs", items: [["Learn", learn_path]]
+== render "shared/breadcrumbs", items: [["Welcome", root_path], ["Learn", learn_path]]
 
-section.virtues
+section.learn
   h2
-    | Empower yourself 🧠
+    | Learn more 🧠
     br> aria-hidden="true"
-    small Become an accessibility virtuoso!
+    small Expand your accessibility skillset
 
-  p A virtue is a <mark>good habit</mark>. There's a dozen or so accessibility virtues. Look into them and start applying some to your projects. Take your time: <mark>slowly and steadily</mark> incorporate one after the other into your daily routines. They will inspire and guide you, resulting in <mark>genuinely better products</mark> - far beyond accessibility.
+  .two_columns
+    .left
+      h3 = link_to "Become a virtuoso 💪", virtues_path
 
-  - @virtues.each_with_index do |virtue, i|
-    article.virtue
-      .two_columns
-        .left
-          h4
-            sup: small> #{i + 1}
-            = link_to virtue
-              = virtue.name
-          blockquote
-            | "#{virtue.intent}"
+      p There are a dozen <mark>accessibility virtues</mark> you want to be aware of, and some will become part of your <mark>daily routines</mark>.
 
-        .right
-          figure.video_player
-            = far_icon('play-circle')
-            = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+    hr
 
-      .video_stats
-        p: strong> Offers:
-        ul
-          li 12 tutorials
-          li 5 exercises
-          li 6 personas
-          li 17 examples
-          li 13 wins & 31 fails
+    .right
+      h3 = link_to "Use the algorithm ⚙️", virtues_path
 
-      .relevant_for
-        p: strong> Inspires:
-        ul
-          - if virtue.relevant_for_designers?
-            li = link_to nil
-              span.icon> 🎨
-              span.name Designers
-          - if virtue.relevant_for_developers?
-            li = link_to nil
-              span.icon> ⌨️
-              span.name Developers
-          - if virtue.relevant_for_text_authors?
-            li = link_to nil
-              span.icon> 📖
-              span.name Text authors
-          - if virtue.relevant_for_audio_authors?
-            li = link_to nil
-              span.icon> 🔈
-              span.name Audio authors
-          - if virtue.relevant_for_video_authors?
-            li = link_to nil
-              span.icon> 🎬
-              span.name Video authors
+      p <mark>Automated tools</mark> and services offer great support to those who recognise both their <mark>power and limitations</mark>.

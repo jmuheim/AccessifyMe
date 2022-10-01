@@ -1,3 +1,5 @@
+== render "shared/breadcrumbs", items: [["Welcome", root_path]]
+
 section.welcome
   h2
     | Welcome, dear 
@@ -6,14 +8,13 @@ section.welcome
     br> aria-hidden="true"
     small Let's accessify the Internet together!
 
-  p Accessibility services: quick, pragmatic, to the point.
-
   .two_columns
     .left
       h3
-        | Learn 🧠
-        br> aria-hidden="true"
-        small Expand your skillset!
+        = link_to learn_path
+          | Learn 🧠
+          br> aria-hidden="true"
+          small Expand your skillset!
 
       p Start with whatever is relevant to you, then go as deep and broad as necessary.
 
@@ -27,8 +28,9 @@ section.welcome
 
     .right
       h3
-        | Hire 💵
-        br> aria-hidden="true"
-        small Get professional help
+        = link_to hire_path
+          | Hire 💸
+          br> aria-hidden="true"
+          small Get professional support
 
       p I teach your team, audit your project and assist in improving it - whatever serves you best.

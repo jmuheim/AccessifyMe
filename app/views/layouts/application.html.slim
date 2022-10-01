@@ -7,7 +7,8 @@ html
     = csp_meta_tag
 
     = stylesheet_link_tag "https://cdn.simplecss.org/simple.min.css"
-    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    /"data-turbo-track": "reload"
+    = stylesheet_link_tag "application"
     = javascript_importmap_tags
 
   body
@@ -21,7 +22,7 @@ html
         br> aria-hidden="true"
         | By a full stack <mark>web developer</mark> and <mark>accessibility geek</mark>.
 
-      nav
+      nav aria-label="Main"
         ul
           li
             = link_to root_path, "aria-current": (:page if request.path == root_path)
@@ -38,7 +39,7 @@ html
 
           li
             = link_to hire_path, "aria-current": (:page if request.path.starts_with? hire_path)
-              | Hire 💵
+              | Hire 💸
 
     main
       - if notice.present? || alert.present?
@@ -46,3 +47,6 @@ html
         p.alert  = alert
 
       = yield
+
+    footer
+      p &copy; 2022 Josua Muheim, Accessify

@@ -1,11 +1,18 @@
-== render "shared/breadcrumbs", items: [["Hire", hire_path]]
+== render "shared/breadcrumbs", items: [["Welcome", root_path], ["Hire", hire_path]]
 
-section
+section.hire
   h2
-    | Rent super powers 💵
+    | Hire me 💸
     br> aria-hidden="true"
-    small I will support you and your team.
+    small Get professional accessibility support
 
-  h3 Teaching
+  p Rent super powers.
 
-  h3 Consulting
+  .two_columns
+    .left
+      h3 Teaching
+
+    hr
+
+    .right
+      h3 Consulting

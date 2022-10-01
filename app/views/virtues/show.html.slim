@@ -1,31 +1,35 @@
-== render "shared/breadcrumbs", items: [["Learn", learn_path], ["Virtues", virtues_path], [@virtue.name, virtue_path(@virtue)]]
+== render "shared/breadcrumbs", items: [["Welcome", root_path], ["Learn", learn_path], ["Virtues", virtues_path], [@virtue.short_name, virtue_path(@virtue)]]
 
 article id=dom_id(@virtue)
   h2 = @virtue.name
 
+  h3 Intent
+
   blockquote = markdown(@virtue.intent)
 
-  ul
-    li
-      strong Published:
-      =<> time_ago_in_words(@virtue.created_at)
-      | ago
-    li
-      strong> Duration:
-      | 5:27"
-    li
-      strong Target audience:
-      =< link_to "Designers (?)"
-      |,
-      =< link_to "Developers"
-      |, and
-      =< link_to "Testers"
-    li
-      strong Level:
-      =< link_to "Beginners"
-    li
-      strong Priority:
-      =< link_to "High"
+  h3 Introduction
+
+  / ul
+  /   li
+  /     strong Published:
+  /     =<> time_ago_in_words(@virtue.created_at)
+  /     | ago
+  /   li
+  /     strong> Duration:
+  /     | 5:27"
+  /   li
+  /     strong Target audience:
+  /     =< link_to "Designers (?)"
+  /     |,
+  /     =< link_to "Developers"
+  /     |, and
+  /     =< link_to "Testers"
+  /   li
+  /     strong Level:
+  /     =< link_to "Beginners"
+  /   li
+  /     strong Priority:
+  /     =< link_to "High"
 
   figure.video_player
     == far_icon(:play_circle)

@@ -8,6 +8,6 @@ class Video < ApplicationRecord
   has_many :requirements
 
   def to_param
-    "#{id}-#{(short_title || title).parameterize}"
+    "#{id}-#{title.parameterize}"
   end
 end

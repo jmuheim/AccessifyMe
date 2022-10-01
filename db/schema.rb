@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_28_201159) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
   create_table "examples", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "requirement_id", null: false
     t.string "title"
@@ -19,19 +19,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_201159) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["requirement_id"], name: "index_examples_on_requirement_id"
-  end
-
-  create_table "virtues", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.string "intent"
-    t.text "description"
-    t.boolean "relevant_for_designers"
-    t.boolean "relevant_for_developers"
-    t.boolean "relevant_for_text_authors"
-    t.boolean "relevant_for_audio_authors"
-    t.boolean "relevant_for_video_authors"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "requirements", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -48,6 +35,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_201159) do
     t.string "mission"
     t.text "description"
     t.string "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -113,6 +106,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_201159) do
     t.text "lead"
     t.text "description"
     t.string "youtube_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "virtues", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "intent"
+    t.text "description"
+    t.boolean "relevant_for_designers"
+    t.boolean "relevant_for_developers"
+    t.boolean "relevant_for_text_authors"
+    t.boolean "relevant_for_audio_authors"
+    t.boolean "relevant_for_video_authors"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
