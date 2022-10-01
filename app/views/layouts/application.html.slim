@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Accessify - Accessibility consulting and teaching
+    title Accessify.me - Accessibility consulting and teaching
     meta name="viewport" content="width=device-width,initial-scale=1"
     = csrf_meta_tags
     = csp_meta_tag
@@ -14,13 +14,8 @@ html
   body
     header
       h1
-        | Accessify -
+        | Accessify.me -
         small< Expert in Digital Inclusion.
-
-      p
-        | Accessibility <mark>consulting and teaching</mark>, remote and in person.
-        br> aria-hidden="true"
-        | By a full stack <mark>web developer</mark> and <mark>accessibility geek</mark>.
 
       nav aria-label="Main"
         ul
@@ -53,4 +48,9 @@ html
       = yield
 
     footer
-      p &copy; 2022 Josua Muheim, Accessify
+      p: strong &copy; #{Date.today.year} by Josua Muheim, Accessify.me
+
+      p
+        | Accessibility <mark>consulting and teaching</mark>, remote and in person.
+        br> aria-hidden="true"
+        | By a full stack <mark>web developer</mark> and <mark>accessibility geek</mark>.

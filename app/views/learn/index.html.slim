@@ -6,18 +6,20 @@ section.learn
     br> aria-hidden="true"
     small Become an accessibility virtuoso!
 
-  p There are a dozen <mark>accessibility virtues</mark>, many of which you want to be aware of, depending on your role. Some will become part of your <mark>daily routines</mark> and workflows.
+  p There are a dozen <mark>accessibility virtues</mark>, many of which you want to be aware of, depending on your role as web creative. Some will become part of your <mark>daily routines</mark> and workflows.
 
   p.show_all_virtues
-    = link_to "👉 Don't hold back, show me all the virtues! 👈", virtues_path
+    = link_to "👉 Hurry up, show all the virtues! 👈", virtues_path
     br aria-hidden="true"
-    small - or pick your role below -
+    small Or filter by choosing your role below!
 
   hr
 
   .two_columns
     .left
-      h3 = link_to "Designer / UX 🎨", virtues_path(roles: [:designer])
+      h3 = link_to virtues_path(role: :designer), class: :with_icon
+        span.name Designer / UX
+        span.icon< 🎨
 
       p Accessibility starts with the <mark>first pixel</mark> you draw. Be aware that <mark>you set the course</mark> for many important matters long before any code is written.
 
@@ -26,7 +28,9 @@ section.learn
     hr
 
     .right
-      h3 = link_to "Developer ⌨️", virtues_path(roles: [:developer])
+      h3 = link_to virtues_path(role: :developer), class: :with_icon
+        span.name Developer
+        span.icon< ⌨️
 
       p Everything <mark>stands or falls</mark> with you: usually you are expected to just <mark>magically implement</mark> all those <del>great</del> crazy ideas handed down to you.
 
@@ -36,20 +40,41 @@ section.learn
 
   .two_columns
     .left
-      h3 = link_to "Text author 📖", virtues_path(roles: [:text_author])
+      h3 = link_to virtues_path(role: :text_author), class: :with_icon
+        span.name Content editor
+        span.icon< ✍️
 
-      p 2/3 of <mark>text content is too complex</mark> for the majority of the population! Even a masterpiece in writing is useless when no one is able to <mark>get its point</mark>.
+      p Two thirds of <mark>text is too complex</mark> for the majority of the population! Even a masterpiece in writing is useless when no one is able to <mark>get its point</mark>.
 
-      p: strong Be kind, be easy to understand!
+      p: strong Use simple(r) language!
 
     hr
 
     .right
-      h3 = link_to "Audio & video 🔈🎬", virtues_path(roles: [:audio_author, :video_author])
+      h3 = link_to virtues_path(role: :audio_author), class: :with_icon
+        span.name PDF producer
+        span.icon< 📄
 
-      p So sad when your audience cannot enjoy your podcast or documentary due to missing <mark>text transcripts</mark> or defective <mark>closed captioning (CC)</mark>.
+      p Sadly, most exported PDF documents are <mark>not accessible by default</mark>. You need to set proper export options and sometimes do a bit of <mark>post-processing</mark>.
+
+      p: strong Know your office tools!
+
+  hr
+
+  .two_columns
+    .left
+      h3
+        = link_to virtues_path(role: :audio_author), class: :with_icon
+          span.name Multimedia artist
+          span.icon< 🔈🎬
+
+      p Hard-of-hearing users will appreciate a proper <mark>text transcript</mark> of  your <mark>audio</mark> files, as well as <mark>closed captioning (CC)</mark> in <mark>videos</mark>.
 
       p: strong Make yourself heard!
+
+    hr
+    
+    .right
 
   hr
 
@@ -64,7 +89,7 @@ section.learn
       | or anyone else with a rather <mark>top-down interest</mark> in the topic?
     br aria-hidden="true"
     = link_to virtues_path
-      | 👉 We compiled some
+      | 👉 I compiled some
       abbr<> title="Frequently asked questions" FAQ
       | for you 👈
 

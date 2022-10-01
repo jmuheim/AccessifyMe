@@ -4,6 +4,12 @@ class VirtuesController < ApplicationController
   load_and_authorize_resource
   before_action :enforce_slugged_param, only: :show
 
+  def index
+    if params[:role].present?
+      @virtues = @virtues.where("relevant_for_#{params[:role]}s" => true)
+    end
+  end
+
   def show
     @video = Video.find(2)
   end

@@ -2,22 +2,22 @@
   p: strong> Inspires:
   ul
     - if virtue.relevant_for_designers?
-      li = link_to nil
-        span.icon> 🎨
+      li = link_to nil, class: :with_icon
         span.name Designers
+        span.icon< 🎨
     - if virtue.relevant_for_developers?
-      li = link_to nil
-        span.icon> ⌨️
+      li = link_to nil, class: :with_icon
         span.name Developers
+        span.icon< ⌨️
     - if virtue.relevant_for_text_authors?
-      li = link_to nil
-        span.icon> 📖
+      li = link_to nil, class: :with_icon
         span.name Text authors
+        span.icon< 📖
     - if virtue.relevant_for_audio_authors?
-      li = link_to nil
-        span.icon> 🔈
+      li = link_to nil, class: :with_icon
         span.name Audio authors
+        span.icon< 🔈
     - if virtue.relevant_for_video_authors?
-      li = link_to nil
-        span.icon> 🎬
+      li = link_to nil, class: :with_icon
         span.name Video authors
+        span.icon< 🎬
