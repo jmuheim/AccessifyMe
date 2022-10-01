@@ -5,19 +5,15 @@
       li = link_to nil, class: :with_icon
         span.name Designers
         span.icon< 🎨
-    - if virtue.relevant_for_developers?
+    - if virtue.relevant_for_web_developers?
       li = link_to nil, class: :with_icon
         span.name Developers
         span.icon< ⌨️
-    - if virtue.relevant_for_text_authors?
+    - if virtue.relevant_for_content_authors?
       li = link_to nil, class: :with_icon
-        span.name Text authors
-        span.icon< 📖
-    - if virtue.relevant_for_audio_authors?
+        span.name Content authors
+        span.icon< ✍️
+    - if virtue.relevant_for_multimedia_artists?
       li = link_to nil, class: :with_icon
-        span.name Audio authors
-        span.icon< 🔈
-    - if virtue.relevant_for_video_authors?
-      li = link_to nil, class: :with_icon
-        span.name Video authors
-        span.icon< 🎬
+        span.name Multimedia artists
+        span.icon< 🔈🎬

@@ -9,7 +9,7 @@ section.learn
   p There are a dozen <mark>accessibility virtues</mark>, many of which you want to be aware of, depending on your role as web creative. Some will become part of your <mark>daily routines</mark> and workflows.
 
   p.show_all_virtues
-    = link_to "👉 Hurry up, show all the virtues! 👈", virtues_path
+    = link_to "👉 Show all the virtues! 👈", virtues_path
     br aria-hidden="true"
     small Or filter by choosing your role below!
 
@@ -28,8 +28,8 @@ section.learn
     hr
 
     .right
-      h3 = link_to virtues_path(role: :developer), class: :with_icon
-        span.name Developer
+      h3 = link_to virtues_path(role: :web_developer), class: :with_icon
+        span.name Web developer
         span.icon< ⌨️
 
       p Everything <mark>stands or falls</mark> with you: usually you are expected to just <mark>magically implement</mark> all those <del>great</del> crazy ideas handed down to you.
@@ -40,8 +40,8 @@ section.learn
 
   .two_columns
     .left
-      h3 = link_to virtues_path(role: :text_author), class: :with_icon
-        span.name Content editor
+      h3 = link_to virtues_path(role: :content_author), class: :with_icon
+        span.name Content author
         span.icon< ✍️
 
       p Two thirds of <mark>text is too complex</mark> for the majority of the population! Even a masterpiece in writing is useless when no one is able to <mark>get its point</mark>.
@@ -51,32 +51,32 @@ section.learn
     hr
 
     .right
-      h3 = link_to virtues_path(role: :audio_author), class: :with_icon
-        span.name PDF producer
-        span.icon< 📄
-
-      p Sadly, most exported PDF documents are <mark>not accessible by default</mark>. You need to set proper export options and sometimes do a bit of <mark>post-processing</mark>.
-
-      p: strong Know your office tools!
-
-  hr
-
-  .two_columns
-    .left
       h3
-        = link_to virtues_path(role: :audio_author), class: :with_icon
+        = link_to virtues_path(role: :multimedia_artist), class: :with_icon
           span.name Multimedia artist
           span.icon< 🔈🎬
 
-      p Hard-of-hearing users will appreciate a proper <mark>text transcript</mark> of  your <mark>audio</mark> files, as well as <mark>closed captioning (CC)</mark> in <mark>videos</mark>.
+      p Many users will appreciate a proper <mark>text transcript</mark> of your <mark>audio</mark> documents, as well as <mark>closed captioning</mark> (CC) in <mark>videos</mark>.
 
       p: strong Make yourself heard!
 
-    hr
-    
-    .right
-
   hr
+
+  / .two_columns
+  /   .left
+  /     h3 = link_to virtues_path(role: :pdf_producer), class: :with_icon
+  /       span.name PDF producer
+  /       span.icon< 📄
+  /
+  /     p Sadly, most exported PDF documents are <mark>not accessible by default</mark>. You need to set proper export options and sometimes do a bit of <mark>post-processing</mark>.
+  /
+  /     p: strong Know your office tools!
+  /
+  /   hr
+  /
+  /   .right
+  /
+  / hr
 
   h3.sr-only Other stakeholders
 
