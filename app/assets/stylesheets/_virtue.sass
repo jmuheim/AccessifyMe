@@ -1,13 +1,13 @@
 .virtue
+  .virtues &
+    border: 1px solid var(--border)
+    padding: 1rem
+    border-radius: 5px
+    margin-bottom: 1rem
+
   h4
     margin-top: 0
     margin-bottom: 0.5em
-    padding-left: 1em
-    position: relative
-
-    sup
-      position: absolute
-      left: 0
 
   .left
     width: 60%
@@ -18,11 +18,12 @@
   blockquote
     margin: 0
 
-  .video_player
-    i.fa-play-circle
-      font-size: 120px
+  .virtues &
+    .video_player
+      i.fa-play-circle
+        font-size: 120px
 
-  .video_stats,
+  .offers,
   .relevant_for
     bottom: 0
 
@@ -45,8 +46,8 @@
       display: inline
 
       &:not(:last-child)::after
-        content: " | "
+        content: ", "
         color: var(--text-light)
 
-  .video_stats
+  .offers
     margin-top: 0.5em

@@ -41,6 +41,10 @@ html
             = link_to hire_path, "aria-current": (:page if request.path.starts_with? hire_path)
               | Hire 💸
 
+          li
+            = link_to about_path, "aria-current": (:page if request.path.starts_with? about_path)
+              | About 👨‍🦰
+
     main
       - if notice.present? || alert.present?
         p.notice = notice

@@ -1,20 +1,75 @@
-== render "shared/breadcrumbs", items: [["Welcome", root_path], ["Learn", learn_path]]
+== render "shared/breadcrumbs", items: [["Learn", learn_path]]
 
 section.learn
   h2
     | Learn more 🧠
     br> aria-hidden="true"
-    small Expand your accessibility skillset
+    small Become an accessibility virtuoso!
+
+  p There are a dozen <mark>accessibility virtues</mark>, many of which you want to be aware of, depending on your role. Some will become part of your <mark>daily routines</mark> and workflows.
+
+  p.show_all_virtues
+    = link_to "👉 Don't hold back, show me all the virtues! 👈", virtues_path
+    br aria-hidden="true"
+    small - or pick your role below -
+
+  hr
 
   .two_columns
     .left
-      h3 = link_to "Become a virtuoso 💪", virtues_path
+      h3 = link_to "Designer / UX 🎨", virtues_path(roles: [:designer])
 
-      p There are a dozen <mark>accessibility virtues</mark> you want to be aware of, and some will become part of your <mark>daily routines</mark>.
+      p Accessibility starts with the <mark>first pixel</mark> you draw. Be aware that <mark>you set the course</mark> for many important matters long before any code is written.
+
+      p: strong Make wise decisions!
 
     hr
 
     .right
-      h3 = link_to "Use the algorithm ⚙️", virtues_path
+      h3 = link_to "Developer ⌨️", virtues_path(roles: [:developer])
 
-      p <mark>Automated tools</mark> and services offer great support to those who recognise both their <mark>power and limitations</mark>.
+      p Everything <mark>stands or falls</mark> with you: usually you are expected to just <mark>magically implement</mark> all those <del>great</del> crazy ideas handed down to you.
+
+      p: strong Better prepare well, fellow!
+
+  hr
+
+  .two_columns
+    .left
+      h3 = link_to "Text author 📖", virtues_path(roles: [:text_author])
+
+      p 2/3 of <mark>text content is too complex</mark> for the majority of the population! Even a masterpiece in writing is useless when no one is able to <mark>get its point</mark>.
+
+      p: strong Be kind, be easy to understand!
+
+    hr
+
+    .right
+      h3 = link_to "Audio & video 🔈🎬", virtues_path(roles: [:audio_author, :video_author])
+
+      p So sad when your audience cannot enjoy your podcast or documentary due to missing <mark>text transcripts</mark> or defective <mark>closed captioning (CC)</mark>.
+
+      p: strong Make yourself heard!
+
+  hr
+
+  h3.sr-only Other stakeholders
+
+  p.show_all_virtues
+    small
+      | Or are you a project manager, product owner,
+      abbr< title="Chief Executive Officer" CEO
+      | ,
+      br aria-hidden="true"
+      | or anyone else with a rather <mark>top-down interest</mark> in the topic?
+    br aria-hidden="true"
+    = link_to virtues_path
+      | 👉 We compiled some
+      abbr<> title="Frequently asked questions" FAQ
+      | for you 👈
+
+  / hr
+  /
+  / h4 = link_to "Use the algorithm ⚙️", virtues_path
+  /
+  / p <mark>Automated tools</mark> and services offer great support to those who recognise both their <mark>power and limitations</mark>.

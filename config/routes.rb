@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   get "video/:id", to: "videos#show"
   get "virtue/:id", to: "virtues#show"
 
-  get "hire", to: "hire#index"
+  get "hire", to: "hire#show"
+  get "about", to: "about#show"
 end

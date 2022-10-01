@@ -1,4 +1,4 @@
-== render "shared/breadcrumbs", items: [["Welcome", root_path], ["Learn", learn_path], ["Virtues", virtues_path]]
+== render "shared/breadcrumbs", items: [["Learn", learn_path], ["Virtues", virtues_path]]
 
 section.virtues
   h2 Accessibility virtues
@@ -10,7 +10,7 @@ section.virtues
       .two_columns
         .left
           h4
-            sup: small> #{virtue.id}
+            sup: small> ##{virtue.id}
             = link_to virtue
               = virtue.name
           blockquote
@@ -21,35 +21,5 @@ section.virtues
             = far_icon('play-circle')
             = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
 
-      .video_stats
-        p: strong> Offers:
-        ul
-          li 12 tutorials
-          li 5 exercises
-          li 6 personas
-          li 17 examples
-          li 13 wins & 31 fails
-
-      .relevant_for
-        p: strong> Inspires:
-        ul
-          - if virtue.relevant_for_designers?
-            li = link_to nil
-              span.icon> 🎨
-              span.name Designers
-          - if virtue.relevant_for_developers?
-            li = link_to nil
-              span.icon> ⌨️
-              span.name Developers
-          - if virtue.relevant_for_text_authors?
-            li = link_to nil
-              span.icon> 📖
-              span.name Text authors
-          - if virtue.relevant_for_audio_authors?
-            li = link_to nil
-              span.icon> 🔈
-              span.name Audio authors
-          - if virtue.relevant_for_video_authors?
-            li = link_to nil
-              span.icon> 🎬
-              span.name Video authors
+      = render "offers", virtue: virtue
+      = render "relevant_for", virtue: virtue

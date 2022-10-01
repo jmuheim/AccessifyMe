@@ -1,0 +1,23 @@
+.relevant_for
+  p: strong> Inspires:
+  ul
+    - if virtue.relevant_for_designers?
+      li = link_to nil
+        span.icon> 🎨
+        span.name Designers
+    - if virtue.relevant_for_developers?
+      li = link_to nil
+        span.icon> ⌨️
+        span.name Developers
+    - if virtue.relevant_for_text_authors?
+      li = link_to nil
+        span.icon> 📖
+        span.name Text authors
+    - if virtue.relevant_for_audio_authors?
+      li = link_to nil
+        span.icon> 🔈
+        span.name Audio authors
+    - if virtue.relevant_for_video_authors?
+      li = link_to nil
+        span.icon> 🎬
+        span.name Video authors

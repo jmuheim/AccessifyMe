@@ -1,4 +1,4 @@
 nav#breadcrumbs aria-label="You are here"
   ol
-    - items.each do |item|
+    - items.unshift(["Welcome", root_path]).each do |item|
       li = link_to item.first, item.last
