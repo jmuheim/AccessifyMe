@@ -6,7 +6,7 @@ class VirtuesController < ApplicationController
 
   def index
     if params[:role].present?
-      @virtues = @virtues.where("relevant_for_#{params[:role]}s" => true)
+      @virtues = @virtues.where("inspires_#{params[:role]}" => true)
     end
   end
 

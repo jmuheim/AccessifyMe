@@ -1,6 +1,4 @@
-class Requirement < ApplicationRecord
-  belongs_to :video
-
+class Insight < ApplicationRecord
   has_many :examples
 
   def to_param

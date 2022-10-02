@@ -8,64 +8,85 @@ article.virtue id=dom_id(@virtue)
   blockquote
     = markdown(@virtue.intent)
 
-  hr
+  / hr
+  /
+  / = render "offers", virtue: @virtue
+  / = render "inspires", virtue: @virtue
+  /
+  / hr
 
-  = render "offers", virtue: @virtue
-  = render "inspires", virtue: @virtue
-
-  hr
-
-  h3 Introduction
-
-  ul
-    li
-      strong Published:
-      =<> time_ago_in_words(@virtue.created_at)
-      | ago
-    li
-      strong> Duration:
-      | 5:27"
-    li
-      strong Target audience:
-      =< link_to "Designers (?)"
-      |,
-      =< link_to "Developers"
-      |, and
-      =< link_to "Testers"
-    li
-      strong Level:
-      =< link_to "Beginners"
-    li
-      strong Priority:
-      =< link_to "High"
+  h3.sr-only General introduction 👨🏼‍🏫
 
   figure.video_player
     == far_icon(:play_circle)
-    = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+    = introduction_image_tag(@virtue)
 
-  h2.visually_hidden Transcript and slides
+  .horizontal-tags
+    ul
+      li
+        strong> Duration:
+        | 5:27"
+      li
+        strong Level:
+        =< link_to "Beginners"
+      li
+        strong Published:
+        =<> time_ago_in_words(@virtue.created_at)
+        | ago
 
-  ul
-    li
-      / == material_icon.description
-      | Transcript:
-      =< link_to video_transcript_path(@video)
-        => visually_hidden("View transcript as")
-        | HTML
-      |,
-      =< link_to video_transcript_path(@video, format: :pdf)
-        => visually_hidden("Download transcript as")
-        | PDF
-    li
-      / == material_icon.slideshow
-      | Slides:
-      =< link_to video_slides_path(@video, format: :keynote)
-        => visually_hidden("Download slides as")
-        | Keynote
-      |,
-      =< link_to video_slides_path(@video, format: :pdf)
-        => visually_hidden("Download slides as")
-        | PDF
+  / h2.visually_hidden Transcript and slides
+  /
+  / ul
+  /   li
+  /     / == material_icon.description
+  /     | Transcript:
+  /     =< link_to video_transcript_path(@video)
+  /       => visually_hidden("View transcript as")
+  /       | HTML
+  /     |,
+  /     =< link_to video_transcript_path(@video, format: :pdf)
+  /       => visually_hidden("Download transcript as")
+  /       | PDF
+  /   li
+  /     / == material_icon.slideshow
+  /     | Slides:
+  /     =< link_to video_slides_path(@video, format: :keynote)
+  /       => visually_hidden("Download slides as")
+  /       | Keynote
+  /     |,
+  /     =< link_to video_slides_path(@video, format: :pdf)
+  /       => visually_hidden("Download slides as")
+  /       | PDF
+
+  h3 Key insights 💡
+
+  - Insight.all.each do |insight|
+    article.insight.video_small id=dom_id(insight)
+      .two_columns
+        .left
+          h4
+            = link_to insight
+              = insight.title
+
+          blockquote
+            | "#{insight.general_value}"
+
+        .right
+          figure.video_player
+            = far_icon('play-circle')
+            = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+
+  / ul
+  /   - Insight.all.each do |insight|
+  /     li
+  /       = link_to insight.title, insight
+  /
+  /       - if insight.examples.any?
+  /         ul
+  /           - insight.examples.each do |example|
+  /             li
+  /               = example.good? ? "👍" : "👎"
+  /               =< link_to example.title
 
   h2 Used tools 🛠
 
@@ -103,23 +124,6 @@ article.virtue id=dom_id(@virtue)
     li #{link_to 'Petra Ritter'}, who cannot use a mouse due to ???.
     li #{link_to 'Oldtimer Bill'}, who suffers from tremors (shaking hands) due to Parkinson's Disease.
     li Power users
-
-  h2 Requirements ❣️
-
-  p The following <strong>good examples (Dos 👍)</strong> give you concise advise on how to painlessly meet the requirements around keyboard-only accessibility. The <strong>bad examples (Don'ts 👎)</strong>, however, demonstrate typical failures.
-
-  ul
-    - @video.requirements.each do |requirement|
-      li
-        = link_to requirement.title, requirement
-
-        - if requirement.examples.any?
-          ul
-            - requirement.examples.each do |example|
-              li
-                = example.good? ? "👍" : "👎"
-                =< link_to example.title
-        
 
   h3 Real world
 

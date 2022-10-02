@@ -29,7 +29,12 @@
 .video_player
   position: relative
 
-.video_player
+  &:hover
+    cursor: pointer
+
+    i.fa-play-circle
+      color: black
+
   i.fa-play-circle
     font-size: 300px
     opacity: .75
@@ -38,14 +43,6 @@
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-
-.video_player:hover
-  cursor: pointer
-
-
-.video_player:hover
-  i.fa-play-circle
-    color: black
 
 label
   display: inline
@@ -112,3 +109,51 @@ em
   border-radius: 4px
   background-color: var(--marked)
   font-style: normal
+
+.video_small
+  border: 1px solid var(--border)
+  padding: 1rem
+  border-radius: 5px
+  margin-bottom: 1rem
+
+  h4
+    margin-top: 0
+    margin-bottom: 0.5em
+
+  .left
+    width: 60%
+
+  .right
+    width: 40%
+
+  blockquote
+    margin: 0
+
+  .video_player
+    i.fa-play-circle
+      font-size: 120px
+
+.horizontal-tags
+  bottom: 0
+
+  ul,
+  p
+    margin: 0
+    padding: 0
+    display: inline
+
+  li
+    display: inline
+
+    &:not(:last-child)::after
+      content: ", "
+      color: var(--text-light)
+
+  a.with_icon
+    text-decoration: none
+
+    .name
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none

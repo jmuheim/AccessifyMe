@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :wcag_elements, path: :wcag
-  resources :requirements
   resources :tools
 
   get "learn", to: "learn#index"
   scope "learn" do
     resources :virtues
+    resources :insights
+    resources :faqs, path: :faq
 
     resources :videos do
       get 'transcript'

@@ -1,19 +1,8 @@
-.inspires
+.inspires.horizontal-tags
   p: strong> Inspires:
   ul
-    - if virtue.relevant_for_designers?
-      li = link_to nil, class: :with_icon
-        span.name Designers
-        span.icon< 🎨
-    - if virtue.relevant_for_web_developers?
-      li = link_to nil, class: :with_icon
-        span.name Developers
-        span.icon< ⌨️
-    - if virtue.relevant_for_content_writers?
-      li = link_to nil, class: :with_icon
-        span.name Content authors
-        span.icon< ✍️
-    - if virtue.relevant_for_multimedia_artists?
-      li = link_to nil, class: :with_icon
-        span.name Multimedia artists
-        span.icon< 🎶🎞
+    - Role.all.each do |role|
+      - if virtue.send("inspires_#{role.slug}?")
+        li = link_to virtues_path(role: role.slug), class: :with_icon
+          span.name = role.name
+          span.icon< = role.icon

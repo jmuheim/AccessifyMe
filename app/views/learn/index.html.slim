@@ -2,7 +2,7 @@
 
 section.learn
   h2
-    | Learn more 🧠
+    | Learn now 🧠
     br> aria-hidden="true"
     small Become an accessibility virtuoso!
 
@@ -10,9 +10,8 @@ section.learn
 
   p.show_all_virtues
     = link_to "👉 Browse all virtues", virtues_path
-    br aria-hidden="true"
-    small
-      | or choose your role to filter
+    small<
+      | or choose a role to filter
       sub< ⤵
 
   hr
@@ -59,7 +58,7 @@ section.learn
       br aria-hidden="true"
       | or anyone else with a rather <mark>top-down interest</mark> in the topic?
     br aria-hidden="true"
-    = link_to virtues_path
+    = link_to faqs_path
       | 👉 I compiled some
       abbr<> title="Frequently asked questions" FAQ
       | for you
