@@ -22,3 +22,44 @@
     margin-top: .75em
     margin-bottom: .75em
     opacity: .66
+
+.role
+  position: relative
+  overflow: hidden
+
+  &::before,
+  &::after
+    position: absolute
+    pointer-events: none
+    font-size: 7em
+    z-index: -1
+    right: -.25em
+    bottom: -.25em
+    line-height: 1em
+    opacity: 0.2
+    content: attr(data-icon)
+
+  &.designer::after
+    content: "🎨"
+    rotate: -60deg
+    right: -.1em
+
+  &.web_developer::after
+    content: "⌨️"
+    rotate: -40deg
+
+  &.content_author::after
+    content: "✍️"
+    rotate: 25deg
+
+  &.multimedia_artist::before
+    content: "🎞"
+    rotate: -15deg
+    right: -.15em
+
+  &.multimedia_artist::after
+    content: "🎶"
+    rotate: 10deg
+    bottom: 0
+    right: .2em
+    font-size: 4em
