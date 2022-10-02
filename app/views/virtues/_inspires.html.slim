@@ -1,4 +1,4 @@
-.relevant_for
+.inspires
   p: strong> Inspires:
   ul
     - if virtue.relevant_for_designers?
@@ -9,7 +9,7 @@
       li = link_to nil, class: :with_icon
         span.name Developers
         span.icon< ⌨️
-    - if virtue.relevant_for_content_authors?
+    - if virtue.relevant_for_content_writers?
       li = link_to nil, class: :with_icon
         span.name Content authors
         span.icon< ✍️

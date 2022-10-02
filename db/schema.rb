@@ -114,11 +114,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
     t.string "name"
     t.string "intent"
     t.text "description"
-    t.boolean "relevant_for_designers"
-    t.boolean "relevant_for_developers"
-    t.boolean "relevant_for_text_authors"
-    t.boolean "relevant_for_audio_authors"
-    t.boolean "relevant_for_video_authors"
+    t.boolean "inspires_designers"
+    t.boolean "inspires_developers"
+    t.boolean "inspires_text_authors"
+    t.boolean "inspires_audio_authors"
+    t.boolean "inspires_video_authors"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,62 +9,29 @@ section.learn
   p There are a dozen <mark>accessibility virtues</mark>, many of which you want to be aware of, depending on your role as web creative. Some will become part of your <mark>daily routines</mark> and workflows.
 
   p.show_all_virtues
-    = link_to "👉 Show all the virtues! 👈", virtues_path
+    = link_to "👉 Browse all virtues", virtues_path
     br aria-hidden="true"
-    small Or filter by choosing your role below!
+    small
+      | or choose your role to filter
+      sub< ⤵
 
   hr
 
-  .two_columns
-    .left
-      .role.designer
-        h3 = link_to virtues_path(role: :designer), class: :with_icon
-          span.name Designer / UX
-          span.icon< 🎨
+  - Role.all.each_slice(2) do |roles|
+    .two_columns
+      - roles.each_with_index do |role, i|
+        div class=(i == 0 ? :left : :right)
+          .role class=role.slug
+            h3 = link_to virtues_path(role: role.slug), class: :with_icon
+              span.name = role.name
+              span.icon< = role.icon
 
-        p Accessibility starts with the <mark>first pixel</mark> you draw. Be aware that <mark>you set the course</mark> for many important matters long before any code is written.
+            = markdown(role.mission)
 
-        p: strong Make wise decisions!
+        - if i == 0
+          hr
 
     hr
-
-    .right
-      .role.web_developer
-        h3 = link_to virtues_path(role: :web_developer), class: :with_icon
-          span.name Web developer
-          span.icon< ⌨️
-
-        p Everything <mark>stands or falls</mark> with you: usually you are expected to just <mark>magically implement</mark> all those <del>great</del> crazy ideas handed down to you.
-
-        p: strong May the force be with you!
-
-  hr
-
-  .two_columns
-    .left
-      .role.content_author
-        h3 = link_to virtues_path(role: :content_author), class: :with_icon
-          span.name Content author
-          span.icon< ✍️
-
-        p Two thirds of <mark>text is too complex</mark> for the majority of the population! Even a masterpiece in writing is useless when no one is able to <mark>get its point</mark>.
-
-        p: strong Use simple(r) language!
-
-    hr
-
-    .right
-      .role.multimedia_artist
-        h3
-          = link_to virtues_path(role: :multimedia_artist), class: :with_icon
-            span.name Multimedia artist
-            span.icon< 🎞🎶
-
-        p Many users will appreciate a proper <mark>text transcript</mark> of your <mark>audio</mark> documents, as well as <mark>closed captioning</mark> (CC) in <mark>videos</mark>.
-
-        p: strong Make yourself heard!
-
-  hr
 
   / .two_columns
   /   .left
@@ -95,7 +62,7 @@ section.learn
     = link_to virtues_path
       | 👉 I compiled some
       abbr<> title="Frequently asked questions" FAQ
-      | for you 👈
+      | for you
 
   / hr
   /

@@ -3,7 +3,18 @@
 section.virtues
   h2 Accessibility virtues
 
-  p A virtue is a <mark>good habit</mark>. There's a dozen or so accessibility virtues. Look into them and start applying some to your projects. Take your time: <mark>slowly and steadily</mark> incorporate one after the other into your daily routines. They will inspire and guide you, resulting in <mark>genuinely better products</mark> - far beyond accessibility.
+  p A virtue is a <mark>good habit</mark>. There's a dozen or so accessibility virtues. Look into those relevant to your role and start applying them to your projects. Take your time: <mark>slowly and steadily</mark> incorporate one after the other into your daily routines, to the depth you feel is reasonable.
+
+  p These virtues will inspire and guide you, resulting in <mark>genuinely better products</mark> far beyond accessibility.
+
+  form action=virtues_path
+    p
+      | Showing <strong>#{@virtues.size} of #{Virtue.count}</strong> virtues for
+      select<> name="role"
+        option value="" All roles
+        - Role.all.each do |role|
+          option value=role.slug selected=(params[:role] == role.slug) #{role.name} #{role.icon}
+      button Go
 
   - @virtues.each do |virtue|
     article.virtue id=dom_id(virtue)
@@ -22,4 +33,4 @@ section.virtues
             = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
 
       = render "offers", virtue: virtue
-      = render "relevant_for", virtue: virtue
+      = render "inspires", virtue: virtue
