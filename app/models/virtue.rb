@@ -1,5 +1,7 @@
 class Virtue < ApplicationRecord
+  has_many :insights
+
   def to_param
-    "#{id}-#{name.parameterize}"
+    "#{id}-#{short_name.parameterize}"
   end
 end

@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 
   get "learn", to: "learn#index"
   scope "learn" do
-    resources :virtues
-    resources :insights
+    resources :virtues do
+      resources :insights      
+    end
+
     resources :faqs, path: :faq
 
     resources :videos do

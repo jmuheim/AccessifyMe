@@ -58,15 +58,15 @@ article.virtue id=dom_id(@virtue)
   /       => visually_hidden("Download slides as")
   /       | PDF
 
-  h3 Key insights 💡
+  h3 Key insights (revelations?) 💡
 
-  - Insight.all.each do |insight|
+  - @virtue.insights.each do |insight|
     article.insight.video_small id=dom_id(insight)
       .two_columns
         .left
           h4
-            = link_to insight
-              = insight.title
+            = link_to [@virtue, insight]
+              = insight.name
 
           blockquote
             | "#{insight.general_value}"

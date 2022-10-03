@@ -1,0 +1,4 @@
+== render "shared/breadcrumbs", items: [["Learn", learn_path], ["Virtues", virtues_path], ["##{@insight.virtue.id}: " + @insight.virtue.short_name, virtue_path(@insight.virtue)], [@insight.short_name, [@insight.virtue, @insight]]]
+
+article.virtue id=dom_id(@insight)
+  h2 = @insight.name

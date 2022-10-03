@@ -33,4 +33,4 @@ section.virtues
             = introduction_image_tag(virtue)
 
       = render "offers", virtue: virtue
-      = render "inspires", virtue: virtue
+      = render "inspires", virtue: virtue unless params[:role].present?
