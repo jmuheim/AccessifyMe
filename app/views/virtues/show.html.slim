@@ -58,35 +58,50 @@ article.virtue id=dom_id(@virtue)
   /       => visually_hidden("Download slides as")
   /       | PDF
 
-  h3 Key insights (revelations?) 💡
+  section.insights
+    h3 Focusability | Operability
 
-  - @virtue.insights.each do |insight|
-    article.insight.video_small id=dom_id(insight)
-      .two_columns
-        .left
-          h4
-            = link_to [@virtue, insight]
-              = insight.name
+    p
+      = @virtue.insights.count
+      =< Insight.model_name.human(count: @virtue.insights.count)
 
-          blockquote
-            | "#{insight.general_value}"
+    - @virtue.insights.each do |insight|
+      article.insight.video_small id=dom_id(insight)
+        .two_columns
+          .left
+            h4 = insight.name
 
-        .right
-          figure.video_player
-            = far_icon('play-circle')
-            = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+            blockquote
+              | "#{insight.general_value}"
 
-  / ul
-  /   - Insight.all.each do |insight|
-  /     li
-  /       = link_to insight.title, insight
-  /
-  /       - if insight.examples.any?
-  /         ul
-  /           - insight.examples.each do |example|
-  /             li
-  /               = example.good? ? "👍" : "👎"
-  /               =< link_to example.title
+          .right
+            figure.video_player
+              = far_icon('play-circle')
+              = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+
+        - if insight.examples.any?
+          details.examples open=true
+            summary
+              h5
+                = insight.examples.count
+                =< Example.model_name.human(count: insight.examples.count)
+
+            - insight.examples.each_with_index do |example, i|
+              article.example id=dom_id(example)
+                .two_columns
+                  .left
+                    h6
+                      span.icon> class=(example.good? ? :good : :bad) = example.icon
+                      = inline_markdown(example.name)
+
+                    = markdown(example.description)
+
+                  .right
+                    figure.video_player
+                      = far_icon('play-circle')
+                      = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+              - if i < insight.examples.count - 1
+                hr
 
   h2 Used tools 🛠
 
