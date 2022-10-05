@@ -1,5 +1,5 @@
 class Insight < ApplicationRecord
-  has_many :examples
+  has_many :illustrations
   belongs_to :virtue
 
   def to_param

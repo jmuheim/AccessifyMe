@@ -5,9 +5,6 @@ article.virtue id=dom_id(@virtue)
     sup: small> ##{@virtue.id}
     =< @virtue.name
 
-  blockquote
-    = markdown(@virtue.intent)
-
   / hr
   /
   / = render "offers", virtue: @virtue
@@ -58,12 +55,31 @@ article.virtue id=dom_id(@virtue)
   /       => visually_hidden("Download slides as")
   /       | PDF
 
+  blockquote
+    = markdown(@virtue.intent)
+
   section.insights
-    h3
-      = @virtue.insights.count
-      =< Insight.model_name.human(count: @virtue.insights.count)
+    h3.sr-only = Insight.model_name.human(count: @virtue.insights.count)
 
     / Ggf. noch unterscheiden nach Focusability und Operability?
+
+    form action=virtues_path
+      p
+        | Showing <strong>#{@virtue.insights.count} of #{@virtue.insights.count}</strong> insights for
+
+        select<> name="role"
+          option value="" All roles
+          - Role.all.each do |role|
+            option value=role.slug selected=(params[:role] == role.slug) #{role.name} #{role.icon}
+
+        | and
+
+        select<> name="role"
+          option value="" All expertise levels
+          option value="" selected="true" Beginners 🐣
+          option value="" Intermediates 💪
+
+        button Go
 
     - @virtue.insights.each do |insight|
       article.insight.video_small id=dom_id(insight)
@@ -79,38 +95,37 @@ article.virtue id=dom_id(@virtue)
               = far_icon('play-circle')
               = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
 
-        - if insight.examples.any?
-          details.examples
+        - if insight.illustrations.any?
+          details.illustrations
             summary
               h5
-                = insight.examples.count
-                | illustrations
-                sup< with <mark>7 codes</mark>, <mark class="green">8 wins</mark>, and <mark class="red">15 fails</mark> in total
+                = insight.illustrations.count
+                =< Illustration.model_name.human(count: insight.illustrations.count)
+                sup< with <mark>7 examples</mark>, <mark class="green">8 wins</mark>, and <mark class="red">15 fails</mark> in total
 
-            - insight.examples.each_with_index do |example, i|
+            - insight.illustrations.each_with_index do |illustration, i|
               hr
 
-              article.example id=dom_id(example)
+              article.illustration id=dom_id(illustration)
                 .two_columns
                   .left
                     h6
-                      span.icon> class=(example.good? ? :good : :bad) = example.icon
+                      span.icon> class=(illustration.good? ? :good : :bad) = illustration.icon
                       = link_to nil
-                        = inline_markdown(example.name)
+                        = inline_markdown(illustration.name)
 
-                    = markdown(example.description)
+                    = markdown(illustration.description)
 
                     .horizontal-tags
                       ul
                         li
-                          | Codes:
-                          mark< 2
+                          strong> Examples:
+                          mark 2
                         li
-                          | Wins:
-                          mark.green< 3
-                        li
-                          | Fails:
-                          mark.red< 5
+                          strong> Real world:
+                          mark.green> 3 wins
+                          | and
+                          mark.red< 5 fails
 
                   .right
                     figure.video_player

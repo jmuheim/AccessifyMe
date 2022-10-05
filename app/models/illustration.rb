@@ -1,4 +1,4 @@
-class Example < ApplicationRecord
+class Illustration < ApplicationRecord
   default_scope { order(good: :desc) }
 
   belongs_to :video

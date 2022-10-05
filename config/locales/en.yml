@@ -14,9 +14,9 @@ en:
         updated_at: Updated at
         wcag_version: WCAG version
     models:
-      example:
-        one: Example
-        other: Examples
+      illustration:
+        one: Illustration
+        other: Illustrations
       insight:
         one: Insight
         other: Insights
