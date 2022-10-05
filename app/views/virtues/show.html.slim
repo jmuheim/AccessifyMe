@@ -59,11 +59,11 @@ article.virtue id=dom_id(@virtue)
   /       | PDF
 
   section.insights
-    h3 Focusability | Operability
-
-    p
+    h3
       = @virtue.insights.count
       =< Insight.model_name.human(count: @virtue.insights.count)
+
+    / Ggf. noch unterscheiden nach Focusability und Operability?
 
     - @virtue.insights.each do |insight|
       article.insight.video_small id=dom_id(insight)
@@ -80,28 +80,42 @@ article.virtue id=dom_id(@virtue)
               = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
 
         - if insight.examples.any?
-          details.examples open=true
+          details.examples
             summary
               h5
                 = insight.examples.count
-                =< Example.model_name.human(count: insight.examples.count)
+                | illustrations
+                sup< with <mark>7 codes</mark>, <mark class="green">8 wins</mark>, and <mark class="red">15 fails</mark> in total
 
             - insight.examples.each_with_index do |example, i|
+              hr
+
               article.example id=dom_id(example)
                 .two_columns
                   .left
                     h6
                       span.icon> class=(example.good? ? :good : :bad) = example.icon
-                      = inline_markdown(example.name)
+                      = link_to nil
+                        = inline_markdown(example.name)
 
                     = markdown(example.description)
+
+                    .horizontal-tags
+                      ul
+                        li
+                          | Codes:
+                          mark< 2
+                        li
+                          | Wins:
+                          mark.green< 3
+                        li
+                          | Fails:
+                          mark.red< 5
 
                   .right
                     figure.video_player
                       = far_icon('play-circle')
                       = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
-              - if i < insight.examples.count - 1
-                hr
 
   h2 Used tools 🛠
 
@@ -140,22 +154,14 @@ article.virtue id=dom_id(@virtue)
     li #{link_to 'Oldtimer Bill'}, who suffers from tremors (shaking hands) due to Parkinson's Disease.
     li Power users
 
-  h3 Real world
+  / h2 External resources 📍
+  /
+  / h3 Written
+  /
+  / h3 Videos
 
-  h4 Good examples
-
-  h4 Bad examples
-
-  h2 Related @virtues 🎞
-
-  h2 External resources 📍
-
-  h3 Written
-
-  h3 Videos
-
-nav ara-label="Video management"
-  ul
-    li = link_to "Edit this virtue", edit_virtue_path(@virtue)
-    li = link_to "Back to virtues", @virtues_path
-    li = button_to "Destroy this virtue", @virtue, method: :delete
+/ nav ara-label="Video management"
+/   ul
+/     li = link_to "Edit this virtue", edit_virtue_path(@virtue)
+/     li = link_to "Back to virtues", @virtues_path
+/     li = button_to "Destroy this virtue", @virtue, method: :delete

@@ -8,7 +8,7 @@ set :repo_url, "git@github.com:jmuheim/AccessifyMe.git"
 set :branch, `git rev-parse --abbrev-ref HEAD`.chomp # Simply use the current branch!
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/virtual/www/xsfi/rails"
+set :deploy_to, "/var/www/virtual/xsfi/rails"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
