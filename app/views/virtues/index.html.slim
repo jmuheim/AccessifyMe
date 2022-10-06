@@ -30,7 +30,8 @@ section.virtues
         .right
           figure.video_player
             = far_icon('play-circle')
-            = introduction_image_tag(virtue)
+            / = introduction_image_tag(virtue)
+            img.placeholder
 
       = render "offers", virtue: virtue
       = render "inspires", virtue: virtue unless params[:role].present?

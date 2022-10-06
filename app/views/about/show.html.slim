@@ -1,7 +1,9 @@
 == render "shared/breadcrumbs", items: [["About", about_path]]
 
 section.about
-  .foto = image_tag "josua"
+  .foto
+    / = image_tag "josua"
+    img.placeholder
 
   h2
     | About me 👨‍🦰
