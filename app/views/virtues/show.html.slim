@@ -60,7 +60,7 @@ article.virtue id=dom_id(@virtue)
     = markdown(@virtue.intent)
 
   section.insights
-    h3.sr-only = Insight.model_name.human(count: @virtue.insights.count)
+    h3 = Insight.model_name.human(count: @virtue.insights.count)
 
     / Ggf. noch unterscheiden nach Focusability und Operability?
 
