@@ -87,6 +87,7 @@ group :development do
   gem "capistrano-rails", "~> 1.6", require: false
   gem "ed25519"
   gem "bcrypt_pbkdf"
+  gem "capistrano3-puma", github: "seuros/capistrano-puma"
 end
 
 group :test do
