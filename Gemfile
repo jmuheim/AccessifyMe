@@ -66,6 +66,8 @@ gem "acts_as_list" # An ActiveRecord plugin for managing lists
 
 gem "sass-rails" # Use Sass for stylesheets
 
+gem "mobility" # Translate ActiveRecord DB columns
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

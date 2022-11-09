@@ -1,0 +1,35 @@
+de:
+  activerecord:
+    attributes:
+      wcag_element:
+        ancestors: Vorfahren
+        children: Kinder
+        created_at: Erstellt am
+        description: Beschreibung
+        explains_why: Erklärt warum
+        lead: Einführung
+        level: Level
+        name: Name
+        parent: Vorläufer
+        requirements: Anforderungen
+        updated_at: Aktualisiert am
+        wcag_version: WCAG Version
+    models:
+      illustration:
+        one: Illustration
+        other: Illustrationen
+      insight:
+        one: Einsicht
+        other: Einsichten
+      wcag_criterion:
+        one: Kriterium
+        other: Kriterien
+      wcag_element:
+        one: WCAG Element
+        other: WCAG Elemente
+      wcag_guideline:
+        one: Richtlinie
+        other: Richtlinien
+      wcag_principle:
+        one: Prinzip
+        other: Prinzipien

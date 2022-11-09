@@ -20,5 +20,8 @@ module AccessifyMe
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.sass.preferred_syntax = :sass
+
+    config.i18n.default_locale = :en
+    config.i18n.available_locales = %i[en de]
   end
 end

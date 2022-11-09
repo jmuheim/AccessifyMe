@@ -5,8 +5,9 @@ en:
         ancestors: Ancestors
         children: Children
         created_at: Created at
-        creator: Creator
         description: Description
+        explains_why: Explains why
+        lead: Lead
         level: Level
         name: Name
         parent: Parent

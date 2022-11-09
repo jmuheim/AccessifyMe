@@ -144,6 +144,9 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.16.3)
+    mobility (1.2.9)
+      i18n (>= 0.6.10, < 2)
+      request_store (~> 1.0)
     msgpack (1.6.0)
     mysql2 (0.5.4)
     net-imap (0.3.1)
@@ -208,6 +211,8 @@ GEM
     regexp_parser (2.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
+    request_store (1.5.1)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -293,6 +298,7 @@ DEPENDENCIES
   font_awesome5_rails
   importmap-rails
   jbuilder
+  mobility
   mysql2 (~> 0.5)
   pandoc-ruby
   pry-rails

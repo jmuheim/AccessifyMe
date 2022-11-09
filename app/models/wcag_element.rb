@@ -21,6 +21,8 @@ class WcagElement < ApplicationRecord
 
   extend ActsAsTree::TreeWalker
 
+  extend Mobility
+
   def to_param
     "#{id}-#{name.parameterize}"
   end
@@ -59,6 +61,8 @@ class WcagElement < ApplicationRecord
 
   acts_as_tree order: :position, dependent: :restrict_with_error
   acts_as_list scope: :parent_id
+
+  translates :name, :explains_why, :lead, :description
 
   def self.model_name
     ActiveModel::Name.new(self, nil, 'WcagElement') # Make sure that STI models use the same namespace
