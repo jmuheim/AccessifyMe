@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
     resources :wcag_elements, path: :wcag
     resources :tools
+    resources :examples
+    resources :illustrations
 
     get "learn", to: "learn#index"
     scope "learn" do

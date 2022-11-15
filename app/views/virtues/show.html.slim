@@ -95,42 +95,49 @@ article.virtue id=dom_id(@virtue)
               = far_icon('play-circle')
               = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
 
-        - if insight.illustrations.any?
-          details.illustrations
-            summary
-              h5
-                = insight.illustrations.count
-                =< Illustration.model_name.human(count: insight.illustrations.count)
-                sup< with <mark>7 examples</mark>, <mark class="green">8 wins</mark>, and <mark class="red">15 fails</mark> in total
+        - Illustration.kind.values.each do |type|
+          - illustrations = insight.illustrations.send(type)
+          - if illustrations.any?
+            details.illustrations class=type
+              summary
+                h5
+                  => illustrations.count
+                  => Illustration.kind.send(type).text.pluralize
 
-            - insight.illustrations.each_with_index do |illustration, i|
-              hr
+                  sup
+                    | with
+                    mark<> ? demos
+                    | and
+                    mark< class=(type == :do ? :green : :red)
+                      | ? #{type == :do ? "wins" : "fails"}
 
-              article.illustration id=dom_id(illustration)
-                .two_columns
-                  .left
-                    h6
-                      span.icon> class=(illustration.good? ? :good : :bad) = illustration.icon
-                      = link_to nil
-                        = inline_markdown(illustration.name)
+              - illustrations.each_with_index do |illustration, i|
+                hr
 
-                    = markdown(illustration.description)
+                article.illustration id=dom_id(illustration)
+                  .two_columns
+                    .left
+                      h6
+                        span.icon> class=(illustration.do? ? :do : :dont) = illustration.icon
+                        = link_to illustration
+                          = inline_markdown(illustration.name)
 
-                    .horizontal-tags
-                      ul
-                        li
-                          strong> Examples:
-                          mark 2
-                        li
-                          strong> Real world:
-                          mark.green> 3 wins
-                          | and
-                          mark.red< 5 fails
+                      = markdown(illustration.description)
 
-                  .right
-                    figure.video_player
-                      = far_icon('play-circle')
-                      = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+                      .horizontal-tags
+                        ul
+                          li
+                            strong> Demos:
+                            mark = illustration.examples.demos.count
+                          li
+                            strong> Real world:
+
+                            mark class=(illustration.do? ? :green : :red) #{illustration.examples.real.count}
+
+                    .right
+                      figure.video_player
+                        = far_icon('play-circle')
+                        = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
 
   h2 Used tools 🛠
 

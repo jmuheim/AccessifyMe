@@ -68,6 +68,10 @@ gem "sass-rails" # Use Sass for stylesheets
 
 gem "mobility" # Translate ActiveRecord DB columns
 
+gem "carrierwave" # File uploads
+
+gem "simple_form" # Forms made easy
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

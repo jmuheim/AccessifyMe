@@ -108,7 +108,7 @@ article id=dom_id(@video)
           ul
             - requirement.examples.each do |example|
               li
-                = example.good? ? "👍" : "👎"
+                = example.win? ? "👍" : "👎"
                 =< link_to example.title
         
 

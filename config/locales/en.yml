@@ -15,6 +15,12 @@ en:
         updated_at: Updated at
         wcag_version: WCAG version
     models:
+      do_illustration:
+        one: Do
+        other: Dos
+      dont_illustration:
+        one: Don't
+        other: Don'ts
       illustration:
         one: Illustration
         other: Illustrations

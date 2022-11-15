@@ -1,0 +1,7 @@
+tr id=dom_id(example)
+  td.tree_prefix
+		= example.tree_prefix
+  th.name
+    = link_to example.name, example, style: "margin-left: #{example.ancestors.count * 20}px"
+	td.level
+		= example.level_text

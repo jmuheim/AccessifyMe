@@ -1,0 +1,14 @@
+h1 Examples
+
+#examples
+  table
+    thead
+      tr
+        th.tree_prefix = WcagElement.human_attribute_name(:tree_prefix)
+        th.name        = WcagElement.human_attribute_name(:name)
+        th.level       = WcagElement.human_attribute_name(:level)
+
+    tbody
+      = render @examples
+
+= link_to "New example", new_example_path

@@ -10,27 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
-  create_table "examples", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "requirement_id", null: false
-    t.string "title"
-    t.boolean "good", default: true, null: false
+ActiveRecord::Schema[7.0].define(version: 2022_11_15_120408) do
+  create_table "clients", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "contact"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "examples", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "type", null: false
+    t.string "kind"
+    t.string "name"
+    t.text "description"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "illustration_id", null: false
+    t.index ["illustration_id"], name: "index_examples_on_illustration_id"
+  end
+
+  create_table "illustrations", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "type", null: false
+    t.bigint "insight_id", null: false
+    t.string "name"
+    t.text "description"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["insight_id"], name: "index_examples_on_insight_id"
+  end
+
+  create_table "insights", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "virtue_id", null: false
+    t.string "name"
+    t.string "short_name"
+    t.string "general_value"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["requirement_id"], name: "index_examples_on_requirement_id"
+    t.index ["virtue_id"], name: "index_insights_on_virtue_id"
   end
 
-  create_table "requirements", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "video_id", null: false
-    t.string "title"
+  create_table "issues", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "website_id", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["video_id"], name: "index_requirements_on_video_id"
+    t.string "screenshot"
+    t.bigint "illustration_id", null: false
+    t.index ["illustration_id"], name: "index_issues_on_illustration_id"
+    t.index ["website_id"], name: "index_issues_on_website_id"
   end
 
-  create_table "roles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "roles", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "icon"
     t.string "name"
     t.string "mission"
     t.text "description"
@@ -39,13 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "skills", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tools", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "tools", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name"
     t.string "short_name"
     t.text "description"
@@ -54,7 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
     t.string "icon"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -80,7 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  create_table "video_to_tools", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "video_to_tools", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "video_id", null: false
     t.bigint "tool_id", null: false
     t.string "purpose"
@@ -90,7 +119,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
     t.index ["video_id"], name: "index_videos_to_tools_on_video_id"
   end
 
-  create_table "video_to_wcag_elements", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "video_to_wcag_elements", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "video_id", null: false
     t.bigint "wcag_element_id", null: false
     t.string "purpose"
@@ -100,9 +129,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
     t.index ["wcag_element_id"], name: "index_videos_to_wcag_criteria_on_wcag_criterion_id"
   end
 
-  create_table "videos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "videos", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "title", null: false
-    t.string "short_title", null: false
     t.text "lead"
     t.text "description"
     t.string "youtube_id"
@@ -110,23 +138,30 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "virtues", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "virtues", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name"
+    t.string "short_name"
     t.string "intent"
     t.text "description"
-    t.boolean "inspires_designers"
-    t.boolean "inspires_developers"
-    t.boolean "inspires_text_authors"
-    t.boolean "inspires_audio_authors"
-    t.boolean "inspires_video_authors"
+    t.text "image"
+    t.boolean "inspires_design"
+    t.boolean "inspires_development"
+    t.boolean "inspires_writing"
+    t.boolean "inspires_multimedia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "wcag_elements", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.string "explains_why"
-    t.text "description"
+  create_table "wcag_elements", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_de"
+    t.string "explains_why_en"
+    t.string "explains_why_de"
+    t.text "lead_en"
+    t.text "lead_de"
+    t.text "notes"
+    t.text "description_en"
+    t.text "description_de"
     t.string "level"
     t.bigint "parent_id"
     t.integer "position"
@@ -137,11 +172,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_122255) do
     t.index ["parent_id"], name: "index_parent_id_on_wcag_elements_fk"
   end
 
-  add_foreign_key "examples", "requirements"
-  add_foreign_key "requirements", "videos"
+  create_table "websites", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "client_id", null: false
+    t.string "name"
+    t.string "url"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_projects_on_client_id"
+  end
+
+  add_foreign_key "examples", "illustrations"
+  add_foreign_key "illustrations", "insights"
+  add_foreign_key "insights", "virtues"
+  add_foreign_key "issues", "illustrations"
+  add_foreign_key "issues", "websites"
   add_foreign_key "video_to_tools", "tools"
   add_foreign_key "video_to_tools", "videos"
   add_foreign_key "video_to_wcag_elements", "videos"
   add_foreign_key "video_to_wcag_elements", "wcag_elements"
   add_foreign_key "wcag_elements", "wcag_elements", column: "parent_id", name: "success_criteria_parent_id_fk"
+  add_foreign_key "websites", "clients"
 end
