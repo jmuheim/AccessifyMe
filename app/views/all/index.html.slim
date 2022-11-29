@@ -13,19 +13,25 @@ ul
               mark> = insight.short_name + ":"
               = link_to insight.name, insight
 
-              - if insight.illustrations.do.any?
+              - if insight.patterns.any?
                 ul
-                  - insight.illustrations.do.each do |illustration|
+                  - insight.patterns.each do |pattern|
                     li
-                      strong> Illustration:
-                      => do_or_dont_icon(illustration)
-                      = link_to inline_markdown(illustration.name), illustration
+                      strong> ✅ Pattern:
+                      = link_to inline_markdown(pattern.name), pattern
 
-                      - if illustration.examples.any?
-                        - illustration.examples.each do |example|
+                      - if pattern.anti_patterns.any?
+                        - pattern.anti_patterns.each do |anti_pattern|
                           ul
                             li
-                              strong> Example:
-                              = example.website.name
-                              | :
-                              =< link_to inline_markdown(example.name), [:edit, example]
+                              strong> 🚨 Anti-Pattern:
+                              =< link_to inline_markdown(anti_pattern.name), [:edit, anti_pattern]
+
+                              - if anti_pattern.bloopers.any?
+                                - anti_pattern.bloopers.each do |blooper|
+                                  ul
+                                    li
+                                      strong> Blooper:
+                                      = blooper.website.name
+                                      | :
+                                      =< link_to inline_markdown(blooper.name), [:edit, blooper]

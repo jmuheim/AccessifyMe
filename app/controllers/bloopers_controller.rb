@@ -1,31 +1,31 @@
-class ExamplesController < ApplicationController
+class BloopersController < ApplicationController
   respond_to :html
   before_action :verify_requested_format!
   load_and_authorize_resource
 
   def create
-    @example = Example.new(example_params)
+    @blooper = Blooper.new(blooper_params)
 
-    @example.save
-    respond_with @example
+    @blooper.save
+    respond_with @blooper
   end
 
   def update
-    @example.update(example_params)
-    respond_with @example
+    @blooper.update(blooper_params)
+    respond_with @blooper
   end
 
   def destroy
-    @example.destroy
-    respond_with @example
+    @blooper.destroy
+    respond_with @blooper
   end
 
   private
 
     # Only allow a list of trusted parameters through.
-    def example_params
-      params.require(:example).permit(:website_id,
-                                      :illustration_id,
+    def blooper_params
+      params.require(:blooper).permit(:website_id,
+                                      :pattern_id,
                                       :demo_or_real,
                                       :name,
                                       :description,

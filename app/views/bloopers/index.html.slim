@@ -1,0 +1,19 @@
+h1 Bloopers
+
+table.bloopers
+  thead
+    tr
+      th.id           = Blooper.human_attribute_name :id
+      / th.website      = Blooper.human_attribute_name :website
+      th.virtue       = Blooper.human_attribute_name :virtue
+      th.insight      = Blooper.human_attribute_name :insight
+      th.pattern = Blooper.human_attribute_name :pattern
+      th.demo_or_real = Blooper.human_attribute_name :demo_or_real
+      th.name         = Blooper.human_attribute_name :name
+      th.description  = Blooper.human_attribute_name :description
+      th.notes        = Blooper.human_attribute_name :notes
+
+  tbody
+    = render @bloopers
+
+= link_to "New blooper", new_blooper_path

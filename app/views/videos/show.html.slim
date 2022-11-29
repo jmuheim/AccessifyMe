@@ -97,26 +97,26 @@ article id=dom_id(@video)
 
   h2 Requirements ❣️
 
-  p The following <strong>good examples (Dos 👍)</strong> give you concise advise on how to painlessly meet the requirements around keyboard-only accessibility. The <strong>bad examples (Don'ts 👎)</strong>, however, demonstrate typical failures.
+  p The following <strong>good bloopers (Dos 👍)</strong> give you concise advise on how to painlessly meet the requirements around keyboard-only accessibility. The <strong>bad bloopers (Don'ts 👎)</strong>, however, demonstrate typical failures.
 
   ul
     - @video.requirements.each do |requirement|
       li
         = link_to requirement.title, requirement
 
-        - if requirement.examples.any?
+        - if requirement.bloopers.any?
           ul
-            - requirement.examples.each do |example|
+            - requirement.bloopers.each do |blooper|
               li
-                = example.win? ? "👍" : "👎"
-                =< link_to example.title
+                = blooper.win? ? "👍" : "👎"
+                =< link_to blooper.title
         
 
   h3 Real world
 
-  h4 Good examples
+  h4 Good bloopers
 
-  h4 Bad examples
+  h4 Bad bloopers
 
   h2 Related @videos 🎞
 

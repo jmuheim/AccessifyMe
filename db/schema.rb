@@ -10,37 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_15_160501) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_154302) do
+  create_table "anti_patterns", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "pattern_id", null: false
+    t.string "name", null: false
+    t.text "description"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pattern_id"], name: "index_anti_patterns_on_pattern_id"
+  end
+
+  create_table "bloopers", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "website_id", null: false
+    t.bigint "anti_pattern_id", null: false
+    t.string "name", null: false
+    t.string "url", default: "real", null: false
+    t.text "description"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "screenshot"
+    t.index ["anti_pattern_id"], name: "index_bloopers_on_anti_pattern_id"
+    t.index ["website_id"], name: "index_examples_on_website_id"
+  end
+
   create_table "clients", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name"
     t.string "contact"
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "examples", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.bigint "illustration_id", null: false
-    t.string "kind", null: false
-    t.string "name", null: false
-    t.text "description"
-    t.text "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "website_id", null: false
-    t.index ["illustration_id"], name: "index_examples_on_illustration_id"
-    t.index ["website_id"], name: "index_examples_on_website_id"
-  end
-
-  create_table "illustrations", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.string "kind", null: false
-    t.bigint "insight_id", null: false
-    t.string "name", null: false
-    t.text "description"
-    t.text "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["insight_id"], name: "index_examples_on_insight_id"
   end
 
   create_table "insights", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
@@ -52,6 +52,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_160501) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["virtue_id"], name: "index_insights_on_virtue_id"
+  end
+
+  create_table "patterns", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "insight_id", null: false
+    t.string "name", null: false
+    t.text "description"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["insight_id"], name: "index_examples_on_insight_id"
+  end
+
+  create_table "patterns_to_anti_patterns", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "pattern_id", null: false
+    t.bigint "anti_pattern_id", null: false
+    t.index ["anti_pattern_id"], name: "index_patterns_to_anti_patterns_on_anti_pattern_id"
+    t.index ["pattern_id"], name: "index_patterns_to_anti_patterns_on_pattern_id"
   end
 
   create_table "roles", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
@@ -172,10 +191,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_160501) do
     t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
-  add_foreign_key "examples", "illustrations"
-  add_foreign_key "examples", "websites"
-  add_foreign_key "illustrations", "insights"
+  add_foreign_key "anti_patterns", "patterns"
+  add_foreign_key "bloopers", "anti_patterns"
+  add_foreign_key "bloopers", "websites"
   add_foreign_key "insights", "virtues"
+  add_foreign_key "patterns", "insights"
+  add_foreign_key "patterns_to_anti_patterns", "anti_patterns"
+  add_foreign_key "patterns_to_anti_patterns", "patterns"
   add_foreign_key "video_to_tools", "tools"
   add_foreign_key "video_to_tools", "videos"
   add_foreign_key "video_to_wcag_elements", "videos"

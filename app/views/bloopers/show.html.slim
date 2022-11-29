@@ -1,0 +1,34 @@
+article id=dom_id(@blooper)
+  h1 = inline_markdown @blooper.pattern.name
+
+  ul
+    li
+      strong> Virtue:
+      = link_to inline_markdown(@blooper.pattern.insight.virtue.name), @blooper.pattern.insight.virtue
+    li
+      strong> Insight:
+      = link_to inline_markdown(@blooper.pattern.insight.name), @blooper.pattern.insight
+    li
+      strong> Pattern:
+      = @blooper.pattern.icon
+      = link_to inline_markdown(@blooper.pattern.name), @blooper.pattern
+
+  = markdown @blooper.pattern.description
+
+  figure
+    = image_tag @blooper.screenshot.url
+    caption = @blooper.name
+
+  dl
+    dt URL
+    dd
+      = link_to @blooper.url, @blooper.url
+
+    dt Website
+    dd
+      = link_to @blooper.website.name, @blooper.website
+    dt Demo or real?
+    dd = @blooper.demo_or_real_text
+
+  h2 Description
+  = markdown @blooper.description

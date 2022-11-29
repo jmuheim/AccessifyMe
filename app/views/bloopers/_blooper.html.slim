@@ -1,0 +1,10 @@
+tr id=dom_id(blooper)
+  th.id           = blooper.id
+  / th.website      = blooper.website.name
+  th.virtue       = link_to blooper.pattern.insight.virtue.name, blooper.pattern.insight.virtue
+  th.insight      = link_to blooper.pattern.insight.name, blooper.pattern.insight
+  td.pattern = link_to inline_markdown(blooper.pattern.name), blooper.pattern
+  td.demo_or_real = blooper.demo_or_real_value
+  td.name         = blooper.name
+  td.description  = blooper.description
+  td.notes        = blooper.notes

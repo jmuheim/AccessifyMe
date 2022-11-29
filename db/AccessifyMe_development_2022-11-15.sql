@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS `examples`;
 
 CREATE TABLE `examples` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `illustration_id` bigint NOT NULL,
+  `pattern_id` bigint NOT NULL,
   `kind` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
@@ -86,14 +86,14 @@ CREATE TABLE `examples` (
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `index_examples_on_illustration_id` (`illustration_id`),
-  CONSTRAINT `fk_rails_bca2bddd30` FOREIGN KEY (`illustration_id`) REFERENCES `illustrations` (`id`)
+  KEY `index_examples_on_pattern_id` (`pattern_id`),
+  CONSTRAINT `fk_rails_bca2bddd30` FOREIGN KEY (`pattern_id`) REFERENCES `patterns` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `examples` WRITE;
 /*!40000 ALTER TABLE `examples` DISABLE KEYS */;
 
-INSERT INTO `examples` (`id`, `illustration_id`, `kind`, `name`, `description`, `notes`, `created_at`, `updated_at`)
+INSERT INTO `examples` (`id`, `pattern_id`, `kind`, `name`, `description`, `notes`, `created_at`, `updated_at`)
 VALUES
 	(1,1,'real','test','das ist eine desc',NULL,'2022-11-15 14:28:27.000000','2022-11-15 14:28:27.000000');
 
@@ -101,12 +101,12 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table illustrations
+# Dump of table patterns
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `illustrations`;
+DROP TABLE IF EXISTS `patterns`;
 
-CREATE TABLE `illustrations` (
+CREATE TABLE `patterns` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `kind` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `insight_id` bigint NOT NULL,
@@ -120,10 +120,10 @@ CREATE TABLE `illustrations` (
   CONSTRAINT `fk_rails_cca645e906` FOREIGN KEY (`insight_id`) REFERENCES `insights` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-LOCK TABLES `illustrations` WRITE;
-/*!40000 ALTER TABLE `illustrations` DISABLE KEYS */;
+LOCK TABLES `patterns` WRITE;
+/*!40000 ALTER TABLE `patterns` DISABLE KEYS */;
 
-INSERT INTO `illustrations` (`id`, `kind`, `insight_id`, `name`, `description`, `notes`, `created_at`, `updated_at`)
+INSERT INTO `patterns` (`id`, `kind`, `insight_id`, `name`, `description`, `notes`, `created_at`, `updated_at`)
 VALUES
 	(1,'do',1,'Link implemented as `<a href>`','A correctly implemented link can be focused by default.',NULL,'2022-08-24 16:13:00.000000','2022-08-24 16:13:00.000000'),
 	(2,'dont',3,'No focus state at all (focus reset)',NULL,'https://uxtools.co/','2022-08-25 09:35:45.000000','2022-08-25 09:35:45.000000'),
@@ -132,7 +132,7 @@ VALUES
 	(5,'do',1,'Button implemented as `<button>` or `<input type=\"submit\">`','A correctly implemented button can be focused by default.','Kann z.B. auch Formular mit `Enter` abschicken','0000-00-00 00:00:00.000000','0000-00-00 00:00:00.000000'),
 	(6,'dont',1,'Button implemented as `<a href>`','A link can never be a proper button, period. Instead, use a `<button>` or `<input type=\"submit\">` (or `type=\"button\"`).','Egal ob mit oder ohne `href`','0000-00-00 00:00:00.000000','0000-00-00 00:00:00.000000');
 
-/*!40000 ALTER TABLE `illustrations` ENABLE KEYS */;
+/*!40000 ALTER TABLE `patterns` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

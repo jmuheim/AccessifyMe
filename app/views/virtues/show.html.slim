@@ -95,14 +95,14 @@ article.virtue id=dom_id(@virtue)
               = far_icon('play-circle')
               = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
 
-        - Illustration.do_or_dont.values.each do |type|
-          - illustrations = insight.illustrations.send(type)
-          - if illustrations.any?
-            details.illustrations class=type
+        - Pattern.do_or_dont.values.each do |type|
+          - patterns = insight.patterns.send(type)
+          - if patterns.any?
+            details.patterns class=type
               summary
                 h5
-                  => illustrations.count
-                  => Illustration.do_or_dont.send(type).text.pluralize
+                  => patterns.count
+                  => Pattern.do_or_dont.send(type).text.pluralize
 
                   sup
                     | with
@@ -111,28 +111,28 @@ article.virtue id=dom_id(@virtue)
                     mark< class=(type == :do ? :green : :red)
                       | ? #{type == :do ? "wins" : "fails"}
 
-              - illustrations.each_with_index do |illustration, i|
+              - patterns.each_with_index do |pattern, i|
                 hr
 
-                article.illustration id=dom_id(illustration)
+                article.pattern id=dom_id(pattern)
                   .two_columns
                     .left
                       h6
-                        = do_or_dont_icon(illustration)
-                        = link_to illustration
-                          = inline_markdown(illustration.name)
+                        = do_or_dont_icon(pattern)
+                        = link_to pattern
+                          = inline_markdown(pattern.name)
 
-                      = markdown(illustration.description)
+                      = markdown(pattern.description)
 
                       .horizontal-tags
                         ul
                           li
                             strong> Demos:
-                            mark = illustration.examples.demos.count
+                            mark = pattern.bloopers.demos.count
                           li
                             strong> Real world:
 
-                            mark class=(illustration.do? ? :green : :red) #{illustration.examples.real.count}
+                            mark class=(pattern.do? ? :green : :red) #{pattern.bloopers.real.count}
 
                     .right
                       figure.video_player

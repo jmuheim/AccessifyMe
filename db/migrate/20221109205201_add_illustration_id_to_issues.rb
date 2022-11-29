@@ -1,5 +1,5 @@
-class AddIllustrationIdToIssues < ActiveRecord::Migration[7.0]
+class AddPatternIdToIssues < ActiveRecord::Migration[7.0]
   def change
-    add_reference :issues, :illustration, null: false, foreign_key: true
+    add_reference :issues, :pattern, null: false, foreign_key: true
   end
 end

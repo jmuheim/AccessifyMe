@@ -15,9 +15,9 @@ de:
         updated_at: Aktualisiert am
         wcag_version: WCAG Version
     models:
-      illustration:
-        one: Illustration
-        other: Illustrationen
+      pattern:
+        one: Pattern
+        other: Patternen
       insight:
         one: Einsicht
         other: Einsichten

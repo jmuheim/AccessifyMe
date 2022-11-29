@@ -1,4 +1,4 @@
-class Example < ApplicationRecord
+class Blooper < ApplicationRecord
   extend Enumerize
   enumerize :demo_or_real, in: [:demo, :real]
 
@@ -7,10 +7,10 @@ class Example < ApplicationRecord
 
   mount_uploader :screenshot, ScreenshotUploader
 
-  belongs_to :illustration
+  belongs_to :pattern
   belongs_to :website
 
   def icon
-    illustration.icon
+    pattern.icon
   end
 end

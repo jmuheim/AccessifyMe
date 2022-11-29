@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     resources :wcag_elements, path: :wcag
     resources :tools
     resources :websites
-    resources :examples
-    resources :illustrations
+    resources :bloopers
+    resources :patterns
+    resources :anti_patterns
     resources :insight
 
     get "learn", to: "learn#index"
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
   # Tiny-URL (shortcuts)
   get "video/:id", to: "videos#show"
   get "virtue/:id", to: "virtues#show"
-  get "example/:id", to: "examples#show"
+  get "blooper/:id", to: "bloopers#show"
   get "win/:id", to: "wins#show"
   get "fail/:id", to: "fails#show"
   get "wcag/:id", to: "wcag#show" # TODO: Needs to work for IDs like `1.3.1`
