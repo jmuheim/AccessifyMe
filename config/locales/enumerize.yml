@@ -1,7 +1,7 @@
 en:
   enumerize:
     illustration:
-      kind:
+      do_or_dont:
         do: Do
         dont: Don't
     wcag_element:

@@ -1,0 +1,56 @@
+/ ul
+/   li https://www.bitvtest.de/bitv_test/das_testverfahren_im_detail/pruefschritte.html
+/   li https://www.bit-inklusiv.de/bitv-softwaretest/
+/   li https://a11y.digitaldialog.swiss
+/   li https://www.a11yproject.com/checklist/
+/   li Wuhcag
+/   li Weitere?
+/ Deutsch Übersetzung: https://outline-rocks.github.io/wcag/translations/WCAG21-de/
+
+article id=dom_id(@example)
+  nav#breadcrumbs aria-label="You are here"
+    ol
+      li = link_to examples_path do
+        abbr title="Web Content Accessibility Guidelines" WCAG
+
+      - @example.ancestors.reverse.each do |ancestor|
+        li = link_to ancestor.name_with_details, ancestor
+
+  h1 = @example.name_with_details
+
+  - if @example.explains_why?
+    = markdown(@example.explains_why.capitalize)
+
+  - if @example.description?
+    blockquote
+      = markdown(@example.description)
+      p: cite
+        | From the
+        =<> link_to "https://a11y.digitaldialog.swiss/de/#{@example.tree_prefix}" do
+          strong Accessibility Checklist 2.1
+        | by the
+        strong< Swiss Government
+
+  figure.video_player
+    == fa_icon('camera-retro')
+    = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+
+  h2 Discussed in videos:
+
+  ul
+    - @example.video_to_examples.each do |through|
+      li
+        => link_to through.video.title, through.video
+        =< through.example.explains_why
+
+  h2 You should check out:
+  
+  ul
+    li = link_to "https://www.wuhcag.com/keyboard/"
+
+div
+  => link_to "Edit this example", edit_example_path(@example)
+  '|
+  =< link_to "Back to examples", examples_path
+
+  = button_to "Destroy this example", @example, method: :delete

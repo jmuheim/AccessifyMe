@@ -1,0 +1,31 @@
+ul
+  - @virtues.each do |virtue|
+    li
+      strong> Virtue:
+      mark> = virtue.short_name + ":"
+      = link_to virtue.name, virtue
+
+      - if virtue.insights.any?
+        ul
+          - virtue.insights.each do |insight|
+            li
+              strong> Insight:
+              mark> = insight.short_name + ":"
+              = link_to insight.name, insight
+
+              - if insight.illustrations.do.any?
+                ul
+                  - insight.illustrations.do.each do |illustration|
+                    li
+                      strong> Illustration:
+                      => do_or_dont_icon(illustration)
+                      = link_to inline_markdown(illustration.name), illustration
+
+                      - if illustration.examples.any?
+                        - illustration.examples.each do |example|
+                          ul
+                            li
+                              strong> Example:
+                              = example.website.name
+                              | :
+                              =< link_to inline_markdown(example.name), [:edit, example]

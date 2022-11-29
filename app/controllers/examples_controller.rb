@@ -24,6 +24,12 @@ class ExamplesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def example_params
-      params.require(:example).permit(:title, :lead, :description, :youtube_id)
+      params.require(:example).permit(:website_id,
+                                      :illustration_id,
+                                      :demo_or_real,
+                                      :name,
+                                      :description,
+                                      :notes,
+                                      :screenshot)
     end
 end

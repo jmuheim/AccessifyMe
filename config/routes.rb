@@ -3,11 +3,14 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     root "welcome#index"
+    get "all", to: "all#index"
 
     resources :wcag_elements, path: :wcag
     resources :tools
+    resources :websites
     resources :examples
     resources :illustrations
+    resources :insight
 
     get "learn", to: "learn#index"
     scope "learn" do

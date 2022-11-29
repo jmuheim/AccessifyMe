@@ -1,9 +1,9 @@
 class Example < ApplicationRecord
   extend Enumerize
-  enumerize :kind, in: [:demo, :real]
+  enumerize :demo_or_real, in: [:demo, :real]
 
-  scope :demos, -> { where(kind: "demo") }
-  scope :real, -> { where(kind: "real") }
+  scope :demos, -> { where(demo_or_real: "demo") }
+  scope :real, -> { where(demo_or_real: "real") }
 
   mount_uploader :screenshot, ScreenshotUploader
 

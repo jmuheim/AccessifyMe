@@ -95,14 +95,14 @@ article.virtue id=dom_id(@virtue)
               = far_icon('play-circle')
               = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
 
-        - Illustration.kind.values.each do |type|
+        - Illustration.do_or_dont.values.each do |type|
           - illustrations = insight.illustrations.send(type)
           - if illustrations.any?
             details.illustrations class=type
               summary
                 h5
                   => illustrations.count
-                  => Illustration.kind.send(type).text.pluralize
+                  => Illustration.do_or_dont.send(type).text.pluralize
 
                   sup
                     | with
@@ -118,7 +118,7 @@ article.virtue id=dom_id(@virtue)
                   .two_columns
                     .left
                       h6
-                        span.icon> class=(illustration.do? ? :do : :dont) = illustration.icon
+                        = do_or_dont_icon(illustration)
                         = link_to illustration
                           = inline_markdown(illustration.name)
 

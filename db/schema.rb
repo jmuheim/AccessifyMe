@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_15_120408) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_15_160501) do
   create_table "clients", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name"
     t.string "contact"
@@ -20,21 +20,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_120408) do
   end
 
   create_table "examples", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.string "type", null: false
-    t.string "kind"
-    t.string "name"
+    t.bigint "illustration_id", null: false
+    t.string "kind", null: false
+    t.string "name", null: false
     t.text "description"
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "illustration_id", null: false
+    t.bigint "website_id", null: false
     t.index ["illustration_id"], name: "index_examples_on_illustration_id"
+    t.index ["website_id"], name: "index_examples_on_website_id"
   end
 
   create_table "illustrations", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.string "type", null: false
+    t.string "kind", null: false
     t.bigint "insight_id", null: false
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.text "notes"
     t.datetime "created_at", null: false
@@ -44,24 +45,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_120408) do
 
   create_table "insights", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "virtue_id", null: false
-    t.string "name"
+    t.string "name", null: false
     t.string "short_name"
     t.string "general_value"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["virtue_id"], name: "index_insights_on_virtue_id"
-  end
-
-  create_table "issues", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.bigint "website_id", null: false
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "screenshot"
-    t.bigint "illustration_id", null: false
-    t.index ["illustration_id"], name: "index_issues_on_illustration_id"
-    t.index ["website_id"], name: "index_issues_on_website_id"
   end
 
   create_table "roles", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
@@ -75,7 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_120408) do
   end
 
   create_table "tools", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "short_name"
     t.text "description"
     t.datetime "created_at", null: false
@@ -183,10 +173,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_120408) do
   end
 
   add_foreign_key "examples", "illustrations"
+  add_foreign_key "examples", "websites"
   add_foreign_key "illustrations", "insights"
   add_foreign_key "insights", "virtues"
-  add_foreign_key "issues", "illustrations"
-  add_foreign_key "issues", "websites"
   add_foreign_key "video_to_tools", "tools"
   add_foreign_key "video_to_tools", "videos"
   add_foreign_key "video_to_wcag_elements", "videos"

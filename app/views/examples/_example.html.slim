@@ -1,7 +1,10 @@
 tr id=dom_id(example)
-  td.tree_prefix
-		= example.tree_prefix
-  th.name
-    = link_to example.name, example, style: "margin-left: #{example.ancestors.count * 20}px"
-	td.level
-		= example.level_text
+  th.id           = example.id
+  / th.website      = example.website.name
+  th.virtue       = link_to example.illustration.insight.virtue.name, example.illustration.insight.virtue
+  th.insight      = link_to example.illustration.insight.name, example.illustration.insight
+  td.illustration = link_to inline_markdown(example.illustration.name), example.illustration
+  td.demo_or_real = example.demo_or_real_value
+  td.name         = example.name
+  td.description  = example.description
+  td.notes        = example.notes

@@ -1,10 +1,10 @@
-= simple_form_for(@example) do |f|
+= simple_form_for(@example, html: { multipart: true }) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
     = f.association :website
-    = f.association :illustration, collection: Illustration.fails
+    = f.association :illustration, collection: Illustration.dont
     = f.input :description
     = f.input :screenshot
 
