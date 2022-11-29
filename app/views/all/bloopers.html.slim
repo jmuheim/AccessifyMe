@@ -1,0 +1,60 @@
+h1 Bloopers
+
+p ...and all dependent elements.
+
+ul
+  - @bloopers.each do |blooper|
+    li
+      strong> Blooper:
+      = blooper.website.name
+      | :
+      =< link_to inline_markdown(blooper.name), [:edit, blooper]
+
+      ul
+        li
+          strong> 🚨 Anti-Pattern:
+          =< link_to inline_markdown(blooper.anti_pattern.name), [:edit, blooper.anti_pattern]
+
+          ul
+            - blooper.anti_pattern.patterns.each do |pattern|
+              li
+                strong> ✅ Pattern:
+                = link_to inline_markdown(pattern.name), pattern
+
+
+  / - @virtues.each do |virtue|
+  /   li
+  /     strong> Virtue:
+  /     mark> = virtue.short_name + ":"
+  /     = link_to virtue.name, virtue
+  /
+  /     - if virtue.insights.any?
+  /       ul
+  /         - virtue.insights.each do |insight|
+  /           li
+  /             strong> Insight:
+  /             mark> = insight.short_name + ":"
+  /             = link_to insight.name, insight
+  /
+  /             - if insight.patterns.any?
+  /               ul
+  /                 - insight.patterns.each do |pattern|
+  /                   li
+  /                     strong> ✅ Pattern:
+  /                     = link_to inline_markdown(pattern.name), pattern
+  /
+  /                     - if pattern.anti_patterns.any?
+  /                       - pattern.anti_patterns.each do |anti_pattern|
+  /                         ul
+  /                           li
+  /                             strong> 🚨 Anti-Pattern:
+  /                             =< link_to inline_markdown(anti_pattern.name), [:edit, anti_pattern]
+  /
+  /                             - if anti_pattern.bloopers.any?
+  /                               - anti_pattern.bloopers.each do |blooper|
+  /                                 ul
+  /                                   li
+  /                                     strong> Blooper:
+  /                                     = blooper.website.name
+  /                                     | :
+  /                                     =< link_to inline_markdown(blooper.name), [:edit, blooper]

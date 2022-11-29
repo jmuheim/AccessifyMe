@@ -1,6 +1,6 @@
 class AntiPattern < ApplicationRecord
-  belongs_to :pattern
   has_many :bloopers
+  has_and_belongs_to_many :patterns, join_table: "patterns_to_anti_patterns"
 
   def icon
     "🚨"
