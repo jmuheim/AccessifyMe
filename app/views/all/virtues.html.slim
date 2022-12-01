@@ -13,7 +13,7 @@ ul
         ul
           - virtue.insights.each do |insight|
             li
-              strong> Insight:
+              strong> Recognise:
               mark> = insight.short_name + ":"
               = link_to insight.name, insight
 
@@ -38,4 +38,4 @@ ul
                                       strong> Blooper:
                                       = blooper.website.name
                                       | :
-                                      =< link_to inline_markdown(blooper.name), [:edit, blooper]
+                                      =< link_to inline_markdown(blooper.screenshot_alt), [:edit, blooper]

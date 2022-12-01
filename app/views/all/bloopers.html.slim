@@ -1,60 +1,45 @@
-h1 Bloopers
+.all-bloopers
+  h1 Presserat.ch Bloopers (lapses?)
 
-p ...and all dependent elements.
+  p Your website <strong>Presserat.ch</strong> was manually tested on accessibility. We chose our <strong>Pareto principle</strong> approach to identify some low hanging fruit for you: issues that are easy to understand and solve - and will tremendously benefit a majority of disabled users.
 
-ul
   - @bloopers.each do |blooper|
-    li
-      strong> Blooper:
-      = blooper.website.name
-      | :
-      =< link_to inline_markdown(blooper.name), [:edit, blooper]
+    h2.prepend-suffix
+      => blooper.insight.virtue.name
+      .suffix Virtue:
 
-      ul
+    blockquote = markdown blooper.insight.virtue.intent
+
+    = markdown blooper.insight.virtue.description
+
+    h3.prepend-suffix
+      = blooper.insight.name
+      .suffix Recognise:
+
+    = markdown blooper.insight.general_value
+
+    h4 Lapse 123: #{inline_markdown blooper.heading}
+
+    = markdown blooper.anti_pattern.description
+
+    p
+      | More info: 🚨
+      =< link_to inline_markdown(blooper.anti_pattern.name), [:edit, blooper.anti_pattern]
+
+    p
+      strong> URL:
+      = link_to blooper.url, blooper.url
+
+    = markdown blooper.description
+
+    figure
+      = image_tag blooper.screenshot.url, alt: blooper.screenshot_alt
+      figcaption aria-hidden="true" = blooper.screenshot_alt
+
+    p: strong How to fix:
+
+    ul
+      - blooper.anti_pattern.patterns.each do |pattern|
         li
-          strong> 🚨 Anti-Pattern:
-          =< link_to inline_markdown(blooper.anti_pattern.name), [:edit, blooper.anti_pattern]
-
-          ul
-            - blooper.anti_pattern.patterns.each do |pattern|
-              li
-                strong> ✅ Pattern:
-                = link_to inline_markdown(pattern.name), pattern
-
-
-  / - @virtues.each do |virtue|
-  /   li
-  /     strong> Virtue:
-  /     mark> = virtue.short_name + ":"
-  /     = link_to virtue.name, virtue
-  /
-  /     - if virtue.insights.any?
-  /       ul
-  /         - virtue.insights.each do |insight|
-  /           li
-  /             strong> Insight:
-  /             mark> = insight.short_name + ":"
-  /             = link_to insight.name, insight
-  /
-  /             - if insight.patterns.any?
-  /               ul
-  /                 - insight.patterns.each do |pattern|
-  /                   li
-  /                     strong> ✅ Pattern:
-  /                     = link_to inline_markdown(pattern.name), pattern
-  /
-  /                     - if pattern.anti_patterns.any?
-  /                       - pattern.anti_patterns.each do |anti_pattern|
-  /                         ul
-  /                           li
-  /                             strong> 🚨 Anti-Pattern:
-  /                             =< link_to inline_markdown(anti_pattern.name), [:edit, anti_pattern]
-  /
-  /                             - if anti_pattern.bloopers.any?
-  /                               - anti_pattern.bloopers.each do |blooper|
-  /                                 ul
-  /                                   li
-  /                                     strong> Blooper:
-  /                                     = blooper.website.name
-  /                                     | :
-  /                                     =< link_to inline_markdown(blooper.name), [:edit, blooper]
+          | ✅
+          =< link_to inline_markdown(pattern.name), pattern
