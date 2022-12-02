@@ -3,6 +3,16 @@
 
   p Your website <strong>Presserat.ch</strong> was manually tested on accessibility. We chose our <strong>Pareto principle</strong> approach to identify some low hanging fruit for you: issues that are easy to understand and solve - and will tremendously benefit a majority of disabled users.
 
+  h2 Who benefits from accessibility?
+
+  ul
+    - Persona.all.each do |persona|
+      li 
+        = image_tag persona.avatar.url, class: "avatar big"
+        strong = persona.name
+        | , #{persona.prototype}:
+        =< persona.description
+
   - @bloopers.each do |blooper|
     h2 id=dom_id(blooper.insight.virtue)
       sup Virtue #{blooper.insight.virtue.id}:
@@ -32,11 +42,10 @@
     ul
       - blooper.anti_pattern.consequences.each do |consequence|
         li
-          = link_to nil do
-            = image_tag consequence.persona.avatar.url, class: "avatar"
-          =< "(#{consequence.persona.prototype})"
-          | :
-          =< consequence.description
+          = image_tag consequence.persona.avatar.url, class: "avatar"
+          strong = consequence.persona.name
+          | , #{consequence.persona.prototype}:
+          =< inline_markdown consequence.description
 
     - case blooper.anti_pattern.patterns.count
     - when 0
