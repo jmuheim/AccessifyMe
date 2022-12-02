@@ -6,8 +6,8 @@
 # https://github.com/Sequel-Ace/Sequel-Ace
 #
 # Host: 127.0.0.1 (MySQL 8.0.31)
-# Database: AccessifyMe_development
-# Generation Time: 2022-12-01 04:26:44 +0000
+# Database: accessifyme_development
+# Generation Time: 2022-12-01 17:07:49 +0000
 # ************************************************************
 
 
@@ -58,8 +58,8 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `ar_internal_metadata`;
 
 CREATE TABLE `ar_internal_metadata` (
-  `key` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `value` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`key`)
@@ -148,7 +148,7 @@ CREATE TABLE `insights` (
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `short_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `general_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_general_ci,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
@@ -161,15 +161,15 @@ LOCK TABLES `insights` WRITE;
 
 INSERT INTO `insights` (`id`, `virtue_id`, `name`, `short_name`, `general_value`, `description`, `created_at`, `updated_at`)
 VALUES
-	(1,3,'Interactive elements should be focusable','Focusable','This enables keyboard-only users to reach all functionalities.',NULL,'2022-08-24 15:43:18.000000','2022-08-24 15:43:18.000000'),
-	(2,3,'Interactive elements should be fully operable via keyboard alone','Operable','This enables keyboard-only users to operate all functionalities.',NULL,'2022-08-24 15:53:43.000000','2022-08-24 15:53:43.000000'),
-	(3,3,'Focus states of interactive elements should be clearly visible','Focus visible','This enables keyboard-only users to identify the currently focused element.',NULL,'2022-08-24 15:57:42.000000','2022-08-24 15:57:42.000000'),
-	(4,3,'States of interactive elements should be easily distinguishable','States distinguishable','This enables keyboard-only users to distinguish between different statuses of an element and interact accordingly with it.','Ist das überhaupt sinnvoll platziert hier? Hat ja nicht unbedingt nur was mit Keyboard zu tun...!','2022-08-24 16:00:52.000000','2022-08-24 16:00:52.000000'),
-	(5,3,'Sequence of interactive elements should be meaningful','Sequence meaningful','This enables keyboard-only users to intuitively locate and interact with elements.',NULL,'0000-00-00 00:00:00.000000','0000-00-00 00:00:00.000000'),
-	(6,3,'Expandable interactive elements should be hidden properly','Expandable hidden','This prevents keyboard-only users from confusion due to losing track of the focus.',NULL,'2022-11-15 17:26:55.000000','2022-11-15 17:26:55.000000'),
-	(7,4,'Informative graphics should provide an equivalent alt text','Informative graphics','This enables screen reader users to understand graphical content.',NULL,'2022-11-28 19:24:28.000000','2022-11-28 19:24:28.000000'),
-	(8,4,'Decorative graphics should be ignored by screen readers','Decorative graphics','This prevents screen reader users from being interrupted in their flow.',NULL,'2022-11-28 19:32:49.000000','2022-11-28 19:32:49.000000'),
-	(9,1,'Microsoft High Contrast Mode should be supported','Win HCM','This enables users of Windows High Contrast Mode to perceive all informative graphics.',NULL,'2022-11-28 22:07:37.000000','2022-11-28 22:07:37.000000');
+	(1,3,'Interactive elements need to be focusable','Focusable','This enables keyboard-only users to reach all functionalities.',NULL,'2022-08-24 15:43:18.000000','2022-08-24 15:43:18.000000'),
+	(2,3,'Interactive elements need to be fully operable via keyboard alone','Operable','This enables keyboard-only users to operate all functionalities.',NULL,'2022-08-24 15:53:43.000000','2022-08-24 15:53:43.000000'),
+	(3,3,'Focus states of interactive elements need to be clearly visible','Focus visible','This enables keyboard-only users to identify the currently focused element.',NULL,'2022-08-24 15:57:42.000000','2022-08-24 15:57:42.000000'),
+	(4,3,'States of interactive elements need to be easily distinguishable','States distinguishable','This enables keyboard-only users to distinguish between different statuses of an element and interact accordingly with it.','Ist das überhaupt sinnvoll platziert hier? Hat ja nicht unbedingt nur was mit Keyboard zu tun...!','2022-08-24 16:00:52.000000','2022-08-24 16:00:52.000000'),
+	(5,3,'Sequence of interactive elements need to be meaningful','Sequence meaningful','This enables keyboard-only users to intuitively locate and interact with elements.',NULL,'0000-00-00 00:00:00.000000','0000-00-00 00:00:00.000000'),
+	(6,3,'Expandable interactive elements need to be hidden properly','Expandable hidden','This prevents keyboard-only users from confusion due to losing track of the focus.',NULL,'2022-11-15 17:26:55.000000','2022-11-15 17:26:55.000000'),
+	(7,4,'Informative graphics need to be described with an equivalent alternative text','Informative graphics','This enables screen reader users to understand graphical content.',NULL,'2022-11-28 19:24:28.000000','2022-11-28 19:24:28.000000'),
+	(8,4,'Decorative graphics need to be ignored by screen readers','Decorative graphics','This prevents screen reader users from being interrupted in their flow.',NULL,'2022-11-28 19:32:49.000000','2022-11-28 19:32:49.000000'),
+	(9,1,'Microsoft High Contrast Mode needs to be supported','Win HCM','This enables users of Windows High Contrast Mode to perceive all informative graphics.',NULL,'2022-11-28 22:07:37.000000','2022-11-28 22:07:37.000000');
 
 /*!40000 ALTER TABLE `insights` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -255,10 +255,10 @@ DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `mission` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_general_ci,
-  `logo` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `mission` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `logo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
@@ -284,7 +284,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `schema_migrations`;
 
 CREATE TABLE `schema_migrations` (
-  `version` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `version` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -337,10 +337,10 @@ CREATE TABLE `tools` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `short_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_general_ci,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
-  `icon` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -373,22 +373,22 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
-  `encrypted_password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
-  `reset_password_token` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
+  `encrypted_password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
+  `reset_password_token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `reset_password_sent_at` datetime(6) DEFAULT NULL,
   `remember_created_at` datetime(6) DEFAULT NULL,
   `sign_in_count` int NOT NULL DEFAULT '0',
   `current_sign_in_at` datetime(6) DEFAULT NULL,
   `last_sign_in_at` datetime(6) DEFAULT NULL,
-  `current_sign_in_ip` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `last_sign_in_ip` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `confirmation_token` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `current_sign_in_ip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `last_sign_in_ip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `confirmation_token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `confirmed_at` datetime(6) DEFAULT NULL,
   `confirmation_sent_at` datetime(6) DEFAULT NULL,
-  `unconfirmed_email` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `unconfirmed_email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `failed_attempts` int NOT NULL DEFAULT '0',
-  `unlock_token` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `unlock_token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `locked_at` datetime(6) DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
@@ -410,7 +410,7 @@ CREATE TABLE `video_to_tools` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `video_id` bigint NOT NULL,
   `tool_id` bigint NOT NULL,
-  `purpose` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `purpose` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
@@ -444,7 +444,7 @@ CREATE TABLE `video_to_wcag_elements` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `video_id` bigint NOT NULL,
   `wcag_element_id` bigint NOT NULL,
-  `purpose` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `purpose` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
@@ -477,10 +477,10 @@ DROP TABLE IF EXISTS `videos`;
 
 CREATE TABLE `videos` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `lead` text COLLATE utf8mb4_general_ci,
-  `description` text COLLATE utf8mb4_general_ci,
-  `youtube_id` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `lead` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `youtube_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
@@ -505,10 +505,10 @@ DROP TABLE IF EXISTS `virtues`;
 
 CREATE TABLE `virtues` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `short_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `intent` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_general_ci,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `inspires_design` tinyint(1) DEFAULT NULL,
   `inspires_development` tinyint(1) DEFAULT NULL,
@@ -524,15 +524,15 @@ LOCK TABLES `virtues` WRITE;
 
 INSERT INTO `virtues` (`id`, `name`, `short_name`, `intent`, `description`, `image`, `inspires_design`, `inspires_development`, `inspires_writing`, `inspires_multimedia`, `created_at`, `updated_at`)
 VALUES
-	(1,'Offer enough contrast','Contrast','We colorize content so that it stands out clearly against the background.','Many users have difficulty perceiving color nuances. For them, a light gray text on a white background may not be visible at all. Similarly, inside a form, a text input with a light gray border on a white background will hardly be recognised as an input.',NULL,1,1,0,1,'2022-09-27 21:58:34.000000','2022-09-27 21:58:34.000000'),
-	(2,'Complement color with shape','Shape and color','When color carries meaning, we apply an additional feature like shape or pattern.','Bezug auf sensorische Merkmale, siehe https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-1-3-3-ohne-bezug-auf-sensorische-merkmale-nutzbar\n\nhttps://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-1-4-1-ohne-farben-nutzbar\n\nWhat about 2-sense principle? → Maybe we just stick to the Pareto-rule (we cannot take into account each and everything)\n\nhttps://colorblindaccessibilitymanifesto.com/',NULL,1,1,0,1,'2022-09-27 21:58:34.000000','2022-09-27 21:58:34.000000'),
-	(3,'Provide keyboard-only operability','Keyboard-only','We ensure that websites can be operated by keyboard alone.','Alternative für komplexe Zeigergesten: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-1-alternativen-fuer-komplexe-zeiger-gesten\n\nZeigergesten-Eingaben können abgebrochen oder widerrufen werden: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-2-zeigergesten-eingaben-koennen-abgebrochen-oder-widerrufen-werden\n\nKeine unvorhergesehene Kontext-Veränderung','keyboard-only',1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(4,'Describe graphics by text alternatives','Alt texts','We implement graphical elements correctly and provide meaningful text alternatives.',NULL,NULL,1,1,1,1,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(5,'Use semantics to structure content','Semantics','We organise documents into meaningful pieces of content and apply proper headings.','Meaningful pieces of info: Ansich alles, was mit korrektem Markup zu tun hat!\n\nAdditional labeling mechanisms: title, aria-label, ggf. auch Formuar-Labels (?), etc.\n\nDocument structure (header, main, footer...) vs. content structure (section, article...)\n\nÜberschriften, Listen, Zitate, Tabellen\n\nSinnvolle Reihenfolge\n\nAussagekräftige Link/Button-Texte\n\nSprache, Sprache von Teilen',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(6,'Define a coherent heading hierarchy','Headings','We organise documents into meaningful pieces of content and apply proper headings.','Meaningful pieces of info: Ansich alles, was mit korrektem Markup zu tun hat!\n\nAdditional labeling mechanisms: title, aria-label, ggf. auch Formuar-Labels (?), etc.\n\nDocument structure (header, main, footer...) vs. content structure (section, article...)\n\nÜberschriften, Listen, Zitate, Tabellen\n\nSinnvolle Reihenfolge\n\nAussagekräftige Link/Button-Texte\n\nSprache, Sprache von Teilen',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(7,'Enhance screen reader compatibility','Screen reader','We ensure that websites can be fully understood and navigated with screen readers.','aria-current, invisible content, alerts, page title?\n\n→ Unsicher, ob das vor oder nach \"Information structure and headings\" kommen soll. Einerseits wird es zum Sicherstellen davon benötigt, andererseits sind aria-current, invisible content, alerts etc. bereits \"advanced\" Knowledge',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(8,'Build robust forms and validations','Forms','We implement solid forms and provide meaningful validation mechanisms.','autocomplete-Attribut!\n\nSichtbare Beschriftung Teil des zugänglichen Namens: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-3-sichtbare-beschriftung-teil-des-zugaenglichen-namens → oder besser zu Keyboard-only?\n\nAuf Verknüpftheit einiger Elemente hinweisen, z.B. dass LEGEND angesagt wird beim Hineinspringen in ein FIELDSET',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(9,'Advanced UI patterns','UI patterns','When introducing interactive components to a project, we make sure they are fully accessible.','Soll da auch sensilbe ARIA usage rein? Oder bei SR operability?',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(1,'Offering enough contrast','Contrast','We colorize content so that it stands out clearly against the background.','Many users have difficulty perceiving color nuances. For them, a light gray text on a white background may not be visible at all. Similarly, inside a form, a text input with a light gray border on a white background will hardly be recognised as an input.',NULL,1,1,0,1,'2022-09-27 21:58:34.000000','2022-09-27 21:58:34.000000'),
+	(2,'Complementing color with shape','Color & shape','When color carries meaning, we apply an additional feature like shape or pattern.','Bezug auf sensorische Merkmale, siehe https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-1-3-3-ohne-bezug-auf-sensorische-merkmale-nutzbar\n\nhttps://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-1-4-1-ohne-farben-nutzbar\n\nWhat about 2-sense principle? → Maybe we just stick to the Pareto-rule (we cannot take into account each and everything)\n\nhttps://colorblindaccessibilitymanifesto.com/',NULL,1,1,0,1,'2022-09-27 21:58:34.000000','2022-09-27 21:58:34.000000'),
+	(3,'Ensuring keyboard-only operability','Keyboard-only','We ensure that websites can be operated by keyboard alone.','Alternative für komplexe Zeigergesten: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-1-alternativen-fuer-komplexe-zeiger-gesten\n\nZeigergesten-Eingaben können abgebrochen oder widerrufen werden: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-2-zeigergesten-eingaben-koennen-abgebrochen-oder-widerrufen-werden\n\nKeine unvorhergesehene Kontext-Veränderung','keyboard-only',1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(4,'Describing graphics by text alternatives','Text alternatives','We implement graphical elements correctly and provide meaningful text alternatives.',NULL,NULL,1,1,1,1,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(5,'Defining a coherent heading hierarchy','Headings','We organise documents into meaningful pieces of content and apply proper headings.','Meaningful pieces of info: Ansich alles, was mit korrektem Markup zu tun hat!\n\nAdditional labeling mechanisms: title, aria-label, ggf. auch Formuar-Labels (?), etc.\n\nDocument structure (header, main, footer...) vs. content structure (section, article...)\n\nÜberschriften, Listen, Zitate, Tabellen\n\nSinnvolle Reihenfolge\n\nAussagekräftige Link/Button-Texte\n\nSprache, Sprache von Teilen',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(6,'Using semantics to structure content','Semantics','We organise documents into meaningful pieces of content and apply proper headings.','Meaningful pieces of info: Ansich alles, was mit korrektem Markup zu tun hat!\n\nAdditional labeling mechanisms: title, aria-label, ggf. auch Formuar-Labels (?), etc.\n\nDocument structure (header, main, footer...) vs. content structure (section, article...)\n\nÜberschriften, Listen, Zitate, Tabellen\n\nSinnvolle Reihenfolge\n\nAussagekräftige Link/Button-Texte\n\nSprache, Sprache von Teilen',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(7,'Enhancing screen reader compatibility','Screen reader','We ensure that websites can be fully understood and navigated with screen readers.','aria-current, invisible content, alerts, page title?\n\n→ Unsicher, ob das vor oder nach \"Information structure and headings\" kommen soll. Einerseits wird es zum Sicherstellen davon benötigt, andererseits sind aria-current, invisible content, alerts etc. bereits \"advanced\" Knowledge',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(8,'Building robust forms and validations','Forms','We implement solid forms and provide meaningful validation mechanisms.','autocomplete-Attribut!\n\nSichtbare Beschriftung Teil des zugänglichen Namens: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-3-sichtbare-beschriftung-teil-des-zugaenglichen-namens → oder besser zu Keyboard-only?\n\nAuf Verknüpftheit einiger Elemente hinweisen, z.B. dass LEGEND angesagt wird beim Hineinspringen in ein FIELDSET',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(9,'Choosing accessible components','Components','When introducing interactive components to a project, we make sure they are fully accessible.','Soll da auch sensilbe ARIA usage rein? Oder bei SR operability?',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
 	(10,'Robust yet flexible','Robust & flexible','We write code that is as strict as necessary, yet as interpretable and adaptable as possible.','Kein ungültiger Code, keine unnötigen Einschränkungen für z.B. User Styles oder Hoch- vs. Querformat\n\nSession timeouts\n\nCaptchas\n\nPausieren, beenden, ausblenden?\n\nWin HCM → oder besser in \"1 Contrast\"?\n\nTon abschaltbar\n\nText vergrösserbar\n\nText Reflow, keine Überlappungen\n\nKein Flackern\n\nResponsive',NULL,1,1,0,0,'2022-09-27 23:39:32.000000','2022-09-27 23:39:32.000000'),
 	(11,'Audio transcripts and video subtitles','Audio & video','We provide text transcripts for audio and closed captioning (CC) for video documents.',NULL,NULL,1,1,0,1,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
 	(12,'PDF documents','PDF','We apply proper tagging to PDF documents.',NULL,NULL,0,1,1,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000');
@@ -557,11 +557,11 @@ CREATE TABLE `wcag_elements` (
   `notes` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `description_en` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `description_de` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `level` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `level` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `parent_id` bigint DEFAULT NULL,
   `position` int DEFAULT NULL,
   `wcag_version` float DEFAULT NULL,
-  `type` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),

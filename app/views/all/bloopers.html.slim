@@ -1,30 +1,63 @@
 .all-bloopers
-  h1 Presserat.ch Bloopers (lapses?)
+  h1 Presserat.ch issues
 
   p Your website <strong>Presserat.ch</strong> was manually tested on accessibility. We chose our <strong>Pareto principle</strong> approach to identify some low hanging fruit for you: issues that are easy to understand and solve - and will tremendously benefit a majority of disabled users.
 
   - @bloopers.each do |blooper|
-    h2.prepend-suffix
-      => blooper.insight.virtue.name
-      .suffix Virtue:
+    h2 id=dom_id(blooper.insight.virtue)
+      sup Virtue #{blooper.insight.virtue.id}:
+      br aria-hidden="true"
+      =< blooper.insight.virtue.name
 
     blockquote = markdown blooper.insight.virtue.intent
 
     = markdown blooper.insight.virtue.description
 
-    h3.prepend-suffix
-      = blooper.insight.name
-      .suffix Recognise:
+    h3 id=dom_id(blooper.insight)
+      sup Rule:
+      br aria-hidden="true"
+      =< blooper.insight.name
 
     = markdown blooper.insight.general_value
 
-    h4 Lapse 123: #{inline_markdown blooper.heading}
+    h4 id=dom_id(blooper.anti_pattern)
+      sup Problem 🚨
+      br aria-hidden="true"
+      =< inline_markdown(blooper.anti_pattern.name)
 
     = markdown blooper.anti_pattern.description
 
-    p
-      | More info: 🚨
-      =< link_to inline_markdown(blooper.anti_pattern.name), [:edit, blooper.anti_pattern]
+    p: strong Who is affected:
+
+    ul
+      - blooper.anti_pattern.consequences.each do |consequence|
+        li
+          = link_to nil do
+            = image_tag consequence.persona.avatar.url, class: "avatar"
+          =< "(#{consequence.persona.prototype})"
+          | :
+          =< consequence.description
+
+    - case blooper.anti_pattern.patterns.count
+    - when 0
+      p: strong 🚨 No solution available yet.
+    - when 1
+      p
+        strong ✅ Solution:
+        =< link_to inline_markdown(blooper.anti_pattern.patterns.first.name), blooper.anti_pattern.patterns.first
+    - else
+      p
+        strong ✅ Solutions:
+      ul
+        - blooper.anti_pattern.patterns.each do |pattern|
+          li = link_to inline_markdown(pattern.name), pattern
+
+    h5 id=dom_id(blooper)
+      sup Issue 123:
+      br aria-hidden="true"
+      =< inline_markdown blooper.heading
+
+    = markdown blooper.anti_pattern.description
 
     p
       strong> URL:
@@ -35,11 +68,3 @@
     figure
       = image_tag blooper.screenshot.url, alt: blooper.screenshot_alt
       figcaption aria-hidden="true" = blooper.screenshot_alt
-
-    p: strong How to fix:
-
-    ul
-      - blooper.anti_pattern.patterns.each do |pattern|
-        li
-          | ✅
-          =< link_to inline_markdown(pattern.name), pattern
