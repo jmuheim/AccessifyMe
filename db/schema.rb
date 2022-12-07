@@ -42,10 +42,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_123314) do
 
   create_table "consequences", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "persona_id", null: false
-    t.string "benefit", null: false
+    t.bigint "anti_pattern_id", null: false
+    t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "anti_pattern_id", null: false
     t.index ["anti_pattern_id"], name: "index_consequences_on_anti_pattern_id"
     t.index ["persona_id"], name: "index_personas_to_insights_on_persona_id"
   end
@@ -68,9 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_123314) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "persona_id", null: false
     t.index ["insight_id"], name: "index_examples_on_insight_id"
-    t.index ["persona_id"], name: "index_patterns_on_persona_id"
   end
 
   create_table "patterns_to_anti_patterns", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
@@ -181,14 +179,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_123314) do
   create_table "wcag_elements", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name_en"
     t.string "name_de"
-    t.string "explains_why_en"
-    t.string "explains_why_de"
+    t.string "level"
     t.text "lead_en"
     t.text "lead_de"
-    t.text "notes"
-    t.text "description_en"
     t.text "description_de"
-    t.string "level"
+    t.text "description_en"
+    t.string "explains_why_en"
+    t.string "explains_why_de"
+    t.text "notes"
     t.bigint "parent_id"
     t.integer "position"
     t.float "wcag_version"
@@ -208,18 +206,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_123314) do
     t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
-  add_foreign_key "bloopers", "anti_patterns"
-  add_foreign_key "bloopers", "websites"
-  add_foreign_key "consequences", "anti_patterns"
-  add_foreign_key "consequences", "personas"
-  add_foreign_key "insights", "virtues"
-  add_foreign_key "patterns", "insights"
-  add_foreign_key "patterns_to_anti_patterns", "anti_patterns"
-  add_foreign_key "patterns_to_anti_patterns", "patterns"
-  add_foreign_key "video_to_tools", "tools"
-  add_foreign_key "video_to_tools", "videos"
-  add_foreign_key "video_to_wcag_elements", "videos"
-  add_foreign_key "video_to_wcag_elements", "wcag_elements"
-  add_foreign_key "wcag_elements", "wcag_elements", column: "parent_id", name: "success_criteria_parent_id_fk"
-  add_foreign_key "websites", "clients"
+  add_foreign_key "bloopers", "anti_patterns", on_update: :cascade
+  add_foreign_key "bloopers", "websites", on_update: :cascade
+  add_foreign_key "consequences", "anti_patterns", on_update: :cascade
+  add_foreign_key "consequences", "personas", on_update: :cascade
+  add_foreign_key "insights", "virtues", on_update: :cascade
+  add_foreign_key "patterns", "insights", on_update: :cascade
+  add_foreign_key "patterns_to_anti_patterns", "anti_patterns", on_update: :cascade
+  add_foreign_key "patterns_to_anti_patterns", "patterns", on_update: :cascade
+  add_foreign_key "video_to_tools", "tools", on_update: :cascade
+  add_foreign_key "video_to_tools", "videos", on_update: :cascade
+  add_foreign_key "video_to_wcag_elements", "videos", on_update: :cascade
+  add_foreign_key "video_to_wcag_elements", "wcag_elements", on_update: :cascade
+  add_foreign_key "wcag_elements", "wcag_elements", column: "parent_id", name: "success_criteria_parent_id_fk", on_update: :cascade
+  add_foreign_key "websites", "clients", on_update: :cascade
 end

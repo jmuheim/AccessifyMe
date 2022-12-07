@@ -96,8 +96,8 @@ CREATE TABLE `bloopers` (
   PRIMARY KEY (`id`),
   KEY `index_examples_on_website_id` (`website_id`),
   KEY `index_bloopers_on_anti_pattern_id` (`anti_pattern_id`),
-  CONSTRAINT `fk_rails_84517c3990` FOREIGN KEY (`anti_pattern_id`) REFERENCES `anti_patterns` (`id`),
-  CONSTRAINT `fk_rails_cce4e042c7` FOREIGN KEY (`website_id`) REFERENCES `websites` (`id`)
+  CONSTRAINT `fk_rails_84517c3990` FOREIGN KEY (`anti_pattern_id`) REFERENCES `anti_patterns` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_rails_cce4e042c7` FOREIGN KEY (`website_id`) REFERENCES `websites` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `bloopers` WRITE;
@@ -156,8 +156,8 @@ CREATE TABLE `consequences` (
   PRIMARY KEY (`id`),
   KEY `index_personas_to_insights_on_persona_id` (`persona_id`),
   KEY `index_consequences_on_anti_pattern_id` (`anti_pattern_id`),
-  CONSTRAINT `fk_rails_34794ec811` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`),
-  CONSTRAINT `fk_rails_8cdf4792eb` FOREIGN KEY (`anti_pattern_id`) REFERENCES `anti_patterns` (`id`)
+  CONSTRAINT `fk_rails_34794ec811` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_rails_8cdf4792eb` FOREIGN KEY (`anti_pattern_id`) REFERENCES `anti_patterns` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `consequences` WRITE;
@@ -190,7 +190,7 @@ CREATE TABLE `insights` (
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_insights_on_virtue_id` (`virtue_id`),
-  CONSTRAINT `fk_rails_cca645e907` FOREIGN KEY (`virtue_id`) REFERENCES `virtues` (`id`)
+  CONSTRAINT `fk_rails_cca645e907` FOREIGN KEY (`virtue_id`) REFERENCES `virtues` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `insights` WRITE;
@@ -229,7 +229,7 @@ CREATE TABLE `patterns` (
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_examples_on_insight_id` (`insight_id`),
-  CONSTRAINT `fk_rails_cca645e906` FOREIGN KEY (`insight_id`) REFERENCES `insights` (`id`)
+  CONSTRAINT `fk_rails_cca645e906` FOREIGN KEY (`insight_id`) REFERENCES `insights` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `patterns` WRITE;
@@ -263,8 +263,8 @@ CREATE TABLE `patterns_to_anti_patterns` (
   PRIMARY KEY (`id`),
   KEY `index_patterns_to_anti_patterns_on_pattern_id` (`pattern_id`),
   KEY `index_patterns_to_anti_patterns_on_anti_pattern_id` (`anti_pattern_id`),
-  CONSTRAINT `fk_rails_37bbaf819e` FOREIGN KEY (`pattern_id`) REFERENCES `patterns` (`id`),
-  CONSTRAINT `fk_rails_fa527d75ea` FOREIGN KEY (`anti_pattern_id`) REFERENCES `anti_patterns` (`id`)
+  CONSTRAINT `fk_rails_37bbaf819e` FOREIGN KEY (`pattern_id`) REFERENCES `patterns` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_rails_fa527d75ea` FOREIGN KEY (`anti_pattern_id`) REFERENCES `anti_patterns` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `patterns_to_anti_patterns` WRITE;
@@ -490,8 +490,8 @@ CREATE TABLE `video_to_tools` (
   PRIMARY KEY (`id`),
   KEY `index_videos_to_tools_on_video_id` (`video_id`),
   KEY `index_videos_to_tools_on_tool_id` (`tool_id`),
-  CONSTRAINT `fk_rails_5d56a74f0c` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`),
-  CONSTRAINT `fk_rails_ee8d722f7e` FOREIGN KEY (`tool_id`) REFERENCES `tools` (`id`)
+  CONSTRAINT `fk_rails_5d56a74f0c` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_rails_ee8d722f7e` FOREIGN KEY (`tool_id`) REFERENCES `tools` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `video_to_tools` WRITE;
@@ -524,8 +524,8 @@ CREATE TABLE `video_to_wcag_elements` (
   PRIMARY KEY (`id`),
   KEY `index_videos_to_wcag_criteria_on_video_id` (`video_id`),
   KEY `index_videos_to_wcag_criteria_on_wcag_criterion_id` (`wcag_element_id`),
-  CONSTRAINT `fk_rails_12e82547c5` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`),
-  CONSTRAINT `fk_rails_9ee5a35c68` FOREIGN KEY (`wcag_element_id`) REFERENCES `wcag_elements` (`id`)
+  CONSTRAINT `fk_rails_12e82547c5` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_rails_9ee5a35c68` FOREIGN KEY (`wcag_element_id`) REFERENCES `wcag_elements` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `video_to_wcag_elements` WRITE;
@@ -641,7 +641,7 @@ CREATE TABLE `wcag_elements` (
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_parent_id_on_wcag_elements_fk` (`parent_id`),
-  CONSTRAINT `success_criteria_parent_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `wcag_elements` (`id`)
+  CONSTRAINT `success_criteria_parent_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `wcag_elements` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `wcag_elements` WRITE;
@@ -771,7 +771,7 @@ CREATE TABLE `websites` (
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_projects_on_client_id` (`client_id`),
-  CONSTRAINT `fk_rails_8d9657cec3` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`)
+  CONSTRAINT `fk_rails_8d9657cec3` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `websites` WRITE;
