@@ -31,11 +31,14 @@
 ## Concepts
 
 - **Semantics**
+- **Solid aesthetic attributes** (z.B. `text-decoration: underline`) vs. **transient** (`background-color`)
 - **ARIA**
 - **Meaningful sequence** (of focusable and non-focusable elements)
 - **Hiding elements properly** (to everybody, from vision, from screen readers)
-- **2-senses principle**
 - **Alternative methods** → z.B. HTML-Variante bei unzugänglichem PDF (aber eher vermeiden!)
+  - Eng verwandt mit **2-senses principle**, vielleicht sogar (zumindest manchmal) "dasselbe"?!
 - **Zoom**
   - **Text-only**
   - **Full page**
+- **Custom color and contrast modes** wie **High Contrast Mode** und **Dark Mode**
+- **Inline, block, and inline-block**

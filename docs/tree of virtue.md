@@ -1,101 +1,160 @@
-# Virtues, insights, and patterns
+# 🙏 Virtues, 💡 insights, and 🧩 patterns
 
-1. Virtue: **Offer enough contrast**
-   - (Why) **Text needs a contrast of `4:1` to its background (or `3:1` for large text).**
-        - Das Kontrastverhältnis bei Text und Bildern von Text zum Hintergrund beträgt mindstens 4.5:1 bei normaler Schriftgrösse und mindestens 3:1 bei grosser Schrift (definiert als mindestens 18pt oder 14pt + fett). Das gilt sowohl für normale Schrift zur Hintergrundfarbe (alle Texte und Hinweise) als auch für Texte in informativen grafischen Elementen, ist aber nicht zwingend für Logos oder rein dekorative Grafiken. (54, 1.4.3)
-        - Interaktive Textelemente (z.B. Schalterbeschriftungen) erfüllen die Kontrastanforderung von 4.5:1 in allen Zuständen (fokussiert, bei Mouseover, etc.) gleichermassen. Für die Unterscheidbarkeit zwischen den Zuständen eines interaktiven Elements gelten keine strikten Kontrastanforderungen. (55, 1.4.3)
-        - Das Kontrastverhältnis von Bedienelementen (z.B. Textfelder, Radiobuttons, Checkboxen, Schalter, Tabs, etc.) zu den umgebenden Farben beträgt mindestens 3:1. Das gilt für alle visuellen Hinweise, die für die Wahrnehmung und Bedienung erforderlich sind (z.B. Formularfeldbegrenzungen, Ausklappindikatoren bei Flyouts/Dropdowns, Häkchen in einer Checkbox, etc.), insbesondere auch für die Wahrnehmung des Zustands eines Elements. Der Hover-Zustand eines Elements muss nicht unterscheidbar sein vom Standard-Zustand. (59, 1.4.11)
+1. 🙏 **Offer enough contrast**
+   - 💡 (Why) **Text needs a contrast of `4.5:1` to its background (or `3:1` for large text).**
 
-   - (Why) **Graphical info needs a contrast of `3:1` to its background.**
-        - Das Kontrastverhältnis bei informativen grafischen Elementen (z.B. Linien und Kurven in Diagrammen) zu den umgebenden Farben beträgt mindestens 3:1. Das gilt für alle visuellen Hinweise, die für die Wahrnehmung und Bedienung erforderlich sind (z.B. Schalter zum Anpassen der Kurven). Der Hover-Zustand eines Elements muss nicht unterscheidbar sein vom Standard-Zustand. (60, 1.4.11)
+        - 🧩 Texts have a contrast of `4.5:1`
 
-        - Wenn Links innerhalb von Fliesstext nur durch Farbe vom Fliesstext unterschieden werden, muss der Kontrast zwischen Link und umgebendem Fliesstext den minimalen Kontrastwert von 3:1 erreichen. Als Alternative kann eine weitere visuelle Auszeichnung von Links verwendet werden (z.B. Unterstreichung, Fettschrift, Rahmen, etc.). (52, 1.4.1)
+             - Das Kontrastverhältnis bei Text und Bildern von Text zum Hintergrund beträgt mindstens 4.5:1 bei normaler Schriftgrösse und mindestens 3:1 bei grosser Schrift (definiert als mindestens 18pt oder 14pt + fett). Das gilt sowohl für normale Schrift zur Hintergrundfarbe (alle Texte und Hinweise) als auch für Texte in informativen grafischen Elementen, ist aber nicht zwingend für Logos oder rein dekorative Grafiken. (54, 1.4.3)
 
-2. **Serve multiple senses (2-senses principle)**
+             - Interaktive Textelemente (z.B. Schalterbeschriftungen) erfüllen die Kontrastanforderung von 4.5:1 in allen Zuständen (fokussiert, bei Mouseover, etc.) gleichermassen. Für die Unterscheidbarkeit zwischen den Zuständen eines interaktiven Elements gelten keine strikten Kontrastanforderungen. (55, 1.4.3)
 
-    1. (Why) **Visual information should be conveyed by color and shape**
-        - (Z.B. Kuchen-Diagramme)
-    2. (Why) **The status of an element shouldn't be conveyed by color alone**
-      - Information wird nicht durch Farbe allein vermittelt. Das gilt auch für Hover- und Fokus-Zustände. Wenn Information farblich übermittelt wird (z.B. rot hervorgehobene Teile eines Texts, um deren Wichtigkeit zu markieren), ist ein weiterer visueller Reiz vorhanden, um diese Information zu vermitteln (z.B. Fettschrift oder Unterstreichung, unterschiedliche Symbole, zusätzlicher Text). (51, 1.4.1)
-    3. (Why) **Indications should be understandable with different senses**
+        - 🧩 Large texts have a contrast of `3:1`
+
+   - 💡 (Why) **Graphical info needs a contrast of `3:1` to its background.**
+
+        - 🧩 Parts of diagrams have a contrast of `3:1`
+
+             - Das Kontrastverhältnis bei informativen grafischen Elementen (z.B. Linien und Kurven in Diagrammen) zu den umgebenden Farben beträgt mindestens 3:1. Das gilt für alle visuellen Hinweise, die für die Wahrnehmung und Bedienung erforderlich sind (z.B. Schalter zum Anpassen der Kurven). Der Hover-Zustand eines Elements muss nicht unterscheidbar sein vom Standard-Zustand. (60, 1.4.11)
+             -  🤔 *If not enough colors → check out "💡 Information conveyed by color should be complemented with shape"* → maybe we should remove the pattern "Essential parts..." completely, as it is much less bullet-proof than "Information conveyed..."?!
+
+        - 🧩 Interactive elements and their statuses have a contrast of `3:1` *→  🤔 is there a better word for "status"? I don't mean "focus" or "hover" with that, but its "intrinsic" status (i.e. what value is selected). Maybe remove the part with the status completely?*
+
+             - Das Kontrastverhältnis von Bedienelementen (z.B. Textfelder, Radiobuttons, Checkboxen, Schalter, Tabs, etc.) zu den umgebenden Farben beträgt mindestens 3:1. Das gilt für alle visuellen Hinweise, die für die Wahrnehmung und Bedienung erforderlich sind (z.B. Formularfeldbegrenzungen, Ausklappindikatoren bei Flyouts/Dropdowns, Häkchen in einer Checkbox, etc.), insbesondere auch für die Wahrnehmung des Zustands eines Elements. Der Hover-Zustand eines Elements muss nicht unterscheidbar sein vom Standard-Zustand. (59, 1.4.11)
+
+
+             - Wenn Links innerhalb von Fliesstext nur durch Farbe vom Fliesstext unterschieden werden, muss der Kontrast zwischen Link und umgebendem Fliesstext den minimalen Kontrastwert von 3:1 erreichen. Als Alternative kann eine weitere visuelle Auszeichnung von Links verwendet werden (z.B. Unterstreichung, Fettschrift, Rahmen, etc.). (52, 1.4.1)
+                  -  🤔 *Unsicher, ob ich das hier überhaupt so nennen soll? Ist weniger "bullet-proof" als es mit zusätzlichem visuellem Attribut auszustatten.*
+
+   - 💡 (Why) **Custom color and contrast modes should be supported** → 🤔 *Like Windows HCM and dark mode*
+
+        - Informative Grafiken sind bei benutzerdefinierten Farbeinstellungen sichtbar. (9, 1.1.1)
+
+2. 🙏 **Serve multiple senses (2-senses principle)** → 🤔 *Not so sure whether we should rename it back to "Complement (meaningful) color with shape" and just put this into the "Concepts" section?!*
+
+    1. 💡 (Why) **Information conveyed by color should be complemented with shape**
+        - 🧩 Colored areas in diagrams are marked with individual icons → 🤔 *i.e. a single "x" or "o"*
+          - Information wird nicht durch Farbe allein vermittelt. Das gilt auch für Hover- und Fokus-Zustände. Wenn Information farblich übermittelt wird (z.B. rot hervorgehobene Teile eines Texts, um deren Wichtigkeit zu markieren), ist ein weiterer visueller Reiz vorhanden, um diese Information zu vermitteln (z.B. Fettschrift oder Unterstreichung, unterschiedliche Symbole, zusätzlicher Text). (51, 1.4.1)
+          - *Unless only a few colors are needed → check out "💡 Graphical info needs a contrast of `3:1` to its background"*
+        - 🧩 Colored areas in diagrams are marked with individual patterns → 🤔 *i.e. horizontal lines, repeating hearts, etc.*
+        - 🧩 Colored lines in a line chart are marked with individual icons → 🤔 *i.e. repeating "x", "o", etc.*
+        - 🧩 Colored lines in a line chart are marked with individual patterns → 🤔 *i.e. dotted, thin, thick, etc.*
+        - 🧩 Colored status indicators have individual shapes
+          - *Like a green tick that conveys "in stock" vs. a red cross that conveys "out of stock", or an alert with a red or green background color and a smiling or frowning "smiley"*
+          - *What about red validation errors? Is the red color an important information? I would say: yes, it makes the message quickly interpretable!*
+    3. 💡 (Why) **Indications should be understandable with different senses**
         - Inhalte weisen nicht ausschliesslich auf sensorische Eigenschaften (rein visuell erkennbar, rein akustisch verständlich) hin, z.B. «Den grünen Schalter links betätigen», «Korrigieren Sie die Eingaben in den rot umrandeten Feldern», «Mit Klick auf das Bild rechts …». (48, 1.3.3)
         - Zeichenverwendung: Schriftformatierungen mit Informationsgehalt (z.B. durchgestrichen) sind auch nicht-visuell zugänglich. (45, 1.3.1e)
-    4. (Why) **Hiding elements specifically from some channel**
+    4. 💡 (Why) **Hiding elements specifically from some channel**
         1. Elemente sind korrekt versteckt und zwar so, dass sie auch durch assistierende Technologien nicht ausgegeben werden, wenn sie visuell nicht sichtbar sind. (76, 2.4.3) ⁉️ Was macht das hier?
-    5. (Why) **Semantics should be used to mark up content**
+    5. 💡 (Why) **Inaccessible media should be accompanied by an accessible alternative**
+    6. 💡 (Why) **Semantics should be used to mark up content**
         1. (Sneak peak für Virtue "Apply Semantics...")?! Oder ganz weglassen?
 
-3. **Describe graphics by text alternatives**
+3. 🙏 **Describe graphics by text alternatives**
 
-    - (Why) **Informative graphics need an alternative text**
-        - Informative Grafiken weisen einen Alternativtext auf, der äquivalente Informationen vermittelt. (1, 1.1.1)
-        - Tests und Übungen, deren Inhalt zwingend aus Nicht-Text-Inhalt bestehen muss, weisen einen Alternativtext auf, der dessen Zweck beschreibt (aber nicht die Information, die benötigt wird, um den Test oder die Übung zu bestehen). (3, 1.1.1)
-        - Sensorische Inhalte, die zwingend aus Nicht-Text-Inhalt bestehen, weil sie durch Worte nicht ausreichend ersetzt werden können (z.B. Musikaufführungen, Kunstwerke), weisen einen Alternativtext auf, der den Zweck des Nicht-Text-Inhalts beschreibt. (4, 1.1.1)
-        - Verlinkte Grafiken weisen einen Alternativtext auf, der Linkziel oder -zweck beschreibt. (6, 1.1.1)
-        - Alternativtexte von Grafiken beinhalten keine redundanten Informationen, z.B. eine bereits in einer Bildlegende oder einem Linktext vorhandene Information oder eine Information wie «Grafik …», «Bild …». (7, 1.1.1)
-        - Das Seiten-Logo (mit Link zur Startseite) verfügt über eine sinnvolle Textalternative (Muster alt="Logo Firmenname, zur Startseite") (10, 1.1.1)
-        - Grafische Schalter sind korrekt beschriftet. (8, 1.1.1)
-    - (Why) **Complex informative graphics need a longer description**
-        - Wenn Alternativtext nicht ausreicht (z.B. bei komplexen Grafiken wie Infografiken oder Diagrammen), wird eine lange Beschreibung bereitgestellt und im Alternativtext darauf hingewiesen. (12, 1.1.1)
-    - (Why) **Decorative graphics should be ignored by screen readers**
-        - Dekorative Grafiken weisen ein leeres alt-Attribut auf. (13, 1.1.1)
-    - (Why) **Microsoft High Contrast Mode should be supported**
-        - Informative Grafiken sind bei benutzerdefinierten Farbeinstellungen sichtbar. (9, 1.1.1)
+    - 💡 (Why) **Informative graphics need an alternative text**
+        - 🧩 A "Coupon 10%" image
+            - Informative Grafiken weisen einen Alternativtext auf, der äquivalente Informationen vermittelt. (1, 1.1.1)
+        - 🧩 A birthday cake image
+        - 🧩 A class photo
+        - 🧩 A portrait photo
+        - 🧩 (many more)
+        - 🧩 An image to test color perception deficiency
+            - Tests und Übungen, deren Inhalt zwingend aus Nicht-Text-Inhalt bestehen muss, weisen einen Alternativtext auf, der dessen Zweck beschreibt (aber nicht die Information, die benötigt wird, um den Test oder die Übung zu bestehen). (3, 1.1.1)
+        - 🧩 A piece of arts
+            - Sensorische Inhalte, die zwingend aus Nicht-Text-Inhalt bestehen, weil sie durch Worte nicht ausreichend ersetzt werden können (z.B. Musikaufführungen, Kunstwerke), weisen einen Alternativtext auf, der den Zweck des Nicht-Text-Inhalts beschreibt. (4, 1.1.1)
+        - 🧩 A linked image → 🤔 *there might also be different use cases here... sometimes the content of the image is important, sometimes not...*
+            - Verlinkte Grafiken weisen einen Alternativtext auf, der Linkziel oder -zweck beschreibt. (6, 1.1.1)
+            - Das Seiten-Logo (mit Link zur Startseite) verfügt über eine sinnvolle Textalternative (Muster alt="Logo Firmenname, zur Startseite") (10, 1.1.1)
+        - 🧩 An image button (or icon) with no textual label
+            - Grafische Schalter sind korrekt beschriftet. (8, 1.1.1)
+    - **Others**
+        - Alternativtexte von Grafiken beinhalten keine redundanten Informationen, z.B. eine bereits in einer Bildlegende oder einem Linktext vorhandene Information oder eine Information wie «Grafik …», «Bild …». (7, 1.1.1) → 🤔 *Can simply be part of the general introduction*
+    - 💡 (Why) **Complex informative graphics need a longer description** → 🤔 *Wichtig darauf hinzuweisen, dass es oft abhängig ist vom Autor, wieviel Erklärung eine komplexe Grafik haben soll! Quintessenz vs. bis ins letzte Detail?! Am besten Download-Link anbieten zu Original-Daten. → Concept "Alternative methods"*
+        - 🧩 A (simple) cake chart
+            - Wenn Alternativtext nicht ausreicht (z.B. bei komplexen Grafiken wie Infografiken oder Diagrammen), wird eine lange Beschreibung bereitgestellt und im Alternativtext darauf hingewiesen. (12, 1.1.1)
+        - 🧩 A (simple) line chart
+    - 💡 (Why) **Decorative graphics should be ignored by screen readers** → 🤔 *Prinzipielle Frage: Was ist dekorativ? Ist z.B. ein Stimmungsbild rein dekorativ?*
+        - 🧩 An atmospheric picture
+            - Dekorative Grafiken weisen ein leeres alt-Attribut auf. (13, 1.1.1)
+        - 🧩 An icon with a textual label
     - **Others**
         - Als Webfont eingebundene Symbole sind so umgesetzt, dass sie nicht zu unverständlichen Ausgaben durch Screenreader führen. (5, 1.1.1)
         - Sonderzeichen vermitteln Informationen auf zugängliche Weise. (11, 1.1.1)
         - Grafische CAPTCHAs sind barrierefrei umgesetzt oder es gibt eine Alternative. (14, 1.1.1)
 
-4. **Ensure keyboard-only operability**
-    - (Why) **Interactive elements should be focusable**
-      - Inhalte/Funktionalitäten (Seitenfunktionalitäten, Seitenelemente, Formularfelder, Kontrollelemente, Schalter, Links, Dialoge, Multimedia-Steuerungen, etc.) sind mit der Tastatur alleine (d.h. ohne Zeigegerät) bedienbar. Elemente sind in der logischen Tab-Reihenfolge erreichbar und können erwartungsgemäss bedient werden. (63, 2.1.1) ⁉️ Letzter Punkt wird ansich schon durch 2.4.3 abgedeckt?
-      - Formular-Schalter sind korrekt umgesetzt (als `<button>`-Element oder `<input type="submit">`-Element). (4.1.2)
-    - (Why) **Interactive elements should be operable via keyboard alone**
-    - (Why) **Interactive elements need clearly visible focus states**
-      - Der Tastaturfokus ist genügend sichtbar, z.B. durch einen gut sichtbaren Rahmen (für alle fokussierbaren Elemente wie Links, Schaltflächen, Radio-Buttons, Checkboxen, Ausklapplisten, verlinkte grafische Elemente, etc.). (81, 2.4.7)
-    - (Why) **The sequence of interactive elements should be meaningful**
-      - Die Fokus-Reihenfolge ist sinnvoll, d.h. intuitiv verständlich und nachvollziehbar. (2.4.3)
-      - Der Tastatur-Fokus wird sinnvoll geführt, wenn jemand mit Elementen auf der Seite interagiert, die zu einer Veränderung innerhalb der Seite führen (ohne Page-Refresh), z.B. nach dem Klick auf einen Schalter, der einen Dialog anzeigt (Erreichen des Dialogs und Interagieren im Dialog, Verlassen desselben, Fokus zurück auf das dialog-auslösende Element, Weiternavigieren auf der Seite). (74, 2.4.3)
-    - (Why) **Interactive elements should be visible**
-      - Sprunglinks werden bei Tastaturbedienung sichtbar. (82, 2.4.7)
-    - (Why) **States of interactive elements should be distinct**
-    - (Why) **Too many tab stops should be avoidable**
-      - Sprunglinks ermöglichen das einfache Überspringen von sich wiederholenden Informationsblöcken (z.B. Navigation, Headerbereich) mit der Tastatur. (71, 2.4.1)
-      - Unternavigationspunkte können mit der Tastatur übersprungen werden. Unternavigationen werden entweder erst auf Auslösen geöffnet (z.B. mittels Enter- oder Pfeil-nach unten-Taste) oder Unternavigationen werden zwar angezeigt, mit der Tabulator-Taste wird aber zum nächsten Hauptnavigationspunkt gesprungen (Hineinnavigieren in die Unternavigation nur mit Pfeil-Tasten). (75, 2.4.3)
-    - (Why) **The keyboard focus should not be overly restricted (trapped)**
-      - Es treten keine Tastaturfallen auf. Alle Bedienelemente können mit der Tastatur erreicht und wieder verlassen werden. Die uneingeschränkte Navigation rückwärts mit Shift+Tab ist sichergestellt. (66, 2.1.2)
-    - (Why) **Single letter keyboard shortcuts should be avoidable**
-      - Einzeltasten-Kurzbefehle (bestehend aus einer einzelnen Buchstaben-, Interpunktions-, Zahlen- oder Symbolzeichentaste) sind entweder deaktivierbar oder veränderbar oder nur bei Fokus aktiv. (67, 2.1.4)
+4. 🙏 **Ensure keyboard-only operability**
+    - 💡 (Why) **Interactive elements should be focusable**
+      - 🧩 A link implemented as `<a href>`
+        - Inhalte/Funktionalitäten (Seitenfunktionalitäten, Seitenelemente, Formularfelder, Kontrollelemente, Schalter, Links, Dialoge, Multimedia-Steuerungen, etc.) sind mit der Tastatur alleine (d.h. ohne Zeigegerät) bedienbar. Elemente sind in der logischen Tab-Reihenfolge erreichbar und können erwartungsgemäss bedient werden. (63, 2.1.1) ⁉️ Letzter Punkt wird ansich schon durch 2.4.3 abgedeckt?
+      - 🧩 A button implemented as `<button>` or `<input type="submit">`
+        - Formular-Schalter sind korrekt umgesetzt (als `<button>`-Element oder `<input type="submit">`-Element). (4.1.2)
+    - 💡 (Why) **Interactive elements should be operable via keyboard alone** → 🤔 *Wird schnell sehr komplex, das Thema, darum Verweis auf Virtue "Accessible Components"*
+      - 🧩 Interactivity implemented with keyboard-compatible events
+      - 🧩 Interactivity available through tab stops → 🤔 *simples Dropdown-Menü (strikt gesehen wäre das aber ein Pattern für "Interactive elements should be focusable")*
+      - 🧩 Interactivity available through arrow keys → 🤔 *ebenfalls simples Dropdown-Menü*
+    - 💡 (Why) **Interactive elements need clearly visible focus states**
+      - 🧩 Focus states with solid aesthetic attributes (`outline`, `border`, `text-decoration`, `font-weight`, etc.) → 🤔 *Hinweis auch auf HCM und Dark Mode!*
+        - Der Tastaturfokus ist genügend sichtbar, z.B. durch einen gut sichtbaren Rahmen (für alle fokussierbaren Elemente wie Links, Schaltflächen, Radio-Buttons, Checkboxen, Ausklapplisten, verlinkte grafische Elemente, etc.). (81, 2.4.7)
+    - 💡 (Why) **The sequence of interactive elements should be meaningful**
+      - 🧩 Interactive elements are aligned in a meaningful sequence → 🤔 *Verweis auf Concept "Meaningful sequence"*
+        - Die Fokus-Reihenfolge ist sinnvoll, d.h. intuitiv verständlich und nachvollziehbar. (2.4.3)
+      - 🧩 Focus is managed in a meaningful way → 🤔 *Verweis auf Dialog Component*
+        - Der Tastatur-Fokus wird sinnvoll geführt, wenn jemand mit Elementen auf der Seite interagiert, die zu einer Veränderung innerhalb der Seite führen (ohne Page-Refresh), z.B. nach dem Klick auf einen Schalter, der einen Dialog anzeigt (Erreichen des Dialogs und Interagieren im Dialog, Verlassen desselben, Fokus zurück auf das dialog-auslösende Element, Weiternavigieren auf der Seite). (74, 2.4.3)
+    - 💡 (Why) **Interactive elements should be visible**
+      - 🧩 Skip links appear on focus → 🤔 *Verweis auf  Concept "Hiding elements properly"*
+        - Sprunglinks werden bei Tastaturbedienung sichtbar. (82, 2.4.7)
+    - 💡 (Why) **States of interactive elements should be distinct** → 🤔 *I'm a bit unsure where this is placed best. It could also be in Contrasts, Use of Color, or similar → maybe give advice that we should not rely on color alone anyway?*
+    - 💡 (Why) **Excessive tab stops should be avoidable**
+      - 🧩 A skip link allows to jump directly to the content
+        - Sprunglinks ermöglichen das einfache Überspringen von sich wiederholenden Informationsblöcken (z.B. Navigation, Headerbereich) mit der Tastatur. (71, 2.4.1)
+      - 🧩 Submenu entries that can be skipped
+        - Unternavigationspunkte können mit der Tastatur übersprungen werden. Unternavigationen werden entweder erst auf Auslösen geöffnet (z.B. mittels Enter- oder Pfeil-nach unten-Taste) oder Unternavigationen werden zwar angezeigt, mit der Tabulator-Taste wird aber zum nächsten Hauptnavigationspunkt gesprungen (Hineinnavigieren in die Unternavigation nur mit Pfeil-Tasten). (75, 2.4.3)
+    - 💡 (Why) **The keyboard focus should not be overly restricted (trapped)**
+      - 🧩 A dialog that restricts focus to itself but doesn't prevent moving the focus outside the document → 🤔 *A bit clunky*
+        - Es treten keine Tastaturfallen auf. Alle Bedienelemente können mit der Tastatur erreicht und wieder verlassen werden. Die uneingeschränkte Navigation rückwärts mit Shift+Tab ist sichergestellt. (66, 2.1.2)
+    - 💡 (Why) **Single letter keyboard shortcuts should be avoidable**
+      - 🧩 Single letter keyboard shortcut that can be disabled
+        - Einzeltasten-Kurzbefehle (bestehend aus einer einzelnen Buchstaben-, Interpunktions-, Zahlen- oder Symbolzeichentaste) sind entweder deaktivierbar oder veränderbar oder nur bei Fokus aktiv. (67, 2.1.4)
     - **Others**
       - Elemente, die einzeln ausgegeben werden sollen, sind als display: block ausgezeichnet, sonst können sie im Browse-Mode (normale Inhaltsnavigation mittels Pfeil-Tasten) nicht einzeln angesteuert werden. Dies gilt hauptsächlich für interaktive Elemente (Links, Buttons, etc.). (64, 2.1.1)
       - Elemente, die von Screenreadern zusammen ausgegeben werden sollen (etwa eine Überschrift, die sowohl eine Kategorie als auch ein Datum enthält), sind als display: inline bzw. display: inline-block ausgezeichnet und befinden sich zusammen in einem display: block-Container. (65, 2.1.1)
 
-5. **Define a coherent heading hierarchy**
+5. 🙏 **Define a coherent page structure and heading hierarchy ** → Concept "Semantics"
 
-    - (Why) **Headings and subheadings must be related meaningfully**
-        - Überschriften: Die Hierarchie der Überschriften-Ebenen ist inhaltlich-logisch korrekt und vermittelt die Struktur der Inhalte. (25, 1.3.1a)
-    - (Why) **Heading levels should not be skipped**
-        - Überschriften: Es werden keine Überschriften-Ebenen ausgelassen. (26, 1.3.1a)
-    - (Why) **Page areas should be introduced by a heading**
-        - Überschriften: Eigenständige Seitenbereiche weisen eine eigene Überschrift auf, da sie sonst der vorausgehenden Überschrift falsch untergeordnet werden. Für Inhalts- und Funktionsblöcke wie Kopf- und Fussbereich, Navigation, Breadcrumb, etc. können visuell unsichtbare Überschriften eingesetzt werden. (27, 1.3.1a)
-        - Überschriften: Überschriften für Akkordeons sind als solche ausgezeichnet. (30, 1.3.1a)
-        - Überschriften und Labels (z.B. in Eingabefeldern, bei Schaltern, etc.) sind ausreichend informativ und korrekt und bezeichnen den zugeordneten Web-Inhalt verständlich. Es gibt keine gleichlautenden Überschriften oder Labels auf einer Seite. (80, 2.4.6) (❗️Auch bei "Forms")
-    - (Why) **Headings should have subsequent content**
-        - Überschriften: Überschriften weisen nachfolgenden Inhalt (bzw. darunter liegende Überschriften) auf. (28, 1.3.1a)
+    - 💡 (Why) **Landmarks should encompass page areas**
+        - 🧩 A typical website's higher level landmarks
+            - Landmark Roles (HTML5-Elemente wie `<header>`, `<main>`, etc. sowie ARIA-Rollen) werden korrekt vergeben. Sie werden mit Bedacht verwendet und konsistent eingesetzt (möglichst keine Mehrfach-Verwendung derselben Rolle, konsistentes Auszeichnen aller wichtigen Seitenbereiche). (22, 1.3.1)
+        - 🧩 Lower level landmarks
+    - 💡 (Why) **The page's `<main>` landmark should be structured meaningfully by headings**
+        - 🧩 Main content is structured by headings (like a book)
+            - Überschriften: Eigenständige Seitenbereiche weisen eine eigene Überschrift auf, da sie sonst der vorausgehenden Überschrift falsch untergeordnet werden. Für Inhalts- und Funktionsblöcke wie Kopf- und Fussbereich, Navigation, Breadcrumb, etc. können visuell unsichtbare Überschriften eingesetzt werden. (27, 1.3.1a)
+            - Überschriften: Die Hierarchie der Überschriften-Ebenen ist inhaltlich-logisch korrekt und vermittelt die Struktur der Inhalte. (25, 1.3.1a)
+            - Überschriften und Labels (z.B. in Eingabefeldern, bei Schaltern, etc.) sind ausreichend informativ und korrekt und bezeichnen den zugeordneten Web-Inhalt verständlich. Es gibt keine gleichlautenden Überschriften oder Labels auf einer Seite. (80, 2.4.6) (❗️Auch bei "Forms")
+    - 💡 (Why) **Landmarks with no visible heading should offer visually hidden headings** → Concept "Hiding elements properly"
+        - 🧩 Landmarks inside `<main>` with no visible heading are introduced by invisible headings
+          - Überschriften: Es werden keine Überschriften-Ebenen ausgelassen. (26, 1.3.1a)
+        - 🧩 Landmarks outside `<main>` with no visible heading are introduced by invisible headings
     - **Others**
         - Überschriften: Überschriften sind im Code vor den ihnen zugehörigen Inhalten platziert. (29, 1.3.1a) → Concept "Meaningful sequence"
         - Überschriften: Überschriften sind semantisch korrekt mit dem Überschriften-Element (`<h1>` bis `<h6>`) ausgezeichnet. (31, 1.3.1a) → Concept "Semantics"
+        - Überschriften: Überschriften für Akkordeons sind als solche ausgezeichnet. (30, 1.3.1a)
+        - Überschriften: Überschriften weisen nachfolgenden Inhalt (bzw. darunter liegende Überschriften) auf. (28, 1.3.1a)
 
-6. **Apply semantics to structure content** → Concept "Semantics"
+6. 🙏 **Apply semantics to structure content (HTML 101)** → Concept "Semantics" → Natürlich stützen sich einige vorangehende Tugenden auch auf Semantik, deshalb klar gegenseitig referenzieren!
 
-    - (Why) **Landmarks should encompass page areas**
-        - Landmark Roles (HTML5-Elemente wie `<header>`, `<main>`, etc. sowie ARIA-Rollen) werden korrekt vergeben. Sie werden mit Bedacht verwendet und konsistent eingesetzt (möglichst keine Mehrfach-Verwendung derselben Rolle, konsistentes Auszeichnen aller wichtigen Seitenbereiche). (22, 1.3.1)
-    - (Why) **Lists should be marked up as `<ul>`, `<ol>`, or `<dl>`**
-        - Listen: Aufzählungen sind semantisch korrekt als Listen (`<ul>`, `<ol>`, `<dl>`) formatiert. (32, 1.3.1b)
-        - Listen: Listen mit nur einem Eintrag werden vermieden (ausser sie werden automatisch generiert). (33, 1.3.1c)
-        - Listen: Glossare und ähnliche Informationslisten sind als Definitionslisten formatiert. (34, 1.3.1c)
-    - (Why) **Quotes should be marked up as `<cite>` or `<blockquote>`**
-        - Zeichenverwendung: Visuell erkennbare Zitate sind semantisch korrekt ausgezeichnet (z.B. als `<blockquote>` und `<cite>`), sodass der jeweilige Text auch beim Einsatz von assistierenden Technologien als Zitat erkannt wird. (46, 1.3.1e)
+    - 💡 (Why) **Lists should be marked up as `<ul>`, `<ol>`, or `<dl>`**
+        - 🧩 Unordered lists (`<ul>`)
+            - Listen: Aufzählungen sind semantisch korrekt als Listen (`<ul>`, `<ol>`, `<dl>`) formatiert. (32, 1.3.1b)
+        - 🧩 Ordered lists (`<ol>`)
+            - Listen: Listen mit nur einem Eintrag werden vermieden (ausser sie werden automatisch generiert). (33, 1.3.1c)
+        - 🧩 Glossaries (`<dl>`)
+            - Listen: Glossare und ähnliche Informationslisten sind als Definitionslisten formatiert. (34, 1.3.1c)
+    - 💡 (Why) **Quotes should be marked up as `<cite>` or `<blockquote>`**
+        - 🧩 Inline quote (`<cite>`)
+            - Zeichenverwendung: Visuell erkennbare Zitate sind semantisch korrekt ausgezeichnet (z.B. als `<blockquote>` und `<cite>`), sodass der jeweilige Text auch beim Einsatz von assistierenden Technologien als Zitat erkannt wird. (46, 1.3.1e)
+        - 🧩 Block quote (`<blockquote>`)
     - **Others**
         - Breadcrumbs oder Prozessanzeigen sind auch nicht-visuell als solche erkennbar. (23, 1.3.1)
         - Fussnoten sind barrierefrei umgesetzt: Auch mit einem Screenreader ist beim Fussnoten-Zeichen der Zugriff auf den Fussnotentext gegeben, ohne dass der ursprüngliche Kontext verloren geht. (24, 1.3.1)
@@ -103,52 +162,53 @@
         - Zeichenverwendung: Inhalte befinden sich innerhalb semantisch bedeutsamer HTML-Elemente (z.B. `<h#>`, `<p>`, `<ul>`, `<ol>`, etc.); das Verwenden von `<div>`- oder `<span>`-Elementen (die keine semantische Relevanz aufweisen) ist nicht ausreichend. (43, 1.3.1e)
         - Zeichenverwendung: Leere bedeutungstragende Elemente werden vermieden. (44, 1.3.1e)
 
-7. **Enhance screen reader compatibility**
-    - (Why) **Every page needs a unique, self-speaking title**
+7. 🙏 **Enhance screen reader compatibility**
+    - 💡 (Why) **Every page needs a unique, self-speaking title**
       - Seiten haben einen eindeutigen, aussagekräftigen Titel, der Thema oder Zweck der Seite sowie den Betreiber enthält (Muster: "Thema/Zweck der Seite - Seitenbetreiberin") (72, 2.4.2)
-    - (Why) **The language declaration should be correct**
+    - 💡 (Why) **The language declaration should be correct**
       - Die Sprachdeklaration ist vorhanden und korrekt. (87, 3.1.1)
       - Sprachwechsel bei längeren Textpassagen werden angegeben: Anderssprachige Textabschnitte sind mit dem lang-Attribut ausgezeichnet. Bei kurzen anderssprachigen Textpassagen (einzelne Wörter) wird auf den Sprachwechsel verzichtet. (88, 3.1.2)
-    - (Why) **Active elements should be declared as `[aria-current]`**
+    - 💡 (Why) **Active elements should be declared as `[aria-current]`**
       - Aktive Elemente (z.B. der aktive Menüpunkt in einer Navigation) sind semantisch erkennbar ausgezeichnet, wenn sie visuell klar als aktiv erkennbar sind. (21, 1.3.1)
-    - (Why) **Content should be aligned in a meaningful sequence**
+    - 💡 (Why) **Content should be aligned in a meaningful sequence**
       - Inhalte müssen im Code (DOM) eine korrekte Reihenfolge aufweisen (unabhängig von CSS) (47, 1.3.2)
-    - (Why) **Link texts should be self-speaking and unique**
+    - 💡 (Why) **Link texts should be self-speaking and unique**
       - Link-Texte sind selbstsprechend, d.h. aus sich selbst heraus oder über den Kontext (gleiches `<p>`-Element, gleiches Listenelement, gleiche Tabellenzelle, Spalten- oder Zeilenüberschrift in Tabelle) verständlich. (77, 2.4.4)
       - Mehrfache, unterschiedliche Links (z.B. eine Überschrift, eine Grafik und ein zusätzlicher Textlink) auf dasselbe Ziel werden vermieden. (78, 2.4.4)
-    - (Why) **Asynchronous notifications should be marked as `[aria-live]` regions**
+    - 💡 (Why) **Asynchronous notifications should be marked as `[aria-live]` regions**
       - Statusmeldungen sind für assistierende Technologien zugänglich und überstrapazieren den Audiokanal nicht. (111, 4.1.3)
 
-8. **Provide tabular data as tables**
+8. 🙏 **Provide tabular data as tables**
 
-    - (Why) **Tabular data should be marked up as `<table>`**
+    - 💡 (Why) **Tabular data should be marked up as `<table>`**
         - *Keine Grids o.ä.! Tabellen sind Tabellen! Punkt. Mann...*
-    - (Why) **Tables should have a `<caption>`**
+    - 💡 (Why) **Tables should have a `<caption>`**
         - Tabellen: Daten-Tabellen weisen Tabellenüberschriften (`<caption>`) auf. (38, 1.3.1d)
-    - (Why) **Tables should have `<th>` elements for columns and rows**
+    - 💡 (Why) **Tables should have `<th>` elements for columns and rows**
         - Tabellen: Daten-Tabellen weisen Spalten- oder Zeilentitel (`<th>`) auf, idealerweise beides. (39, 1.3.1d)
-    - (Why) **Tables should not contain any "higher" markup elements**
+    - 💡 (Why) **Tables should not contain any "higher" markup elements**
         - Tabellen: Daten, welche eindeutig tabellarischen Charakter aufweisen, sind semantisch korrekt als Tabelle formatiert und enthalten nur die semantisch zugelassenen Attribute, z.B. keine Paragraphen- (`<p>`) oder Überschriften-Elemente (`<h1>` bis `<h6>`). (40, 1.3.1d)
-    - (Why) **Tables should not contain empty rows or columns**
+    - 💡 (Why) **Tables should not contain empty rows or columns**
         - Tabellen: Daten-Tabellen weisen keine leeren Spalten oder Zeilen auf. (41, 1.3.1d)
-    - (Why) **Tables should be responsive**
+    - 💡 (Why) **Tables should be responsive**
 
-9. **Build robust forms and validations**
+9. 🙏 **Build robust forms and validations**
 
-    - (Why) **Form inputs should have a `<label>`**
+    - 💡 (Why) **Form inputs should have a `<label>`**
         - Formulare: Formularfelder weisen korrekt verknüpfte Labels auf. (37, 1.3.1c)
         - Überschriften und Labels (z.B. in Eingabefeldern, bei Schaltern, etc.) sind ausreichend informativ und korrekt und bezeichnen den zugeordneten Web-Inhalt verständlich. Es gibt keine gleichlautenden Überschriften oder Labels auf einer Seite. (80, 2.4.6) (❗️Auch bei "Headings")
         - Formularfelder verfügen über visuell sichtbare Labels. Die alleinige Verwendung von placeholder-Attributen zur Beschriftung von Formularfeldern wird vermieden. (95, 3.3.2)
         - Formatangaben bei Formularfeldern sind zugänglich und mit den zugehörigen Eingabefeldern eindeutig verknüpft, d.h. zusätzlich angegebene Hinweise zu Eingabeformaten sind auch durch assistierende Technologien korrekt erfassbar. (96, 3.3.2)
-    - (Why) **Groups of inputs should be grouped using `<fieldset>` and `<legend>`**
+    - 💡 (Why) **Groups of inputs should be grouped using `<fieldset>` and `<legend>`**
         - Formulare: In umfangreichen Formularen werden inhaltlich zusammengehörige Formularfelder mittels `<fieldset>`/`<legend>`-Kombination gruppiert. (35, 1.3.1c)
-    - (Why) **Non-interactive elements between form controls should be associated with `[aria-describedby]`**
+    - 💡 (Why) **Non-interactive elements between form controls should be associated with `[aria-describedby]`**
         - Formulare: Informationen, die sich zwischen den Eingabefeldern befinden (z.B. als `<p>` zwischen mehreren Eingabefeldern) sind verknüpft mit den relevanten Formularfeldern, sodass sie auch mit Screenreadern wahrgenommen werden können (z.B. mit aria-describedby). (36, 1.3.1c)
-    - (Why) **Validation messages should be clearly associated and meaningful**
+    - 💡 (Why) **Validation messages should be meaningful and associated to the input**
         - Fehlermeldungen in Formularen sind barrierefrei umgesetzt: Automatisch erkannte Eingabefehler geben in der Fehlermeldung einen klaren Hinweis (in Textform) auf das fehlerhafte Element und sind mit diesem eindeutig verknüpft. (93, 3.3.1)
         - Fehlermeldungen sind informativ und mit den zugehörigen Eingabefeldern eindeutig verknüpft: Es sind Korrekturempfehlungen vorhanden, wenn falsche Benutzereingaben erfolgen. (97, 3.3.3)
-    - (Why) **Required inputs should be marked up with `[required]`**
+    - 💡 (Why) **Required inputs should be marked up with `[required]`**
         - Pflichtfelder sind zugänglich ausgezeichnet, sowohl auf visueller wie nicht-visueller Ebene, z.B. mit required-Attribut. (94, 3.3.2)
+    - 💡 (Why) **Complex forms should be split into separate pages**
 
     - **Others**
         - Die zugängliche Beschriftung eines Bedienelements entspricht exakt der visuellen oder beinhaltet sie (ermöglicht v.a. Sprachsteuerung). (85, 2.5.3)
@@ -157,7 +217,7 @@
         - Nutzereingaben müssen überprüfbar sein vor Prozess-Abschluss mit finanziellen/rechtlichen Folgen. Es ist sichergestellt, dass die Gelegenheit besteht, eingegebenen Daten zu überprüfen und gegebenenfalls zu korrigieren, bevor ein endgültiger Abschluss erfolgt. (98, 3.3.4)
         - Eingabefelder zu Nutzerdaten können automatisch ausgefüllt werden. (50, 1.3.5)
 
-10. **Build a robust yet flexible experience**
+10. 🙏 **Build a robust yet flexible experience**
     - Inhalte sind in beiden Bildschirmorientierungen (Hoch- und Querformat) korrekt dargestellt und nutzbar. Passt sich der Inhalt nicht automatisch an die Bildschirmorientierung an, steht ein Schalter zur Verfügung zum manuellen Drehen des Bildschirminhalts (für Websites vom Browser sichergestellt, für Mobile Apps durch Design und Entwicklung sicherzustellen). (49, 1.3.4)
     - Automatisch abspielender Audio-Inhalt von mehr als 3 Sekunden wird nach Möglichkeit vermieden. Ist er doch vorhanden, ist er steuerbar (Wiedergabe stoppen, Lautstärke unabhängig von der Systemlautstärke regeln). Die Steuerung befindet sich am Anfang der Seite. (53, 1.4.2)
     - Elemente sind auf mindestens 200% zoombar, entweder der Text allein oder die komplette Seite (für Websites in der Regel vom Browser sichergestellt, für Mobile Apps durch Design und Entwicklung sicherzustellen). (56, 1.4.4)
@@ -174,7 +234,7 @@
     - Bestandteile mit gleicher Funktion sind konsistent umgesetzt, sowohl auf visueller wie auch auf semantischer Ebene. (92, 3.2.4)
     - Der HTML-Code weist keine für die Barrierefreiheit relevanten Fehler auf. (99, 4.1.1)
 
-11. **Choose accessible components**
+11. 🙏 **Choose accessible components**
      - Akkordeons sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «reduziert» bzw. «erweitert»).  (100, 4.1.2)
      - Autocompletes sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, die Anzahl aktuell verfügbarer Vorschläge, der aktuelle Eintrag beim Navigieren der Optionen sowie die schlussendlich gewählte Option werden durch Screenreader vermittelt. (101, 4.1.2)
      - Datumswähler sind barrierefrei umgesetzt, sofern keine Alternative dazu besteht (z.B. manuelle Datumseingabe in Formularfeld). Sie werden durch Screenreader korrekt angesagt, der aktuelle Eintrag beim Navigieren der Optionen sowie die schlussendlich gewählte Option werden durch Screenreader vermittelt. (102, 4.1.2)
@@ -186,7 +246,7 @@
      - Weitere JavaScript-Widgets sind barrierefrei zugänglich, d.h. so programmiert, dass sie mittels assistierender Technologien verstanden und uneingeschränkt verwendet werden können. Sie werden z.B. durch Screenreader korrekt angesagt; Funktion, Rolle und Status werden korrekt und aktuell vermittelt. (108, 4.1.2)
      - Der Einsatz von ARIA ist sinnvoll und korrekt. Wann immer möglich werden Standard-HTML-Elemente verwendet; ARIA wird eingesetzt wenn kein entsprechendes HTML-Element existiert oder weil eine technische Notwendigkeit dafür besteht. (109, 4.1.2)
 
-12. **Add audio transcripts and video subtitles**
+12. 🙏 **Add audio transcripts and video subtitles**
 
      - Video- und Audio-Inhalte weisen einen Alternativtext auf, der den Titel und/oder eine kurze Umschreibung vermittelt. (2, 1.1.1)
      - Für aufgezeichnete reine Audio-Inhalte (z.B. Podcasts) existieren Textabschriften oder eine Audiodeskription. Ausnahme: Wenn der reine Audio-Inhalt eine Alternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textabschrift erforderlich. (15, 1.2.1)

@@ -38,5 +38,5 @@ Rails.application.routes.draw do
   get "blooper/:id", to: "bloopers#show"
   get "win/:id", to: "wins#show"
   get "fail/:id", to: "fails#show"
-  get "wcag/:id", to: "wcag#show" # TODO: Needs to work for IDs like `1.3.1`
+  get "wcag2/:id", to: "wcag_elements#show" # TODO: Needs to work for IDs like `1.3.1`
 end

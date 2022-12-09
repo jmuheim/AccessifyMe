@@ -1,0 +1,23 @@
+# Trailer
+
+- Prämisse: Accessibility is complex, ugly, and expensive!
+- Accessibility for the 99% of web professionals that have no disability (and therefore lack awareness about the topic)!
+  - I show you the simplest, most common ways to avoid typical accessibility problems! → doesn't mean they are the sexiest ones (let alone the only ones), but if you choose them you are on the safe side.
+- With great power comes great responsibility → not each and every decorative possibility should be used in each and every situation!
+- Viele Anti-Patterns noch vorhanden!
+  - Genaues Programmieren! Wie in "HTML 101"! Ordnung halten, Sachen beim Namen nennen. Nicht Kreativität verhindern, sondern Chaos!
+- WCAG 2.1 ready
+- Essence of WCAG, without its complexity
+  - Map von Utopia aufzeigen (rauszoomen)
+  - Beispiel aufzeigen von Tastaturbedienbarkeit
+    - Unterschiedlichste WCAG Kriterien damit verknüpft, ziemlich "random"
+      - Das "Pferd von hinten aufzäumen"
+- And: it's always about a few blind people, isn't it?!
+- Let's do it differently!
+  - 12 virtues
+  - Personas
+  - You'll get insights (through personas) and see the value of proposed patterns
+- For designers and developers! (And quality assurance → testers)
+  - Designers need to have a basic understanding of what developers are able to do
+  - Developers are not magicians that can simply convert any creative UX idea into a fully working end result!
+- No! Accessibility is straight-forward, can be totally appealing (moves aesthetics from personal taste to scientifically based reasoning), and (although there will be some costs in the beginning) will pay back plenty over time - not only due to enlarging your audience (people of disability, SEO ranking), but also due to cleaner, more readable/maintainable ("Leitplanken, vgl. mit BEM") and performant code!

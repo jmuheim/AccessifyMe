@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_123314) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_060147) do
   create_table "anti_patterns", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -193,7 +193,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_123314) do
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["parent_id"], name: "index_parent_id_on_wcag_elements_fk"
+    t.index ["slug"], name: "index_wcag_elements_on_slug", unique: true
   end
 
   create_table "websites", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|

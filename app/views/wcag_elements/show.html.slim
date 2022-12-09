@@ -22,9 +22,9 @@ article id=dom_id(@wcag_element)
   - if @wcag_element.explains_why?
     = markdown(@wcag_element.explains_why.capitalize)
 
-  - if @wcag_element.description?
+  - if @wcag_element.lead?
     blockquote
-      = markdown(@wcag_element.description)
+      = markdown(@wcag_element.lead)
       p: cite
         | From the
         =<> link_to "https://a11y.digitaldialog.swiss/de/#{@wcag_element.tree_prefix}" do

@@ -60,7 +60,12 @@ class WcagElementsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wcag_element
-      @wcag_element = WcagElement.find(params[:id])
+      binding.pry
+      @wcag_element = if params[:slug].present?
+                        WcagElement.find_by_slug(params[:slug])
+                      else
+                        WcagElement.find(params[:id])
+                      end
     end
 
     # Only allow a list of trusted parameters through.

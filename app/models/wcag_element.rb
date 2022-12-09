@@ -17,6 +17,9 @@
 class WcagElement < ApplicationRecord
   WCAG_MIN_VERSION = 2.0
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   extend Enumerize
 
   extend ActsAsTree::TreeWalker
