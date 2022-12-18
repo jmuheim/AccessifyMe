@@ -266,17 +266,20 @@ Hat da ebenfalls 5-6 Personas! Dünkt mich gut und straight to the point.
   - Could also be:
     - [Diabetic Retinopathy](https://www.cdc.gov/diabetes/managing/diabetes-vision-loss.html) (leading cause of blindness in working-age adults)
     - [Temporary blindness](https://www.doctorshealthpress.com/common-causes-of-temporary-blindness-and-natural-ways-to-treat-it/): increasing amount of people gluing their eyes to television screens, laptops, and phones → good motivation to relieve your eyes a bit by using other ways of interacting with digital content, i.e. text-to-speech (but for that to work, the content must be built in an accessible way)
-  
+
+- Pratul (45), **color blind** (red/green)
 - Hannah (72), **partially sighted** (age-related cataract)
   - Quote: "I'm keen to keep up with Technology so I can communicate with my grandchildren. In later years though it's getting difficult for me to perceive content on screen."
   - Background: Retired, worked as secretary in a law firm
+  - Could also be:
+    - 
   - Depends on:
     - Page-Zoom (or ZoomText)
 
   - Statistics:
     - [About 2 million people in the UK](https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user) have sight loss, and this figure is expected to double by 2050.
 - Victoria (32), **hard of hearing**
-  - Quote: "It's so frustrating when I watch a movie with friends and don't understand half of "
+  - Quote: "It's so frustrating when I watch a movie with friends and don't understand half of the conversation."
   - Depends on:
     - Closed Captions
   - Could also be:

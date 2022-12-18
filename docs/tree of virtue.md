@@ -29,6 +29,7 @@
 2. 🙏 **Serve multiple senses (2-senses principle)** → 🤔 *Not so sure whether we should rename it back to "Complement (meaningful) color with shape" and just put this into the "Concepts" section?!*
 
     1. 💡 (Why) **Information conveyed by color should be complemented with shape**
+        - https://www.color-blindness.com/coblis-color-blindness-simulator/
         - 🧩 Colored areas in diagrams are marked with individual icons → 🤔 *i.e. a single "x" or "o"*
           - Information wird nicht durch Farbe allein vermittelt. Das gilt auch für Hover- und Fokus-Zustände. Wenn Information farblich übermittelt wird (z.B. rot hervorgehobene Teile eines Texts, um deren Wichtigkeit zu markieren), ist ein weiterer visueller Reiz vorhanden, um diese Information zu vermitteln (z.B. Fettschrift oder Unterstreichung, unterschiedliche Symbole, zusätzlicher Text). (51, 1.4.1)
           - *Unless only a few colors are needed → check out "💡 Graphical info needs a contrast of `3:1` to its background"*
