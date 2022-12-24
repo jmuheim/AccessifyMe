@@ -256,7 +256,7 @@ Hat da ebenfalls 5-6 Personas! Dünkt mich gut und straight to the point.
 
 ## Personas
 
-**Nur Personas, auf welche wir als Design/Entwickler:innen direkten Einfluss haben!** (Keine, welche v.a. mit Erarbeitung von Inhalten zu tun haben.)
+**Nur Personas, auf welche wir als Design/Entwickler:innen direkten Einfluss haben!**(Keine, welche v.a. mit Erarbeitung von Inhalten zu tun haben.) TECHNISCH BARRIEREFREI! BEDEUTET NICHT UNBEDINGT GUTE UX!
 
 - Daniel (26), Student, born **blind**
   - Quote: "Why are there no headings on this website? It's so frustrating to identify and navigate content."
@@ -268,6 +268,17 @@ Hat da ebenfalls 5-6 Personas! Dünkt mich gut und straight to the point.
     - [Temporary blindness](https://www.doctorshealthpress.com/common-causes-of-temporary-blindness-and-natural-ways-to-treat-it/): increasing amount of people gluing their eyes to television screens, laptops, and phones → good motivation to relieve your eyes a bit by using other ways of interacting with digital content, i.e. text-to-speech (but for that to work, the content must be built in an accessible way)
 
 - Pratul (45), **color blind** (red/green)
+  - Quote: "As a science journalist I read statistical charts everyday. It's a shame that most of them are color-coded."
+  - Background: PhD (Journalism)
+  - Depends on:
+    - (Nothing in particular)
+
+  - Could also be:
+    - Any other color blindness
+    - Achromatic
+
+  - Statistics: 1 in 12 men is color blind (https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness)
+
 - Hannah (72), **partially sighted** (age-related cataract)
   - Quote: "I'm keen to keep up with Technology so I can communicate with my grandchildren. In later years though it's getting difficult for me to perceive content on screen."
   - Background: Retired, worked as secretary in a law firm
@@ -278,6 +289,14 @@ Hat da ebenfalls 5-6 Personas! Dünkt mich gut und straight to the point.
 
   - Statistics:
     - [About 2 million people in the UK](https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user) have sight loss, and this figure is expected to double by 2050.
+- Aljosha (52), **low contrast**
+  - Quote: ""
+  - Could also be:
+    - Smartphone screen in direct sunlight, low-quality beamer (or bad lighting conditions), AND MANY MORE
+
+  - Depends on:
+    - High Contrast Mode
+
 - Victoria (32), **hard of hearing**
   - Quote: "It's so frustrating when I watch a movie with friends and don't understand half of the conversation."
   - Depends on:
@@ -288,7 +307,13 @@ Hat da ebenfalls 5-6 Personas! Dünkt mich gut und straight to the point.
   - Depends on:
     - Keyboard-only
   - Could also be:
-    - 
+    - Power user
+    - Broke major hand
+    - Young parent
+- Benjamin (36), **dyslexia**
+  - Depends on:
+    - Custom Font, line-height, etc.
+
 
 **Plus: YOU!**
 
