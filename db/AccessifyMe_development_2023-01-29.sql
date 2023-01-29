@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 8.0.31)
 # Database: AccessifyMe_development
-# Generation Time: 2023-01-29 09:31:14 +0000
+# Generation Time: 2023-01-29 12:23:21 +0000
 # ************************************************************
 
 
@@ -18,40 +18,6 @@ SET NAMES utf8mb4;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE='NO_AUTO_VALUE_ON_ZERO', SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump of table anti_patterns
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `anti_patterns`;
-
-CREATE TABLE `anti_patterns` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `notes` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `created_at` datetime(6) NOT NULL,
-  `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-LOCK TABLES `anti_patterns` WRITE;
-/*!40000 ALTER TABLE `anti_patterns` DISABLE KEYS */;
-
-INSERT INTO `anti_patterns` (`id`, `name`, `description`, `notes`, `created_at`, `updated_at`)
-VALUES
-	(1,'No focus state at all (focus reset)',NULL,'https://uxtools.co/','2022-11-29 20:33:46.000000','2022-11-29 20:33:46.000000'),
-	(2,'Focus state with insufficient contrast',NULL,NULL,'2022-11-29 20:36:05.000000','2022-11-29 20:36:05.000000'),
-	(3,'Interactive element implemented as `<span>`, `<div>`, or similar','Non-interactive HTML elements can\'t be focused by default. While you can add focusability with `tabindex=\"0\"`, you should avoid it.','Die typischen Verdächtigen: können nicht fokusiert werden (ausser mit der `tabindex`-Krücke)\n\nFail: Twitter-Signup: \"Use email/phone instead\" funktioniert kann mit Tastatur nicht aktiviert werden.','2022-11-15 17:33:39.000000','2022-11-15 17:33:39.000000'),
-	(5,'Link implemented as `<button>`','A button can never be a proper link, period. If you want a link to like a button, use CSS (which will only change its appearance, not its behavior).','Wenn ein Link wie ein Button aussehen soll → besser CSS Klasse `.button` verwenden!','2022-11-15 17:33:39.000000','2022-11-15 17:33:39.000000'),
-	(6,'Button implemented as `<a href>`','A link can never be a proper button, period. Instead, use a `<button>` or `<input type=\"submit\">` (or `type=\"button\"`).','Egal ob mit oder ohne `href`','2022-11-15 17:33:39.000000','2022-11-15 17:33:39.000000'),
-	(7,'Decorative graphics without `[alt]`','When a graphic has no `[alt]` attribute, then a screen reader will not know how to announce it. To still give an indication of the image\'s existence, the screen reader will output its filename, but this is usually cryptic and therefore confusing.',NULL,'2022-11-28 20:24:05.000000','2022-11-28 20:24:05.000000'),
-	(8,'Graphic whose contrast depends on the background','The contrast of a single-colored graphic with transparent background is dependent of the surrounding background color. When Windows HCM changes this color, the graphic may become poorly visible or not visible at all.',NULL,'2022-11-28 22:10:13.000000','2022-11-28 22:10:13.000000'),
-	(9,'Subheading is nested more than one level below parent heading','Let\'s say a heading `<h2>` has a subheading `<h4>`. Screen reader users arriving at the `<h2>` may look out for a subheading on the next deeper level `<h3>`. Not finding any, they will naturally expect that there are no subheadings at all, missing out on the `<h4>` and its content completely.',NULL,'2022-12-01 22:48:12.000000','2022-12-01 22:48:12.000000'),
-	(10,'Subheading has wrong parent','Bla',NULL,'2022-12-02 21:22:58.000000','2022-12-02 21:22:58.000000');
-
-/*!40000 ALTER TABLE `anti_patterns` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table ar_internal_metadata
@@ -75,42 +41,6 @@ VALUES
 	('environment','development','2022-08-09 09:58:32.813951','2022-08-09 09:58:32.813951');
 
 /*!40000 ALTER TABLE `ar_internal_metadata` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table bloopers
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `bloopers`;
-
-CREATE TABLE `bloopers` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `website_id` bigint NOT NULL,
-  `anti_pattern_id` bigint NOT NULL,
-  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'real',
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `notes` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `created_at` datetime(6) NOT NULL,
-  `updated_at` datetime(6) NOT NULL,
-  `screenshot` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_examples_on_website_id` (`website_id`),
-  KEY `index_bloopers_on_anti_pattern_id` (`anti_pattern_id`),
-  CONSTRAINT `fk_rails_84517c3990` FOREIGN KEY (`anti_pattern_id`) REFERENCES `anti_patterns` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_rails_cce4e042c7` FOREIGN KEY (`website_id`) REFERENCES `websites` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-LOCK TABLES `bloopers` WRITE;
-/*!40000 ALTER TABLE `bloopers` DISABLE KEYS */;
-
-INSERT INTO `bloopers` (`id`, `website_id`, `anti_pattern_id`, `url`, `description`, `notes`, `created_at`, `updated_at`, `screenshot`)
-VALUES
-	(3,1,7,'https://presserat.ch/','The rotating **pictures at the top right of the content** (one of which has the filename `France_EU_parliament.jpg`) are probably of purely atmospheric nature. As such, they **need an empty `[alt]` attribute**.','testlili','2022-11-15 17:07:18.000000','2022-11-28 16:07:47.484670','screenshot_2x.png'),
-	(4,1,8,'https://presserat.ch/','The **logo and magnifying glass icon** in the header **disappear completely**.',NULL,'2022-11-28 22:29:07.000000','2022-11-28 17:06:03.183268','screenshot_2x.png'),
-	(5,1,9,'https://presserat.ch/en/der-presserat/geschaeftsreglement/','The **`<h3>` \"1. Institution, Domicile...\"** follows the `<h1>` \"Statutes of the...\", therefore it **needs to be an `<h2>`**.',NULL,'2022-12-01 22:52:19.000000','2022-12-01 22:52:19.000000','screenshot_2x.png'),
-	(6,1,10,'https://presserat.ch/en/complaints/','The **`<h3>` \"1. Institution, Domicile...\"** follows the `<h1>` \"Statutes of the...\", therefore it **needs to be an `<h2>`**.',NULL,'2022-12-02 21:05:45.000000','2022-12-02 21:05:45.000000','screenshot_2x.png');
-
-/*!40000 ALTER TABLE `bloopers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -138,39 +68,6 @@ VALUES
 	(2,'PublicBeta / WeCollect','Samuel Raymann <samuel.raymann@publicbeta.ch>',NULL,'2022-11-09 17:35:02.000000','2022-11-09 17:35:02.000000');
 
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table consequences
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `consequences`;
-
-CREATE TABLE `consequences` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `persona_id` bigint NOT NULL,
-  `anti_pattern_id` bigint NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `created_at` datetime(6) NOT NULL,
-  `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_personas_to_insights_on_persona_id` (`persona_id`),
-  KEY `index_consequences_on_anti_pattern_id` (`anti_pattern_id`),
-  CONSTRAINT `fk_rails_34794ec811` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_rails_8cdf4792eb` FOREIGN KEY (`anti_pattern_id`) REFERENCES `anti_patterns` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-LOCK TABLES `consequences` WRITE;
-/*!40000 ALTER TABLE `consequences` DISABLE KEYS */;
-
-INSERT INTO `consequences` (`id`, `persona_id`, `anti_pattern_id`, `description`, `created_at`, `updated_at`)
-VALUES
-	(1,1,8,'I can\'t see certain graphics anymore, like black icons with transparent background. If such an icon is the only thing to represent something like an \"add to shopping cart\" button, I will completely miss it - and spend my money somewhere else.','2022-12-02 12:54:45.000000','2022-12-02 12:54:45.000000'),
-	(2,2,7,'Sometimes my screen reader announces graphics like `placeholder.jpg`, `icon.gif`, `blue-bird.png`, `birthday-present.jpg`, or even `15da-53jg-68hd-99io.jpg`. Some filenames indeed provide some indication on what the image could be about, but filenames usually are not very reliable. Even if all these images do not contain any relevant information, I will never know whether I\'m missing something important here.','2022-12-02 18:53:07.000000','2022-12-02 18:53:07.000000'),
-	(3,3,7,'Even though I can to some extent perceive visual elements, it\'s hard for me to decipher graphics. I\'m grateful when my screen reader can just read a graphic\'s alternative text to me.','2022-12-02 20:35:14.000000','2022-12-02 20:35:14.000000'),
-	(4,2,9,'With my screen reader, I can target headings on a specific level. When I reach a heading on level 2 and wish to see whether there are any subheadings, I will look for them on level 3. If there are none, I may skip the whole passage - because I don\'t expect there to be any more subheadings. However, contrary to expectation and logic, if there are indeed subheadings at level 4 or even below, I will miss them.','2022-12-02 20:55:56.000000','2022-12-02 20:55:56.000000');
-
-/*!40000 ALTER TABLE `consequences` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -248,43 +145,6 @@ VALUES
 	(14,11,'Headings and subheadings are in meaningful relation with each other',NULL,NULL,'2022-12-02 21:23:53.000000','2022-12-02 21:23:53.000000');
 
 /*!40000 ALTER TABLE `patterns` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table patterns_to_anti_patterns
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `patterns_to_anti_patterns`;
-
-CREATE TABLE `patterns_to_anti_patterns` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `pattern_id` bigint NOT NULL,
-  `anti_pattern_id` bigint NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_patterns_to_anti_patterns_on_pattern_id` (`pattern_id`),
-  KEY `index_patterns_to_anti_patterns_on_anti_pattern_id` (`anti_pattern_id`),
-  CONSTRAINT `fk_rails_37bbaf819e` FOREIGN KEY (`pattern_id`) REFERENCES `patterns` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_rails_fa527d75ea` FOREIGN KEY (`anti_pattern_id`) REFERENCES `anti_patterns` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-LOCK TABLES `patterns_to_anti_patterns` WRITE;
-/*!40000 ALTER TABLE `patterns_to_anti_patterns` DISABLE KEYS */;
-
-INSERT INTO `patterns_to_anti_patterns` (`id`, `pattern_id`, `anti_pattern_id`)
-VALUES
-	(1,2,1),
-	(2,2,2),
-	(3,1,3),
-	(4,5,3),
-	(5,1,5),
-	(6,5,6),
-	(7,8,7),
-	(8,11,8),
-	(9,12,8),
-	(13,13,9),
-	(14,14,10);
-
-/*!40000 ALTER TABLE `patterns_to_anti_patterns` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -600,18 +460,18 @@ LOCK TABLES `virtues` WRITE;
 
 INSERT INTO `virtues` (`id`, `name`, `short_name`, `intent`, `description`, `notes`, `image`, `inspires_design`, `inspires_development`, `inspires_writing`, `inspires_multimedia`, `created_at`, `updated_at`)
 VALUES
-	(1,'Offer enough contrast','Contrast','We colorize content so that it stands out clearly against the background.','Many users have difficulty perceiving color nuances. For them, a light gray text on a white background may not be visible at all. Similarly, inside a form, a text input with a light gray border on a white background will hardly be recognised as an input.','See:\n\n- https://www.w3.org/WAI/test-evaluate/preliminary/#contrast\n- https://webaim.org/articles/contrast/\n- https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/\n- https://design-system.service.gov.uk/styles/colour/\n- https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/',NULL,1,1,0,1,'2022-09-27 21:58:34.000000','2022-09-27 21:58:34.000000'),
-	(2,'Complement color with shape','Color & shape','When color carries meaning, we apply an additional feature like shape or pattern.',NULL,'Bezug auf sensorische Merkmale, siehe https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-1-3-3-ohne-bezug-auf-sensorische-merkmale-nutzbar\n\nhttps://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-1-4-1-ohne-farben-nutzbar\n\nWhat about 2-sense principle? → Maybe we just stick to the Pareto-rule (we cannot take into account each and everything)\n\nhttps://colorblindaccessibilitymanifesto.com/',NULL,1,1,0,1,'2022-09-27 21:58:34.000000','2022-09-27 21:58:34.000000'),
-	(3,'Ensure keyboard-only operability','Keyboard-only','We ensure that websites can be operated by keyboard alone.',NULL,'Alternative für komplexe Zeigergesten: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-1-alternativen-fuer-komplexe-zeiger-gesten\n\nZeigergesten-Eingaben können abgebrochen oder widerrufen werden: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-2-zeigergesten-eingaben-koennen-abgebrochen-oder-widerrufen-werden\n\nKeine unvorhergesehene Kontext-Veränderung','keyboard-only',1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(4,'Describe graphics by text alternatives','Text alternatives','We implement graphical elements correctly and provide meaningful text alternatives.',NULL,NULL,NULL,1,1,1,1,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(5,'Define a coherent heading hierarchy','Headings','We make sure that the content has a great headings hierarchy...',NULL,'',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(6,'Apply semantics to structure content','Semantics','We organise documents into meaningful pieces of content and apply proper headings.',NULL,'Meaningful pieces of info: Ansich alles, was mit korrektem Markup zu tun hat!\n\nAdditional labeling mechanisms: title, aria-label, ggf. auch Formuar-Labels (?), etc.\n\nDocument structure (header, main, footer...) vs. content structure (section, article...)\n\nListen, Zitate\n\nSinnvolle Reihenfolge\n\nAussagekräftige Link/Button-Texte\n\nSprache, Sprache von Teilen',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(7,'Enhance screen reader compatibility','Screen reader','We ensure that websites can be fully understood and navigated with screen readers.',NULL,'aria-current, invisible content, alerts, page title?\n\n→ Unsicher, ob das vor oder nach \"Information structure and headings\" kommen soll. Einerseits wird es zum Sicherstellen davon benötigt, andererseits sind aria-current, invisible content, alerts etc. bereits \"advanced\" Knowledge',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(8,'Build robust forms and validations','Forms','We implement solid forms and provide meaningful validation mechanisms.',NULL,'autocomplete-Attribut!\n\nSichtbare Beschriftung Teil des zugänglichen Namens: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-3-sichtbare-beschriftung-teil-des-zugaenglichen-namens → oder besser zu Keyboard-only?\n\nAuf Verknüpftheit einiger Elemente hinweisen, z.B. dass LEGEND angesagt wird beim Hineinspringen in ein FIELDSET',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(9,'Choose accessible components','Components','When introducing interactive components to a project, we make sure they are fully accessible.',NULL,'Soll da auch sensilbe ARIA usage rein? Oder bei SR operability?',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(1,'Offer enough color contrast','Color contrast','We colorize content so that it stands out clearly against the background.','Many users have difficulty perceiving color nuances. For them, a light gray text on a white background may not be visible at all. Similarly, inside a form, a text input with a light gray border on a white background will hardly be recognised as an input.','# Thoughts\n\n- With \"content\" we do not only mean text etc., but also visual attributes that have meaning (i.e. the underline of a link)!\n\n# Further information\n\n- https://www.w3.org/WAI/test-evaluate/preliminary/#contrast\n- https://webaim.org/articles/contrast/\n- https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/\n- https://design-system.service.gov.uk/styles/colour/\n- https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/',NULL,1,1,0,1,'2022-09-27 21:58:34.000000','2022-09-27 21:58:34.000000'),
+	(2,'Complement meaningful color with visual cues','Meaningful color','When color carries meaning, we add a visual cue like a label, icon, or pattern.',NULL,'Bezug auf sensorische Merkmale, siehe https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-1-3-3-ohne-bezug-auf-sensorische-merkmale-nutzbar\n\nhttps://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-1-4-1-ohne-farben-nutzbar\n\nWhat about 2-sense principle? → Maybe we just stick to the Pareto-rule (we cannot take into account each and everything)\n\nhttps://colorblindaccessibilitymanifesto.com/',NULL,1,1,0,1,'2022-09-27 21:58:34.000000','2022-09-27 21:58:34.000000'),
+	(3,'Ensure keyboard-only operability','Keyboard-only','We make sure that websites can be operated by keyboard alone (without mouse).',NULL,'Alternative für komplexe Zeigergesten: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-1-alternativen-fuer-komplexe-zeiger-gesten\n\nZeigergesten-Eingaben können abgebrochen oder widerrufen werden: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-2-zeigergesten-eingaben-koennen-abgebrochen-oder-widerrufen-werden\n\nKeine unvorhergesehene Kontext-Veränderung','keyboard-only',1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(4,'Describe graphics through text alternatives','Text alternatives','We implement graphical elements correctly and provide meaningful text alternatives.',NULL,NULL,NULL,1,1,1,1,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(5,'Define a coherent page structure and headings','Structure & headings','We organise a page into meaningful parts with a coherent heading hierarchy.',NULL,'',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(6,'Apply semantics to structure content (HTML 101)','Semantics','We mark up content with inherent meaning through semantics.',NULL,'Meaningful pieces of info: Ansich alles, was mit korrektem Markup zu tun hat!\n\nAdditional labeling mechanisms: title, aria-label, ggf. auch Formuar-Labels (?), etc.\n\nDocument structure (header, main, footer...) vs. content structure (section, article...)\n\nListen, Zitate\n\nSinnvolle Reihenfolge\n\nAussagekräftige Link/Button-Texte\n\nSprache, Sprache von Teilen',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(7,'Optimise screen reader compatibility','Screen reader','We validate that screen readers can understand, navigate, and interact with the website.',NULL,'aria-current, invisible content, alerts, page title?\n\n→ Unsicher, ob das vor oder nach \"Information structure and headings\" kommen soll. Einerseits wird es zum Sicherstellen davon benötigt, andererseits sind aria-current, invisible content, alerts etc. bereits \"advanced\" Knowledge',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(8,'Build robust forms and validations','Forms & validations','We implement solid forms and provide meaningful instruction and validation mechanisms.',NULL,'autocomplete-Attribut!\n\nSichtbare Beschriftung Teil des zugänglichen Namens: https://ergebnis.bitvtest.de/pruefschritt/bitv-20-web/9-2-5-3-sichtbare-beschriftung-teil-des-zugaenglichen-namens → oder besser zu Keyboard-only?\n\nAuf Verknüpftheit einiger Elemente hinweisen, z.B. dass LEGEND angesagt wird beim Hineinspringen in ein FIELDSET',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(9,'Choose accessible web components','Components','We make sure that third party web components are fully accessible.',NULL,'Soll da auch sensilbe ARIA usage rein? Oder bei SR operability?',NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
 	(10,'Build a robust yet flexible experience','Robust & flexible','We write code that is as strict as necessary, yet as interpretable and adaptable as possible.',NULL,'Kein ungültiger Code, keine unnötigen Einschränkungen für z.B. User Styles oder Hoch- vs. Querformat\n\nSession timeouts\n\nCaptchas\n\nPausieren, beenden, ausblenden?\n\nTon abschaltbar\n\nText vergrösserbar\n\nText Reflow, keine Überlappungen\n\nKein Flackern\n\nResponsive',NULL,1,1,0,0,'2022-09-27 23:39:32.000000','2022-09-27 23:39:32.000000'),
-	(11,'Add audio transcripts and video subtitles','Audio & video','We provide text transcripts for audio and closed captioning (CC) for video documents.',NULL,NULL,NULL,1,1,0,1,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
-	(12,'Provide tabular data as tables','Tables','',NULL,NULL,NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000');
+	(11,'Provide audio transcripts and video subtitles','Audio & video','We add text transcripts to audio and closed captioning (CC, subtitles) to video elements.',NULL,NULL,NULL,1,1,0,1,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000'),
+	(12,'Mark up tabular data as tables','Tables','We implement solid tables with proper headers.',NULL,NULL,NULL,1,1,0,0,'2022-09-27 22:40:07.000000','2022-09-27 22:40:07.000000');
 
 /*!40000 ALTER TABLE `virtues` ENABLE KEYS */;
 UNLOCK TABLES;
