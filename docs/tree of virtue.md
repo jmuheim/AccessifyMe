@@ -3,27 +3,27 @@
 1. 🙏 **Offer enough color contrast**
    - 💡 (Why) **Text needs a contrast of `4.5:1` to its background (or `3:1` for large text).** → 🤔 *Aufteilen in "normal" text and "large" text?*
         - 🧩 Texts have a contrast of `4.5:1`
-   
+
              - Das Kontrastverhältnis bei Text und Bildern von Text zum Hintergrund beträgt mindstens 4.5:1 bei normaler Schriftgrösse und mindestens 3:1 bei grosser Schrift (definiert als mindestens 18pt oder 14pt + fett). Das gilt sowohl für normale Schrift zur Hintergrundfarbe (alle Texte und Hinweise) als auch für Texte in informativen grafischen Elementen, ist aber nicht zwingend für Logos oder rein dekorative Grafiken. (54, 1.4.3)
-   
+
              - Interaktive Textelemente (z.B. Schalterbeschriftungen) erfüllen die Kontrastanforderung von 4.5:1 in allen Zuständen (fokussiert, bei Mouseover, etc.) gleichermassen. Für die Unterscheidbarkeit zwischen den Zuständen eines interaktiven Elements gelten keine strikten Kontrastanforderungen. (55, 1.4.3)
-   
+
         - 🧩 Large texts have a contrast of `3:1`
    - 💡 (Why) **Graphical info needs a contrast of `3:1` to its background.**
-   
+
         - 🧩 Parts of diagrams have a contrast of `3:1`
-   
+
              - Das Kontrastverhältnis bei informativen grafischen Elementen (z.B. Linien und Kurven in Diagrammen) zu den umgebenden Farben beträgt mindestens 3:1. Das gilt für alle visuellen Hinweise, die für die Wahrnehmung und Bedienung erforderlich sind (z.B. Schalter zum Anpassen der Kurven). Der Hover-Zustand eines Elements muss nicht unterscheidbar sein vom Standard-Zustand. (60, 1.4.11)
              -  🤔 *If not enough colors → check out "💡 Information conveyed by color should be complemented with shape"* → maybe we should remove the pattern "Essential parts..." completely, as it is much less bullet-proof than "Information conveyed..."?!
-   
+
         - 🧩 Interactive elements and their statuses have a contrast of `3:1` *→  🤔 is there a better word for "status"? I don't mean "focus" or "hover" with that, but its "intrinsic" status (i.e. what value is selected). Maybe remove the part with the status completely?*
-   
+
              - Das Kontrastverhältnis von Bedienelementen (z.B. Textfelder, Radiobuttons, Checkboxen, Schalter, Tabs, etc.) zu den umgebenden Farben beträgt mindestens 3:1. Das gilt für alle visuellen Hinweise, die für die Wahrnehmung und Bedienung erforderlich sind (z.B. Formularfeldbegrenzungen, Ausklappindikatoren bei Flyouts/Dropdowns, Häkchen in einer Checkbox, etc.), insbesondere auch für die Wahrnehmung des Zustands eines Elements. Der Hover-Zustand eines Elements muss nicht unterscheidbar sein vom Standard-Zustand. (59, 1.4.11)
-   
+
              - Wenn Links innerhalb von Fliesstext nur durch Farbe vom Fliesstext unterschieden werden, muss der Kontrast zwischen Link und umgebendem Fliesstext den minimalen Kontrastwert von 3:1 erreichen. Als Alternative kann eine weitere visuelle Auszeichnung von Links verwendet werden (z.B. Unterstreichung, Fettschrift, Rahmen, etc.). (52, 1.4.1)
                   -  🤔 *Unsicher, ob ich das hier überhaupt so nennen soll? Ist weniger "bullet-proof" als es mit zusätzlichem visuellem Attribut auszustatten.*
    - 💡 (Why) **Custom color and contrast modes should be supported** → 🤔 *Like Windows HCM and dark mode*
-   
+
         - Informative Grafiken sind bei benutzerdefinierten Farbeinstellungen sichtbar. (9, 1.1.1)
 2. 🙏 **Complement meaningful color with visual cues**
 
@@ -119,31 +119,7 @@
     - **Others**
       - Elemente, die einzeln ausgegeben werden sollen, sind als display: block ausgezeichnet, sonst können sie im Browse-Mode (normale Inhaltsnavigation mittels Pfeil-Tasten) nicht einzeln angesteuert werden. Dies gilt hauptsächlich für interaktive Elemente (Links, Buttons, etc.). (64, 2.1.1)
       - Elemente, die von Screenreadern zusammen ausgegeben werden sollen (etwa eine Überschrift, die sowohl eine Kategorie als auch ein Datum enthält), sind als display: inline bzw. display: inline-block ausgezeichnet und befinden sich zusammen in einem display: block-Container. (65, 2.1.1)
-5. 🙏 **Define a coherent page structure and headings ** → Concept "Semantics"
-
-    - https://www.gov.uk/guidance/content-design/writing-for-gov-uk#structuring-content
-    - 💡 (Why) **Landmarks should encompass page areas**
-        - 🧩 A typical website's higher level landmarks
-            - Landmark Roles (HTML5-Elemente wie `<header>`, `<main>`, etc. sowie ARIA-Rollen) werden korrekt vergeben. Sie werden mit Bedacht verwendet und konsistent eingesetzt (möglichst keine Mehrfach-Verwendung derselben Rolle, konsistentes Auszeichnen aller wichtigen Seitenbereiche). (22, 1.3.1)
-        - 🧩 Lower level landmarks
-    - 💡 (Why) **The page's `<main>` landmark should be structured meaningfully by headings**
-        - 🧩 Main content is structured by headings (like a book)
-            - Überschriften: Eigenständige Seitenbereiche weisen eine eigene Überschrift auf, da sie sonst der vorausgehenden Überschrift falsch untergeordnet werden. Für Inhalts- und Funktionsblöcke wie Kopf- und Fussbereich, Navigation, Breadcrumb, etc. können visuell unsichtbare Überschriften eingesetzt werden. (27, 1.3.1a)
-            - Überschriften: Die Hierarchie der Überschriften-Ebenen ist inhaltlich-logisch korrekt und vermittelt die Struktur der Inhalte. (25, 1.3.1a)
-            - Überschriften und Labels (z.B. in Eingabefeldern, bei Schaltern, etc.) sind ausreichend informativ und korrekt und bezeichnen den zugeordneten Web-Inhalt verständlich. Es gibt keine gleichlautenden Überschriften oder Labels auf einer Seite. (80, 2.4.6) (❗️Auch bei "Forms")
-    - 💡 (Why) **Landmarks with no visible heading should offer visually hidden headings** → Concept "Hiding elements properly"
-        - 🧩 Landmarks inside `<main>` with no visible heading are introduced by invisible headings
-          - Überschriften: Es werden keine Überschriften-Ebenen ausgelassen. (26, 1.3.1a)
-        - 🧩 Landmarks outside `<main>` with no visible heading are introduced by invisible headings
-    - 💡 (Why) **Headings should preside their content** → Concept "Meaningful sequence"
-        - 🧩 Heading with subsequent content
-          - Inhalte müssen im Code (DOM) eine korrekte Reihenfolge aufweisen (unabhängig von CSS) (47, 1.3.2)
-    - **Others**
-        - Überschriften: Überschriften sind im Code vor den ihnen zugehörigen Inhalten platziert. (29, 1.3.1a) → Concept "Meaningful sequence"
-        - Überschriften: Überschriften sind semantisch korrekt mit dem Überschriften-Element (`<h1>` bis `<h6>`) ausgezeichnet. (31, 1.3.1a) → Concept "Semantics"
-        - Überschriften: Überschriften für Akkordeons sind als solche ausgezeichnet. (30, 1.3.1a)
-        - Überschriften: Überschriften weisen nachfolgenden Inhalt (bzw. darunter liegende Überschriften) auf. (28, 1.3.1a)
-6. 🙏 **Apply semantics to structure content (HTML 101)** → Concept "Semantics" → Natürlich stützen sich einige vorangehende Tugenden auch auf Semantik, deshalb klar gegenseitig referenzieren!
+5. 🙏 **Apply semantics to structure content (HTML 101)** → Concept "Semantics" → Natürlich stützen sich einige vorangehende Tugenden auch auf Semantik, deshalb klar gegenseitig referenzieren!
 
     - 💡 (Why) **Paragraphs should be marked up as `<p>`**
         - 🧩 Paragraphs (`<p>`)
@@ -169,7 +145,85 @@
     - **Others**
         - Zeichenverwendung: Inhalte befinden sich innerhalb semantisch bedeutsamer HTML-Elemente (z.B. `<h#>`, `<p>`, `<ul>`, `<ol>`, etc.); das Verwenden von `<div>`- oder `<span>`-Elementen (die keine semantische Relevanz aufweisen) ist nicht ausreichend. (43, 1.3.1e)
         - Zeichenverwendung: Schriftformatierungen mit Informationsgehalt (z.B. durchgestrichen) sind auch nicht-visuell zugänglich. (45, 1.3.1e)
-7. 🙏 **Optimise screen reader compatibility**
+6. 🙏 **Define a coherent page structure and headings ** → Concept "Semantics"
+
+    - https://www.gov.uk/guidance/content-design/writing-for-gov-uk#structuring-content
+    - 💡 (Why) **Landmarks should encompass page areas**
+      - 🧩 A typical website's higher level landmarks
+        - Landmark Roles (HTML5-Elemente wie `<header>`, `<main>`, etc. sowie ARIA-Rollen) werden korrekt vergeben. Sie werden mit Bedacht verwendet und konsistent eingesetzt (möglichst keine Mehrfach-Verwendung derselben Rolle, konsistentes Auszeichnen aller wichtigen Seitenbereiche). (22, 1.3.1)
+      - 🧩 Lower level landmarks
+    - 💡 (Why) **The page's `<main>` landmark should be structured meaningfully by headings**
+      - 🧩 Main content is structured by headings (like a book)
+        - Überschriften: Eigenständige Seitenbereiche weisen eine eigene Überschrift auf, da sie sonst der vorausgehenden Überschrift falsch untergeordnet werden. Für Inhalts- und Funktionsblöcke wie Kopf- und Fussbereich, Navigation, Breadcrumb, etc. können visuell unsichtbare Überschriften eingesetzt werden. (27, 1.3.1a)
+        - Überschriften: Die Hierarchie der Überschriften-Ebenen ist inhaltlich-logisch korrekt und vermittelt die Struktur der Inhalte. (25, 1.3.1a)
+        - Überschriften und Labels (z.B. in Eingabefeldern, bei Schaltern, etc.) sind ausreichend informativ und korrekt und bezeichnen den zugeordneten Web-Inhalt verständlich. Es gibt keine gleichlautenden Überschriften oder Labels auf einer Seite. (80, 2.4.6) (❗️Auch bei "Forms")
+    - 💡 (Why) **Landmarks with no visible heading should offer visually hidden headings** → Concept "Hiding elements properly"
+      - 🧩 Landmarks inside `<main>` with no visible heading are introduced by invisible headings
+        - Überschriften: Es werden keine Überschriften-Ebenen ausgelassen. (26, 1.3.1a)
+      - 🧩 Landmarks outside `<main>` with no visible heading are introduced by invisible headings
+    - 💡 (Why) **Headings should preside their content** → Concept "Meaningful sequence"
+      - 🧩 Heading with subsequent content
+        - Inhalte müssen im Code (DOM) eine korrekte Reihenfolge aufweisen (unabhängig von CSS) (47, 1.3.2)
+    - **Others**
+      - Überschriften: Überschriften sind im Code vor den ihnen zugehörigen Inhalten platziert. (29, 1.3.1a) → Concept "Meaningful sequence"
+      - Überschriften: Überschriften sind semantisch korrekt mit dem Überschriften-Element (`<h1>` bis `<h6>`) ausgezeichnet. (31, 1.3.1a) → Concept "Semantics"
+      - Überschriften: Überschriften für Akkordeons sind als solche ausgezeichnet. (30, 1.3.1a)
+      - Überschriften: Überschriften weisen nachfolgenden Inhalt (bzw. darunter liegende Überschriften) auf. (28, 1.3.1a)
+7. 🙏 **Mark up tabular data as tables**
+
+    - 💡 (Why) **Tabular data should be marked up as `<table>`** → 🤔 *Keine Grids o.ä.! Tabellen sind Tabellen! Punkt. Mann...*
+      - 🧩 A simple table
+        - Tabellen: Daten, welche eindeutig tabellarischen Charakter aufweisen, sind semantisch korrekt als Tabelle formatiert und enthalten nur die semantisch zugelassenen Attribute, z.B. keine Paragraphen- (`<p>`) oder Überschriften-Elemente (`<h1>` bis `<h6>`). (40, 1.3.1d) → 🤔 *Welche Elemente sind denn da eigentlich zugelassen?!*
+        - Tabellen: Daten-Tabellen weisen keine leeren Spalten oder Zeilen auf. (41, 1.3.1d)
+        - → 🤔 *Sind Überschriften o.ä. in Tabellen erlaubt?! Darauf hinweisen, dass das zumindest fragwürdig ist, am besten aber klare Referenzen angeben!*
+    - 💡 (Why) **Tables should have `<th>` elements for columns and rows**
+      - 🧩 Tables with column and/or row headers
+        - Tabellen: Daten-Tabellen weisen Spalten- oder Zeilentitel (`<th>`) auf, idealerweise beides. (39, 1.3.1d)
+    - 💡 (Why) **Tables should be careful with `[rowspan]` and `[colspan]`**
+      - 🧩 Tables with colspan and rowspan
+    - 💡 (Why) **Tables should have a `<caption>`**
+      - 🧩 Tables with captions
+        - Tabellen: Daten-Tabellen weisen Tabellenüberschriften (`<caption>`) auf. (38, 1.3.1d)
+    - 💡 (Why) **Tables should be responsive** → 🤔 *Problem des horizontalen Scrollens möglichst umgehen (für Keyboard-only User generell schwierig, wenn nichts fokussierbar)*
+      - 🧩 Responsive tables → 🤔 *Gibt's verschiedene Möglichkeiten, u.a. jene im ADG, aber ggf. auch Luis' Variante!*
+8. 🙏 **Build robust forms and validations**
+
+    - https://www.w3.org/WAI/tutorials/forms/ | https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/
+    - 💡 (Why) **Form inputs should have a `<label>`**
+      - 🧩 Form inputs with labels (incl. Floating-Label Pattern)
+        - Formulare: Formularfelder weisen korrekt verknüpfte Labels auf. (37, 1.3.1c)
+        - Überschriften und Labels (z.B. in Eingabefeldern, bei Schaltern, etc.) sind ausreichend informativ und korrekt und bezeichnen den zugeordneten Web-Inhalt verständlich. Es gibt keine gleichlautenden Überschriften oder Labels auf einer Seite. (80, 2.4.6) (❗️Auch bei "Headings")
+        - Formularfelder verfügen über visuell sichtbare Labels. Die alleinige Verwendung von placeholder-Attributen zur Beschriftung von Formularfeldern wird vermieden. (95, 3.3.2)
+    - 💡 (Why) **Form inputs should be implemented using standard controls**
+      - 🧩 Standard form inputs (in different "clothes") → 🤔 *z.B. Checkbox mit custom Styling (Win HCM nicht vergessen!)*
+    - 💡 (Why) **Groups of inputs should be grouped using `<fieldset>` and `<legend>`** → 🤔 *Complex forms should be split into separate pages!*
+      - 🧩 Groups of form inputs
+        - Formulare: In umfangreichen Formularen werden inhaltlich zusammengehörige Formularfelder mittels `<fieldset>`/`<legend>`-Kombination gruppiert. (35, 1.3.1c)
+      - 🧩 Group of radio buttons
+      - 🧩 Group of checkboxes
+    - 💡 (Why) **Non-interactive elements between form controls should be associated with `[aria-describedby]`**
+      - 🧩 Additional info associated to a form control
+        - Formulare: Informationen, die sich zwischen den Eingabefeldern befinden (z.B. als `<p>` zwischen mehreren Eingabefeldern) sind verknüpft mit den relevanten Formularfeldern, sodass sie auch mit Screenreadern wahrgenommen werden können (z.B. mit aria-describedby). (36, 1.3.1c)
+        - Formatangaben bei Formularfeldern sind zugänglich und mit den zugehörigen Eingabefeldern eindeutig verknüpft, d.h. zusätzlich angegebene Hinweise zu Eingabeformaten sind auch durch assistierende Technologien korrekt erfassbar. (96, 3.3.2)
+    - 💡 (Why) **Required inputs should be marked up with `[required]`**
+      - 🧩 Required form input
+        - Pflichtfelder sind zugänglich ausgezeichnet, sowohl auf visueller wie nicht-visueller Ebene, z.B. mit required-Attribut. (94, 3.3.2)
+      - 🧩 Group of required inputs → 🤔 *i.e. radio buttons → how is this done best??*
+    - 💡 (Why) **Browser-Validations should be used considerately** → 🤔 *Hier geht es um "dynamische" Validations, im Gegensatz zu statischen (sich nicht verändernden) Validations wie etwa `required`. Relevant ist dabei insbesondere die Frage: zu welchem Event-Zeitpunkt werden die Zustände verändert, z.B. wann wird `invalid` gesetzt, beim Verlassen eines Feldes, oder schon bei der Eingabe?!*
+      - 🧩 HTML5 Browser validations
+    - 💡 (Why) **Validation messages should be meaningful and associated to the input**
+      - 🧩 Validation associated to the input
+        - Fehlermeldungen in Formularen sind barrierefrei umgesetzt: Automatisch erkannte Eingabefehler geben in der Fehlermeldung einen klaren Hinweis (in Textform) auf das fehlerhafte Element und sind mit diesem eindeutig verknüpft. (93, 3.3.1)
+        - Fehlermeldungen sind informativ und mit den zugehörigen Eingabefeldern eindeutig verknüpft: Es sind Korrekturempfehlungen vorhanden, wenn falsche Benutzereingaben erfolgen. (97, 3.3.3)
+
+    - **Others**
+      - Die zugängliche Beschriftung eines Bedienelements entspricht exakt der visuellen oder beinhaltet sie (ermöglicht v.a. Sprachsteuerung). (85, 2.5.3)
+      - Der Kontext ändert sich nicht automatisch bei Fokus (z.B. Weiterleitung auf eine andere Seite). (89, 3.2.1)
+      - Der Kontext ändert sich nicht automatisch bei Eingabe (z.B. Weiterleitung auf eine andere Seite). (90, 3.2.2)
+      - Nutzereingaben müssen überprüfbar sein vor Prozess-Abschluss mit finanziellen/rechtlichen Folgen. Es ist sichergestellt, dass die Gelegenheit besteht, eingegebenen Daten zu überprüfen und gegebenenfalls zu korrigieren, bevor ein endgültiger Abschluss erfolgt. (98, 3.3.4)
+      - Eingabefelder zu Nutzerdaten können automatisch ausgefüllt werden. (50, 1.3.5)
+      - *🤔 Was ist mit 4.1.3 Status Messages?*
+9. 🙏 **Optimise screen reader compatibility**
     - *See https://www.tpgi.com/basic-screen-reader-commands-for-accessibility-testing/*
     - 💡 (Why) **Every page needs a unique, self-speaking title**
       - 🧩 Home page
@@ -197,60 +251,6 @@
       - 🧩 Time-sensitive notification as live region → 🤔 *Careful with auto-rotating sliders or newstickers!* → 🤔 *Or move the focus to a notification? (vgl. Virtue "Keyboard only")*
         - Statusmeldungen sind für assistierende Technologien zugänglich und überstrapazieren den Audiokanal nicht. (111, 4.1.3)
         - https://www.youtube.com/watch?v=5lzAj1ahRSI | https://web.dev/hiding-and-updating-content/#aria-live
-8. 🙏 **Mark up tabular data as tables**
-
-    - 💡 (Why) **Tabular data should be marked up as `<table>`** → 🤔 *Keine Grids o.ä.! Tabellen sind Tabellen! Punkt. Mann...*
-        - 🧩 A simple table
-            - Tabellen: Daten, welche eindeutig tabellarischen Charakter aufweisen, sind semantisch korrekt als Tabelle formatiert und enthalten nur die semantisch zugelassenen Attribute, z.B. keine Paragraphen- (`<p>`) oder Überschriften-Elemente (`<h1>` bis `<h6>`). (40, 1.3.1d) → 🤔 *Welche Elemente sind denn da eigentlich zugelassen?!*
-            - Tabellen: Daten-Tabellen weisen keine leeren Spalten oder Zeilen auf. (41, 1.3.1d)
-            - → 🤔 *Sind Überschriften o.ä. in Tabellen erlaubt?! Darauf hinweisen, dass das zumindest fragwürdig ist, am besten aber klare Referenzen angeben!*
-    - 💡 (Why) **Tables should have `<th>` elements for columns and rows**
-        - 🧩 Tables with column and/or row headers
-            - Tabellen: Daten-Tabellen weisen Spalten- oder Zeilentitel (`<th>`) auf, idealerweise beides. (39, 1.3.1d)
-    - 💡 (Why) **Tables should be careful with `[rowspan]` and `[colspan]`**
-        - 🧩 Tables with colspan and rowspan
-    - 💡 (Why) **Tables should have a `<caption>`**
-        - 🧩 Tables with captions
-            - Tabellen: Daten-Tabellen weisen Tabellenüberschriften (`<caption>`) auf. (38, 1.3.1d)
-    - 💡 (Why) **Tables should be responsive** → 🤔 *Problem des horizontalen Scrollens möglichst umgehen (für Keyboard-only User generell schwierig, wenn nichts fokussierbar)*
-        - 🧩 Responsive tables → 🤔 *Gibt's verschiedene Möglichkeiten, u.a. jene im ADG, aber ggf. auch Luis' Variante!*
-9. 🙏 **Build robust forms and validations**
-
-    - https://www.w3.org/WAI/tutorials/forms/ | https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/
-    - 💡 (Why) **Form inputs should have a `<label>`**
-        - 🧩 Form inputs with labels (incl. Floating-Label Pattern)
-            - Formulare: Formularfelder weisen korrekt verknüpfte Labels auf. (37, 1.3.1c)
-            - Überschriften und Labels (z.B. in Eingabefeldern, bei Schaltern, etc.) sind ausreichend informativ und korrekt und bezeichnen den zugeordneten Web-Inhalt verständlich. Es gibt keine gleichlautenden Überschriften oder Labels auf einer Seite. (80, 2.4.6) (❗️Auch bei "Headings")
-            - Formularfelder verfügen über visuell sichtbare Labels. Die alleinige Verwendung von placeholder-Attributen zur Beschriftung von Formularfeldern wird vermieden. (95, 3.3.2)
-    - 💡 (Why) **Form inputs should be implemented using standard controls**
-        - 🧩 Standard form inputs (in different "clothes") → 🤔 *z.B. Checkbox mit custom Styling (Win HCM nicht vergessen!)*
-    - 💡 (Why) **Groups of inputs should be grouped using `<fieldset>` and `<legend>`** → 🤔 *Complex forms should be split into separate pages!*
-        - 🧩 Groups of form inputs
-            - Formulare: In umfangreichen Formularen werden inhaltlich zusammengehörige Formularfelder mittels `<fieldset>`/`<legend>`-Kombination gruppiert. (35, 1.3.1c)
-        - 🧩 Group of radio buttons
-        - 🧩 Group of checkboxes
-    - 💡 (Why) **Non-interactive elements between form controls should be associated with `[aria-describedby]`**
-        - 🧩 Additional info associated to a form control
-            - Formulare: Informationen, die sich zwischen den Eingabefeldern befinden (z.B. als `<p>` zwischen mehreren Eingabefeldern) sind verknüpft mit den relevanten Formularfeldern, sodass sie auch mit Screenreadern wahrgenommen werden können (z.B. mit aria-describedby). (36, 1.3.1c)
-            - Formatangaben bei Formularfeldern sind zugänglich und mit den zugehörigen Eingabefeldern eindeutig verknüpft, d.h. zusätzlich angegebene Hinweise zu Eingabeformaten sind auch durch assistierende Technologien korrekt erfassbar. (96, 3.3.2)
-    - 💡 (Why) **Required inputs should be marked up with `[required]`**
-        - 🧩 Required form input
-          - Pflichtfelder sind zugänglich ausgezeichnet, sowohl auf visueller wie nicht-visueller Ebene, z.B. mit required-Attribut. (94, 3.3.2)
-        - 🧩 Group of required inputs → 🤔 *i.e. radio buttons → how is this done best??*
-    - 💡 (Why) **Browser-Validations should be used considerately** → 🤔 *Hier geht es um "dynamische" Validations, im Gegensatz zu statischen (sich nicht verändernden) Validations wie etwa `required`. Relevant ist dabei insbesondere die Frage: zu welchem Event-Zeitpunkt werden die Zustände verändert, z.B. wann wird `invalid` gesetzt, beim Verlassen eines Feldes, oder schon bei der Eingabe?!*
-        - 🧩 HTML5 Browser validations
-    - 💡 (Why) **Validation messages should be meaningful and associated to the input**
-        - 🧩 Validation associated to the input
-            - Fehlermeldungen in Formularen sind barrierefrei umgesetzt: Automatisch erkannte Eingabefehler geben in der Fehlermeldung einen klaren Hinweis (in Textform) auf das fehlerhafte Element und sind mit diesem eindeutig verknüpft. (93, 3.3.1)
-            - Fehlermeldungen sind informativ und mit den zugehörigen Eingabefeldern eindeutig verknüpft: Es sind Korrekturempfehlungen vorhanden, wenn falsche Benutzereingaben erfolgen. (97, 3.3.3)
-    
-    - **Others**
-        - Die zugängliche Beschriftung eines Bedienelements entspricht exakt der visuellen oder beinhaltet sie (ermöglicht v.a. Sprachsteuerung). (85, 2.5.3)
-        - Der Kontext ändert sich nicht automatisch bei Fokus (z.B. Weiterleitung auf eine andere Seite). (89, 3.2.1)
-        - Der Kontext ändert sich nicht automatisch bei Eingabe (z.B. Weiterleitung auf eine andere Seite). (90, 3.2.2)
-        - Nutzereingaben müssen überprüfbar sein vor Prozess-Abschluss mit finanziellen/rechtlichen Folgen. Es ist sichergestellt, dass die Gelegenheit besteht, eingegebenen Daten zu überprüfen und gegebenenfalls zu korrigieren, bevor ein endgültiger Abschluss erfolgt. (98, 3.3.4)
-        - Eingabefelder zu Nutzerdaten können automatisch ausgefüllt werden. (50, 1.3.5)
-        - *🤔 Was ist mit 4.1.3 Status Messages?*
 10. 🙏 **Choose accessible web components**
     - 💡 (Why) **Accordions should behave accessibly**
       - Akkordeons sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «reduziert» bzw. «erweitert»).  (100, 4.1.2)
@@ -275,41 +275,41 @@
       - Captchas?
 11. 🙏 **Provide audio transcripts and video subtitles**
 
-     - https://www.paciellogroup.com/blog/2017/03/sounding-out-the-web-accessibility-for-deaf-and-hard-of-hearing-people-part-2
-     - "Transcripts facilitate easier production of subtitles in a number of languages and also improve the indexing of online content" (https://www.w3.org/WAI/people-use-web/user-stories/)
-     - 💡 (Why) **Pure audio content should have a text transcript**
-       - Video- und Audio-Inhalte weisen einen Alternativtext auf, der den Titel und/oder eine kurze Umschreibung vermittelt. (2, 1.1.1)
-       - Für aufgezeichnete reine Audio-Inhalte (z.B. Podcasts) existieren Textabschriften oder eine Audiodeskription. Ausnahme: Wenn der reine Audio-Inhalt eine Alternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textabschrift erforderlich. (15, 1.2.1)
-     - 💡 (Why) **Pure video content should have a text transcript**
-       - Für aufgezeichnete reine Video-Inhalte (z.B. Stummfilme) existieren Textabschriften oder gleichwertige Alternativen als Audio-Inhalt. Ausnahme: Wenn der reine Video-Inhalt eine Alternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textabschrift oder gleichwertige Alternative als Audio-Inhalt erforderlich. (16, 1.2.1)
-     - 💡 (Why) **Video with audio should have closed captioning**
-       - Für aufgezeichnete Video-Inhalte mit Audio (z.B. Spielfilme) existieren gleichwertige, synchrone Untertitel. (17, 1.2.2)
-       - Für synchronisierte Video-Inhalte (Videos, in denen Audio- und Videospur zusammen die komplette Information ergeben) existieren Textabschriften oder Audiodeskriptionen. Für die Audiodeskription gilt: Wenn alle Informationen der Videospur bereits in der Audiospur enthalten sind, ist keine Audiodeskription erforderlich. Ausnahme: Wenn der synchronisierte Video-Inhalt eine Medienalternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textalternative oder Audiodeskription erforderlich. (Dieser Checkpunkt kann vernachlässigt werden, falls Level AA angestrebt wird und damit 1.2.5 in Kraft tritt. Um Konformitätsstufe A zu erreichen, benötigen synchronisierte Video-Inhalte entweder eine Textabschrift oder eine Audiodeskription. Für Konformitätsstufe AA ist immer eine Audiodeskription erforderlich.) (18, 1.2.3)
-         - 🤔 *Gute Wortwahl: "text in multimedia not covered by narration"*
-         - *See https://www.3playmedia.com/learn/popular-topics/closed-captioning/* | http://mindfulresearch.co.uk/2011/08/29/autistic-spectrum-captions-and-audio-description/
-     - **Others**
-       - Für Live Video-Inhalte mit Audio (z.B. Nachrichtensendung) existieren gleichwertige, synchrone Untertitel. (19, 1.2.4)
-       - Für synchronisierte Video-Inhalte (Videos, in denen Audio- und Videospur zusammen die komplette Information ergeben) existieren Audiodeskriptionen für inhaltlich relevante, rein visuelle Inhalte. Für die Audiodeskription gilt: Wenn alle Informationen der Videospur bereits in der Audiospur enthalten sind, ist keine Audiodeskription erforderlich. (Dieser Checkpunkt kann vernachlässigt werden, falls Konformitätsstufe A angestrebt wird und damit 1.2.3 in Kraft ist. Um Konformitätsstufe A zu erreichen, benötigen synchronisierte Video-Inhalte entweder eine Textabschrift oder eine Audiodeskription. Für Konformitätsstufe AA ist immer eine Audiodeskription erforderlich.) (20, 1.2.5)
-       - Es gibt keine Elemente, die öfter als dreimal in einer Sekunde blitzen, oder der Blitz ist unterhalb eines definierten Grenzwerts für Blitze. (70, 2.3.1)
+      - https://www.paciellogroup.com/blog/2017/03/sounding-out-the-web-accessibility-for-deaf-and-hard-of-hearing-people-part-2
+      - "Transcripts facilitate easier production of subtitles in a number of languages and also improve the indexing of online content" (https://www.w3.org/WAI/people-use-web/user-stories/)
+      - 💡 (Why) **Pure audio content should have a text transcript**
+        - Video- und Audio-Inhalte weisen einen Alternativtext auf, der den Titel und/oder eine kurze Umschreibung vermittelt. (2, 1.1.1)
+        - Für aufgezeichnete reine Audio-Inhalte (z.B. Podcasts) existieren Textabschriften oder eine Audiodeskription. Ausnahme: Wenn der reine Audio-Inhalt eine Alternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textabschrift erforderlich. (15, 1.2.1)
+      - 💡 (Why) **Pure video content should have a text transcript**
+        - Für aufgezeichnete reine Video-Inhalte (z.B. Stummfilme) existieren Textabschriften oder gleichwertige Alternativen als Audio-Inhalt. Ausnahme: Wenn der reine Video-Inhalt eine Alternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textabschrift oder gleichwertige Alternative als Audio-Inhalt erforderlich. (16, 1.2.1)
+      - 💡 (Why) **Video with audio should have closed captioning**
+        - Für aufgezeichnete Video-Inhalte mit Audio (z.B. Spielfilme) existieren gleichwertige, synchrone Untertitel. (17, 1.2.2)
+        - Für synchronisierte Video-Inhalte (Videos, in denen Audio- und Videospur zusammen die komplette Information ergeben) existieren Textabschriften oder Audiodeskriptionen. Für die Audiodeskription gilt: Wenn alle Informationen der Videospur bereits in der Audiospur enthalten sind, ist keine Audiodeskription erforderlich. Ausnahme: Wenn der synchronisierte Video-Inhalt eine Medienalternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textalternative oder Audiodeskription erforderlich. (Dieser Checkpunkt kann vernachlässigt werden, falls Level AA angestrebt wird und damit 1.2.5 in Kraft tritt. Um Konformitätsstufe A zu erreichen, benötigen synchronisierte Video-Inhalte entweder eine Textabschrift oder eine Audiodeskription. Für Konformitätsstufe AA ist immer eine Audiodeskription erforderlich.) (18, 1.2.3)
+          - 🤔 *Gute Wortwahl: "text in multimedia not covered by narration"*
+          - *See https://www.3playmedia.com/learn/popular-topics/closed-captioning/* | http://mindfulresearch.co.uk/2011/08/29/autistic-spectrum-captions-and-audio-description/
+      - **Others**
+        - Für Live Video-Inhalte mit Audio (z.B. Nachrichtensendung) existieren gleichwertige, synchrone Untertitel. (19, 1.2.4)
+        - Für synchronisierte Video-Inhalte (Videos, in denen Audio- und Videospur zusammen die komplette Information ergeben) existieren Audiodeskriptionen für inhaltlich relevante, rein visuelle Inhalte. Für die Audiodeskription gilt: Wenn alle Informationen der Videospur bereits in der Audiospur enthalten sind, ist keine Audiodeskription erforderlich. (Dieser Checkpunkt kann vernachlässigt werden, falls Konformitätsstufe A angestrebt wird und damit 1.2.3 in Kraft ist. Um Konformitätsstufe A zu erreichen, benötigen synchronisierte Video-Inhalte entweder eine Textabschrift oder eine Audiodeskription. Für Konformitätsstufe AA ist immer eine Audiodeskription erforderlich.) (20, 1.2.5)
+        - Es gibt keine Elemente, die öfter als dreimal in einer Sekunde blitzen, oder der Blitz ist unterhalb eines definierten Grenzwerts für Blitze. (70, 2.3.1)
 12. 🙏 **Build a robust yet flexible experience**
 
-     - 💡 (Why) **Indications should be understandable with different senses**
-       - Inhalte weisen nicht ausschliesslich auf sensorische Eigenschaften (rein visuell erkennbar, rein akustisch verständlich) hin, z.B. «Den grünen Schalter links betätigen», «Korrigieren Sie die Eingaben in den rot umrandeten Feldern», «Mit Klick auf das Bild rechts …». (48, 1.3.3) → Verweis auf Virtue "Forms (required)"
-     - Inhalte sind in beiden Bildschirmorientierungen (Hoch- und Querformat) korrekt dargestellt und nutzbar. Passt sich der Inhalt nicht automatisch an die Bildschirmorientierung an, steht ein Schalter zur Verfügung zum manuellen Drehen des Bildschirminhalts (für Websites vom Browser sichergestellt, für Mobile Apps durch Design und Entwicklung sicherzustellen). (49, 1.3.4) → 🤔 *Einfach nur richtig responsiv machen!*
-     - Automatisch abspielender Audio-Inhalt von mehr als 3 Sekunden wird nach Möglichkeit vermieden. Ist er doch vorhanden, ist er steuerbar (Wiedergabe stoppen, Lautstärke unabhängig von der Systemlautstärke regeln). Die Steuerung befindet sich am Anfang der Seite. (53, 1.4.2)
-     - Elemente sind auf mindestens 200% zoombar, entweder der Text allein oder die komplette Seite (für Websites in der Regel vom Browser sichergestellt, für Mobile Apps durch Design und Entwicklung sicherzustellen). (56, 1.4.4)
-       - 🤔 *What about px vs. rem question?!*
-     - Texte werden nicht nur als Grafiken eingebunden, denn diese lassen keine Anpassungen zu (z.B. Grösse skalieren, Vorder- und Hintergrund-Farben verändern, etc.). Ausgenommen sind Texte, bei denen eine bestimmte Art der Präsentation für die vermittelte Information unentbehrlich ist (z.B. Logos oder Markennamen). (57, 1.4.5)
-     - Inhalt lässt sich ohne Einschränkungen (z.B. Überlappungen) und ohne horizontales Scrollen in den Viewport-Mindestdimensionen von 320x256 CSS-Pixel darstellen. Das entspricht einer Vergrösserung auf 400%. (58, 1.4.10)
-     - Abstände zwischen Zeilen, Wörtern und Buchstaben sowie nach Absätzen sind ohne resultierende Einschränkungen um bestimmte Werte vergrösserbar. Ausnahmen sind: Untertitel in Video-Inhalten, PDF-Dokumente. (61, 1.4.12)
-     - Inhalte, die per Hover oder Fokus eingeblendet werden, sind nicht störend und es kann mit ihnen interagiert werden. Folgende drei Bedingungen sind erfüllt: Per Hover oder Fokus eingeblendete Inhalte sind ausblendbar, hoverbar und dauerhaft (persistent). (62, 1.4.13)
-     - Timeout-Zeitintervalle sind anpassbar oder können deaktiviert werden. Es ist ein deutlicher Hinweis auf diese Möglichkeiten erforderlich. Für die Anpassungsmöglichkeiten gilt: Entweder ist das Timeout auf mindestens den zehnfachen Wert der Standardeinstellung möglich oder es erfolgt eine Warnung, bevor das Timeout abläuft, und es werden mindestens 20 Sekunden zur Verfügung gestellt, um mit einer einfachen Aktion (z.B. «Drücken Sie die Leertaste») die verfügbare Zeit zu verlängern. Diese Option muss mindestens zehn Mal bestehen. (68, 2.2.1)
-       - http://www.washington.edu/accessibility/checklist/time-limits/ | https://accessibility.18f.gov/timeouts/
-     - Dauerhaft animierte Inhalte (länger als fünf Sekunden) können mittels gut sichtbarer Bedienelemente pausiert, gestoppt oder ausgeblendet werden. Als dauerhaft animiert gelten Inhalte, die sich bewegen und/oder automatisch aktualisieren, die blinken oder scrollen. Sie beginnen automatisch und werden parallel zu anderen Inhalten dargestellt. (69, 2.2.2)
-     - Es existieren mindestens zwei der folgenden drei Methoden, um Zugang zu Inhalten zu bekommen: Navigation, Suchfunktion, Sitemap. (79, 2.4.5)
-     - Die Navigation ist konsistent, d.h. innerhalb einer Anwendung gleichbleibend angeordnet und aufgebaut. (91, 3.2.3)
-     - Bestandteile mit gleicher Funktion sind konsistent umgesetzt, sowohl auf visueller wie auch auf semantischer Ebene. (92, 3.2.4)
-     - Der HTML-Code weist keine für die Barrierefreiheit relevanten Fehler auf. (99, 4.1.1)
+      - 💡 (Why) **Indications should be understandable with different senses**
+        - Inhalte weisen nicht ausschliesslich auf sensorische Eigenschaften (rein visuell erkennbar, rein akustisch verständlich) hin, z.B. «Den grünen Schalter links betätigen», «Korrigieren Sie die Eingaben in den rot umrandeten Feldern», «Mit Klick auf das Bild rechts …». (48, 1.3.3) → Verweis auf Virtue "Forms (required)"
+      - Inhalte sind in beiden Bildschirmorientierungen (Hoch- und Querformat) korrekt dargestellt und nutzbar. Passt sich der Inhalt nicht automatisch an die Bildschirmorientierung an, steht ein Schalter zur Verfügung zum manuellen Drehen des Bildschirminhalts (für Websites vom Browser sichergestellt, für Mobile Apps durch Design und Entwicklung sicherzustellen). (49, 1.3.4) → 🤔 *Einfach nur richtig responsiv machen!*
+      - Automatisch abspielender Audio-Inhalt von mehr als 3 Sekunden wird nach Möglichkeit vermieden. Ist er doch vorhanden, ist er steuerbar (Wiedergabe stoppen, Lautstärke unabhängig von der Systemlautstärke regeln). Die Steuerung befindet sich am Anfang der Seite. (53, 1.4.2)
+      - Elemente sind auf mindestens 200% zoombar, entweder der Text allein oder die komplette Seite (für Websites in der Regel vom Browser sichergestellt, für Mobile Apps durch Design und Entwicklung sicherzustellen). (56, 1.4.4)
+        - 🤔 *What about px vs. rem question?!*
+      - Texte werden nicht nur als Grafiken eingebunden, denn diese lassen keine Anpassungen zu (z.B. Grösse skalieren, Vorder- und Hintergrund-Farben verändern, etc.). Ausgenommen sind Texte, bei denen eine bestimmte Art der Präsentation für die vermittelte Information unentbehrlich ist (z.B. Logos oder Markennamen). (57, 1.4.5)
+      - Inhalt lässt sich ohne Einschränkungen (z.B. Überlappungen) und ohne horizontales Scrollen in den Viewport-Mindestdimensionen von 320x256 CSS-Pixel darstellen. Das entspricht einer Vergrösserung auf 400%. (58, 1.4.10)
+      - Abstände zwischen Zeilen, Wörtern und Buchstaben sowie nach Absätzen sind ohne resultierende Einschränkungen um bestimmte Werte vergrösserbar. Ausnahmen sind: Untertitel in Video-Inhalten, PDF-Dokumente. (61, 1.4.12)
+      - Inhalte, die per Hover oder Fokus eingeblendet werden, sind nicht störend und es kann mit ihnen interagiert werden. Folgende drei Bedingungen sind erfüllt: Per Hover oder Fokus eingeblendete Inhalte sind ausblendbar, hoverbar und dauerhaft (persistent). (62, 1.4.13)
+      - Timeout-Zeitintervalle sind anpassbar oder können deaktiviert werden. Es ist ein deutlicher Hinweis auf diese Möglichkeiten erforderlich. Für die Anpassungsmöglichkeiten gilt: Entweder ist das Timeout auf mindestens den zehnfachen Wert der Standardeinstellung möglich oder es erfolgt eine Warnung, bevor das Timeout abläuft, und es werden mindestens 20 Sekunden zur Verfügung gestellt, um mit einer einfachen Aktion (z.B. «Drücken Sie die Leertaste») die verfügbare Zeit zu verlängern. Diese Option muss mindestens zehn Mal bestehen. (68, 2.2.1)
+        - http://www.washington.edu/accessibility/checklist/time-limits/ | https://accessibility.18f.gov/timeouts/
+      - Dauerhaft animierte Inhalte (länger als fünf Sekunden) können mittels gut sichtbarer Bedienelemente pausiert, gestoppt oder ausgeblendet werden. Als dauerhaft animiert gelten Inhalte, die sich bewegen und/oder automatisch aktualisieren, die blinken oder scrollen. Sie beginnen automatisch und werden parallel zu anderen Inhalten dargestellt. (69, 2.2.2)
+      - Es existieren mindestens zwei der folgenden drei Methoden, um Zugang zu Inhalten zu bekommen: Navigation, Suchfunktion, Sitemap. (79, 2.4.5)
+      - Die Navigation ist konsistent, d.h. innerhalb einer Anwendung gleichbleibend angeordnet und aufgebaut. (91, 3.2.3)
+      - Bestandteile mit gleicher Funktion sind konsistent umgesetzt, sowohl auf visueller wie auch auf semantischer Ebene. (92, 3.2.4)
+      - Der HTML-Code weist keine für die Barrierefreiheit relevanten Fehler auf. (99, 4.1.1)
 
 **Offene Punkte:**
 

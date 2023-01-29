@@ -17,7 +17,7 @@
 - Viele Anti-Patterns noch vorhanden!
   - Genaues Programmieren! Wie in "HTML 101"! Ordnung halten, Sachen beim Namen nennen. Nicht Kreativität verhindern, sondern Chaos!
   - Keine Angst wenn es manchmal auf A11y-Seiten heisst: man muss Dinge mit Sprache und Keyboard steuern können! Das hat wenig/nichts mit zusätzlichen Features zu tun! Es geht nur darum, HTML korrekt einzusetzen.
-- WCAG 2.1 ready
+- **WCAG 2.2 ready!!** 🎉🚀
 - Essence of WCAG, without its complexity
   - Map von Utopia aufzeigen (rauszoomen)
   - Beispiel aufzeigen von Tastaturbedienbarkeit
