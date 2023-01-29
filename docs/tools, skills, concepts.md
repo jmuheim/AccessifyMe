@@ -12,6 +12,7 @@
   - Desktop screen reader
   - Colour contrast analyser
   - ZoomText → wie relevant ist das noch, jetzt wo es Responsive Webdesign (RWD) gibt?!
+  - Windows High Contrast Mode (HCM)
 - Semi-automated
   - WAVE toolbar
 - Automated
