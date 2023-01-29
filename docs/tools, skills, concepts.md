@@ -50,6 +50,7 @@ Vielleicht macht es Sinn, einfach nur den Screenreader-Teil in einer eigenen sep
   - Wer profitiert sonst noch? Extensions wie Link-Lists (Vi-ähnlich), Überschriften-Anspringer für Keyboard-only
 - **Solid aesthetics** (z.B. `text-decoration: underline`) vs. **transient aesthetics** (`background-color`)
 - **ARIA**
+- **1 solution for all** sowie **All information for all** (nicht das Gefühl haben, ein ausführlicher alt-Text sei nur für Screenreader sinnvoll)
 - **Meaningful sequence** (of interactive elements and content/headings)
   - Ist content/headings nur für Screenreader relevant, oder auch für andere? (Z.B. Selektieren von Text kann counter-intuitiv sein, wenn DOM und visuelle Anordnung nicht ähnlich sind)
 - **Hiding elements properly** (to everybody, from vision, from screen readers)

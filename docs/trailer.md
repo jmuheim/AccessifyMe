@@ -38,3 +38,7 @@
 
 
 - He is torn between high ideals, high time demands, and lack of reliable, succinct, usable information on Web accessibility. (See Zhang in https://www.w3.org/WAI/redesign/personas)
+
+
+
+**Level up - it's about time.**

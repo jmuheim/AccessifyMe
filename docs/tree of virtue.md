@@ -254,6 +254,7 @@
         - Der Kontext ändert sich nicht automatisch bei Eingabe (z.B. Weiterleitung auf eine andere Seite). (90, 3.2.2)
         - Nutzereingaben müssen überprüfbar sein vor Prozess-Abschluss mit finanziellen/rechtlichen Folgen. Es ist sichergestellt, dass die Gelegenheit besteht, eingegebenen Daten zu überprüfen und gegebenenfalls zu korrigieren, bevor ein endgültiger Abschluss erfolgt. (98, 3.3.4)
         - Eingabefelder zu Nutzerdaten können automatisch ausgefüllt werden. (50, 1.3.5)
+        - *🤔 Was ist mit 4.1.3 Status Messages?*
 10. 🙏 **Choose accessible components**
     - 💡 (Why) **Accordions should behave accessibly**
       - Akkordeons sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «reduziert» bzw. «erweitert»).  (100, 4.1.2)

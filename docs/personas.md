@@ -256,7 +256,7 @@ Hat da ebenfalls 5-6 Personas! Dünkt mich gut und straight to the point.
 
 ## Personas
 
-**Nur Personas, auf welche wir als Design/Entwickler:innen direkten Einfluss haben!**(Keine, welche v.a. mit Erarbeitung von Inhalten zu tun haben.) TECHNISCH BARRIEREFREI! BEDEUTET NICHT UNBEDINGT GUTE UX!
+**Nur Personas, auf welche wir als Design/Entwickler:innen direkten Einfluss haben!** (Keine, welche v.a. mit Erarbeitung von Inhalten zu tun haben.) TECHNISCH BARRIEREFREI! BEDEUTET NICHT UNBEDINGT GUTE UX!
 
 - Daniel (26), Student, born **blind**
   - Quote: "Why are there no headings on this website? It's so frustrating to identify and navigate content."
@@ -310,9 +310,10 @@ Hat da ebenfalls 5-6 Personas! Dünkt mich gut und straight to the point.
     - Power user
     - Broke major hand
     - Young parent
-- Benjamin (36), **dyslexia**
+- Victoria (42), **dyslexia**
   - Depends on:
     - Custom Font, line-height, etc.
+    - (Aber auch Easy Language → Content!)
 
 
 **Plus: YOU!**
