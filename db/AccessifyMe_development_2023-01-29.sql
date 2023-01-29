@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 8.0.31)
 # Database: AccessifyMe_development
-# Generation Time: 2023-01-29 12:23:21 +0000
+# Generation Time: 2023-01-29 12:40:07 +0000
 # ************************************************************
 
 
@@ -129,23 +129,6 @@ CREATE TABLE `patterns` (
   CONSTRAINT `fk_rails_cca645e906` FOREIGN KEY (`insight_id`) REFERENCES `insights` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-LOCK TABLES `patterns` WRITE;
-/*!40000 ALTER TABLE `patterns` DISABLE KEYS */;
-
-INSERT INTO `patterns` (`id`, `insight_id`, `name`, `description`, `notes`, `created_at`, `updated_at`)
-VALUES
-	(1,1,'Link implemented as `<a href>`','A correctly implemented link can be focused by default.',NULL,'2022-08-24 16:13:00.000000','2022-08-24 16:13:00.000000'),
-	(2,3,'Clearly visible focus',NULL,'','2022-08-25 09:35:45.000000','2022-08-25 09:35:45.000000'),
-	(5,1,'Button implemented as `<button>` or `<input type=\"submit\">`','A correctly implemented button can be focused by default.','Kann z.B. auch Formular mit `Enter` abschicken','2022-11-15 17:33:39.000000','2022-11-15 17:33:39.000000'),
-	(8,8,'Decorative graphic with empty `[alt]`',NULL,NULL,'2022-11-28 19:37:40.000000','2022-11-28 19:37:40.000000'),
-	(9,7,'Simple informative graphic with proper `[alt=\"...\"]` value',NULL,NULL,'2022-11-28 19:43:05.000000','2022-11-28 19:43:05.000000'),
-	(11,9,'Graphic whose contrast is independent of the background',NULL,NULL,'2022-11-28 22:10:13.000000','2022-11-28 22:10:13.000000'),
-	(12,9,'Graphic whose background is set via `@media` query',NULL,'`@media (forced-colors: active)` (oder dark/light theme)','2022-11-28 22:10:13.000000','2022-11-28 22:10:13.000000'),
-	(13,10,'Subheadings are nested exactly one level below parent heading',NULL,NULL,'2022-12-01 22:45:23.000000','2022-12-01 22:45:23.000000'),
-	(14,11,'Headings and subheadings are in meaningful relation with each other',NULL,NULL,'2022-12-02 21:23:53.000000','2022-12-02 21:23:53.000000');
-
-/*!40000 ALTER TABLE `patterns` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table personas
@@ -164,18 +147,6 @@ CREATE TABLE `personas` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-LOCK TABLES `personas` WRITE;
-/*!40000 ALTER TABLE `personas` DISABLE KEYS */;
-
-INSERT INTO `personas` (`id`, `name`, `prototype`, `description`, `created_at`, `updated_at`, `avatar`)
-VALUES
-	(1,'Hannah','silver surfer','I\'m a 73 years old grandma. I eagerly try to keep up with modern technology, so I can communicate and share photos with my grandchildren. I also love online shopping. Since a few years though, my eyesight worsens: I\'m barely able to distinguish color nuances anymore. Therefore I\'m using Windows High Contrast Mode to surf the web.','2022-12-02 12:18:26.000000','2022-12-02 12:18:26.000000','screenshot_2x.jpg'),
-	(2,'Gianfranco','born blind','Being a blind person, screen readers have opened up a whole new world of possibilities for me. When I was a child, I could barely communicate over distance, leave alone travel somewhere without assistance. Today, I work as a web programmer, checkout unknown cities using my smartphone and GPS, and have friends all over the world.','2022-12-02 18:52:09.000000','2022-12-02 18:52:09.000000','screenshot_2x.jpg'),
-	(3,'Petra','low vision','I can see my computer\'s screen and recognise there are elements on it. But usually I can\'t read any text or see the details on images. Fortunately, my screen reader can read aloud those elements to me.','2022-12-02 19:59:08.000000','2022-12-02 19:59:08.000000','screenshot_2x.jpg'),
-	(4,'Peter','SEO expert','The more I know about accessibility, the more I realise that it goes hand in hand with search engine optimisation (SEO). All measures that make content easier to understand and navigate for humans tremendously have a tremendous impact on machine readability, too.','2022-12-02 20:45:04.000000','2022-12-02 20:45:04.000000','screenshot_2x.jpg');
-
-/*!40000 ALTER TABLE `personas` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table roles
@@ -334,103 +305,6 @@ CREATE TABLE `users` (
   UNIQUE KEY `index_users_on_unlock_token` (`unlock_token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
-
-# Dump of table video_to_tools
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `video_to_tools`;
-
-CREATE TABLE `video_to_tools` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `video_id` bigint NOT NULL,
-  `tool_id` bigint NOT NULL,
-  `purpose` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `created_at` datetime(6) NOT NULL,
-  `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_videos_to_tools_on_video_id` (`video_id`),
-  KEY `index_videos_to_tools_on_tool_id` (`tool_id`),
-  CONSTRAINT `fk_rails_5d56a74f0c` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_rails_ee8d722f7e` FOREIGN KEY (`tool_id`) REFERENCES `tools` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-LOCK TABLES `video_to_tools` WRITE;
-/*!40000 ALTER TABLE `video_to_tools` DISABLE KEYS */;
-
-INSERT INTO `video_to_tools` (`id`, `video_id`, `tool_id`, `purpose`, `created_at`, `updated_at`)
-VALUES
-	(1,2,1,'navigate websites','2022-08-23 13:46:58.000000','2022-08-23 13:46:58.000000'),
-	(2,2,2,'interact with the computer (without a mouse)','2022-08-23 13:49:29.000000','2022-08-23 13:49:29.000000'),
-	(3,2,3,'visually highlight the keyboard focus','2022-08-23 13:49:49.000000','2022-08-23 13:49:49.000000'),
-	(4,2,4,'print the currently focused element to the console','2022-08-23 13:50:36.000000','2022-08-23 13:50:36.000000'),
-	(5,2,5,'highlight the order of focusable elements','2022-08-23 13:51:06.000000','2022-08-23 13:51:06.000000');
-
-/*!40000 ALTER TABLE `video_to_tools` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table video_to_wcag_elements
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `video_to_wcag_elements`;
-
-CREATE TABLE `video_to_wcag_elements` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `video_id` bigint NOT NULL,
-  `wcag_element_id` bigint NOT NULL,
-  `purpose` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `created_at` datetime(6) NOT NULL,
-  `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_videos_to_wcag_criteria_on_video_id` (`video_id`),
-  KEY `index_videos_to_wcag_criteria_on_wcag_criterion_id` (`wcag_element_id`),
-  CONSTRAINT `fk_rails_12e82547c5` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_rails_9ee5a35c68` FOREIGN KEY (`wcag_element_id`) REFERENCES `wcag_elements` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-LOCK TABLES `video_to_wcag_elements` WRITE;
-/*!40000 ALTER TABLE `video_to_wcag_elements` DISABLE KEYS */;
-
-INSERT INTO `video_to_wcag_elements` (`id`, `video_id`, `wcag_element_id`, `purpose`, `created_at`, `updated_at`)
-VALUES
-	(1,2,23,NULL,'2022-09-26 17:54:00.000000','2022-09-26 17:54:06.000000'),
-	(2,2,33,NULL,'2022-09-26 17:53:50.000000','2022-09-26 17:53:50.000000'),
-	(3,2,36,NULL,'2022-09-26 17:55:53.000000','2022-09-26 17:55:53.000000'),
-	(4,2,24,NULL,'2022-09-26 18:00:44.000000','2022-09-26 18:00:44.000000'),
-	(5,2,95,NULL,'2022-09-26 18:01:32.000000','2022-09-26 18:01:32.000000'),
-	(6,2,40,NULL,'2022-09-26 18:02:27.000000','2022-09-26 18:02:27.000000');
-
-/*!40000 ALTER TABLE `video_to_wcag_elements` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table videos
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `videos`;
-
-CREATE TABLE `videos` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `lead` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `youtube_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `created_at` datetime(6) NOT NULL,
-  `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-LOCK TABLES `videos` WRITE;
-/*!40000 ALTER TABLE `videos` DISABLE KEYS */;
-
-INSERT INTO `videos` (`id`, `title`, `lead`, `description`, `youtube_id`, `created_at`, `updated_at`)
-VALUES
-	(1,'Welcome to Accessify.me!','Test','','','2022-08-09 11:19:00.828562','2022-09-26 11:44:32.861640'),
-	(2,'Introduction to keyboard-only operability','Why websites must be operable by using a keyboard alone','## Welcome ?\n\n- Keyboard-only operability is a **key aspect of accessibility**\n- It **can be tested very easily** with no special tools required\n  - As such it is a low hanging fruit that you shouldn\'t miss\n- Finally, if you acquire the habit of regularly testing your websites on keyboard operability, this will **assist in creating clean and robust HTML**\n\n## Why is keyboard-only accessibility important? ?\n\n- [?](https://www.deviantart.com/dleafystock/art/old-mouse-apple-70160856) You have to be aware that **not all users are capable of using a mouse**, touch or track pad.\n  - This can be due to **temporary** limitations, [?](https://keepasking.com/what-you-need-to-know-about-rheumatoid-arthritis-symptoms-and-treatment/) like a broken wrist of the dominant hand, or when holding a baby in our arm.\n  - But often it is **permanent** disabilities: [?](https://www.nbcnews.com/mach/science/stephen-hawking-says-humans-must-leave-earth-within-600-years-ncna818926) diseases like Multiple sclerosis or Arthritis, or Paraplegia after an accident\n- You may now legitimately question whether a paraplegic can actually use a keyboard? [?](https://www.lifetool.at/en/assistive-technology/lifetool-hardware/integramouse-plus/) Keep in mind though that there are many different **assistive input devices**...\n  - Like a mouth mouse, eye tracking, [?](https://oxen.tech/blog/dictate-office-365-apps/) and even text-to-speech dictation, **and they all use the keyboard interface** to translate their specific input modalities into actual keystrokes.\n- [?](http://appointmentschedulingnews.com/want-to-become-a-power-user/) Finally, there are **Power users who don\'t want to use a mouse**, because in many situations they are much faster by using a keyboard alone.\n\n## Recommendations and guidelines\n\n- https://www.w3.org/WAI/perspective-videos/keyboard/\n- https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html\n- https://a11y.digitaldialog.swiss/de/2.1.1\n\n## How to\n\n- **Tab** / **Shift-Tab:** Navigate between focusable (usually interactive) elements\n- **Enter** (and sometimes **Space**): interact with element (e.g. activate link or button)\n- **Arrows:** toggle through options (e.g. radio buttons, dropdown)\n\n## Practical session\n\n- macOS → activate full keyboard support!\n  - System Preferences → Keyboard → Shortcuts → Use keyboard navigation to move focus between controls\n- Bad example: [Bing](https://www.bing.com)\n- Good example: ???\n- NerdeFocus plugin\n\n## Homework\n\n- Try to use any website with keyboard only!\n- What problems or questions do you encounter?\n  - Non-focusable elements\n  - Focus state hardly visible (or not at all)?\n  - Focus \"lost\" on invisible elements every now and then?\n  - Custom components that are hard (or impossible) to control?\n  - Surprising (unnatural) focus order?\n\n## Outro\n\n- Keyboard focus not visible → later video!\n\n## Credits\n\nYouTube:\n\n- [VLE Guru](https://www.youtube.com/c/VLEGuru): [Introduction to Keyboard Navigation and Accessibility](https://www.youtube.com/watch?v=FvpUNiB-2T0)\n\nLinks:\n\n- [Microsoft Inclusive Design](https://www.microsoft.com/design/inclusive/): [Inclusive 101 Manual (pdf)](https://download.microsoft.com/download/b/0/d/b0d4bf87-09ce-4417-8f28-d60703d672ed/inclusive_toolkit_manual_final.pdf)\n\nRelated WCAG criteria (A and AA):\n\n- 2.1.1 Keyboard\n- 2.4.1 Bypass blocks\n- 2.4.3 Focus order\n- 2.1.2 No Keyboard Trap\n- 2.1.4 Character Key Shortcuts\n- 2.4.7 Focus Visible\n- 2.4.11 Focus Appearance (Minimum) → WCAG 2.2 (draft)\n\nBUT THAT\'S JUST WHAT I THINK 😅','','2022-08-09 11:19:00.828562','2022-09-26 11:31:44.759804');
-
-/*!40000 ALTER TABLE `videos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table virtues

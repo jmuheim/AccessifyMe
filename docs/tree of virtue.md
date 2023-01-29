@@ -1,14 +1,13 @@
 # 🙏 Virtues, 💡 insights, and 🧩 patterns
 
-1. 🙏 **Offer enough contrast**
-   - *See https://www.w3.org/WAI/test-evaluate/preliminary/#contrast* | *See https://webaim.org/articles/contrast/* | *See https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/* | https://design-system.service.gov.uk/styles/colour/ | https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
-   - 💡 (Why) **Text needs a contrast of `4.5:1` to its background (or `3:1` for large text).**
+1. 🙏 **Offer enough color contrast**
+   - 💡 (Why) **Text needs a contrast of `4.5:1` to its background (or `3:1` for large text).** → 🤔 *Aufteilen in "normal" text and "large" text?*
         - 🧩 Texts have a contrast of `4.5:1`
-        
+   
              - Das Kontrastverhältnis bei Text und Bildern von Text zum Hintergrund beträgt mindstens 4.5:1 bei normaler Schriftgrösse und mindestens 3:1 bei grosser Schrift (definiert als mindestens 18pt oder 14pt + fett). Das gilt sowohl für normale Schrift zur Hintergrundfarbe (alle Texte und Hinweise) als auch für Texte in informativen grafischen Elementen, ist aber nicht zwingend für Logos oder rein dekorative Grafiken. (54, 1.4.3)
-        
+   
              - Interaktive Textelemente (z.B. Schalterbeschriftungen) erfüllen die Kontrastanforderung von 4.5:1 in allen Zuständen (fokussiert, bei Mouseover, etc.) gleichermassen. Für die Unterscheidbarkeit zwischen den Zuständen eines interaktiven Elements gelten keine strikten Kontrastanforderungen. (55, 1.4.3)
-        
+   
         - 🧩 Large texts have a contrast of `3:1`
    - 💡 (Why) **Graphical info needs a contrast of `3:1` to its background.**
    
@@ -24,31 +23,27 @@
              - Wenn Links innerhalb von Fliesstext nur durch Farbe vom Fliesstext unterschieden werden, muss der Kontrast zwischen Link und umgebendem Fliesstext den minimalen Kontrastwert von 3:1 erreichen. Als Alternative kann eine weitere visuelle Auszeichnung von Links verwendet werden (z.B. Unterstreichung, Fettschrift, Rahmen, etc.). (52, 1.4.1)
                   -  🤔 *Unsicher, ob ich das hier überhaupt so nennen soll? Ist weniger "bullet-proof" als es mit zusätzlichem visuellem Attribut auszustatten.*
    - 💡 (Why) **Custom color and contrast modes should be supported** → 🤔 *Like Windows HCM and dark mode*
-
+   
         - Informative Grafiken sind bei benutzerdefinierten Farbeinstellungen sichtbar. (9, 1.1.1)
-2. 🙏 **Serve multiple senses (2-senses principle)** → 🤔 *Not so sure whether we should rename it back to "Complement (meaningful) color with shape" and just put this into the "Concepts" section?!*
+2. 🙏 **Complement meaningful color with visual cues**
 
-    1. 💡 (Why) **Information conveyed by color should be complemented with shape**
-        - https://www.color-blindness.com/coblis-color-blindness-simulator/
-        - 🧩 Colored areas in diagrams are marked with individual icons → 🤔 *i.e. a single "x" or "o"*
+    1. 💡 (Why) **Meaningful object-color should be complemented with label, icon, or pattern**
+        - 🧩 Colored lines in a line chart are marked with individual labels → 🤔 *i.e. "Zürich", "New York", etc.*
           - Information wird nicht durch Farbe allein vermittelt. Das gilt auch für Hover- und Fokus-Zustände. Wenn Information farblich übermittelt wird (z.B. rot hervorgehobene Teile eines Texts, um deren Wichtigkeit zu markieren), ist ein weiterer visueller Reiz vorhanden, um diese Information zu vermitteln (z.B. Fettschrift oder Unterstreichung, unterschiedliche Symbole, zusätzlicher Text). (51, 1.4.1)
           - *Unless only a few colors are needed → check out "💡 Graphical info needs a contrast of `3:1` to its background"*
           - *Great icons: https://www.smashingmagazine.com/2016/10/icons-as-part-of-a-great-user-experience/*
-        - 🧩 Colored areas in diagrams are marked with individual patterns → 🤔 *i.e. horizontal lines, repeating hearts, etc.*
         - 🧩 Colored lines in a line chart are marked with individual icons → 🤔 *i.e. repeating "x", "o", etc.*
         - 🧩 Colored lines in a line chart are marked with individual patterns → 🤔 *i.e. dotted, thin, thick, etc.*
+    2. 💡 (Why) **Meaningful background-color should be complemented with label, icon, or pattern** 
+        - https://www.color-blindness.com/coblis-color-blindness-simulator/
+        - 🧩 Colored areas in diagrams are marked with individual labels → 🤔 *i.e. "Zürich", "New York", etc.*
+        - 🧩 Colored areas in diagrams are marked with individual icons → 🤔 *i.e. a single "x" or "o"*
+        - 🧩 Colored areas in diagrams are marked with individual patterns → 🤔 *i.e. horizontal lines, repeating hearts, etc.* → 🤔 *can also be simply repeating a label or icon*
+    3. 💡 (Why) **Colored status indicators need individual shapes**
         - 🧩 Colored status indicators have individual shapes
           - *Like a green tick that conveys "in stock" vs. a red cross that conveys "out of stock", or an alert with a red or green background color and a smiling or frowning "smiley"*
           - *What about red validation errors? Is the red color an important information? I would say: yes, it makes the message quickly interpretable!*
-    3. 💡 (Why) **Indications should be understandable with different senses**
-        - Inhalte weisen nicht ausschliesslich auf sensorische Eigenschaften (rein visuell erkennbar, rein akustisch verständlich) hin, z.B. «Den grünen Schalter links betätigen», «Korrigieren Sie die Eingaben in den rot umrandeten Feldern», «Mit Klick auf das Bild rechts …». (48, 1.3.3) → Verweis auf Virtue "Forms (required)"
-        - Zeichenverwendung: Schriftformatierungen mit Informationsgehalt (z.B. durchgestrichen) sind auch nicht-visuell zugänglich. (45, 1.3.1e)
-    4. 💡 (Why) **Hiding elements specifically from some channel**
-        1. Elemente sind korrekt versteckt und zwar so, dass sie auch durch assistierende Technologien nicht ausgegeben werden, wenn sie visuell nicht sichtbar sind. (76, 2.4.3) ⁉️ Was macht das hier?
-    5. 💡 (Why) **Inaccessible media should be accompanied by an accessible alternative**
-    6. 💡 (Why) **Semantics should be used to mark up content**
-        1. (Sneak peak für Virtue "Apply Semantics...")?! Oder ganz weglassen?
-3. 🙏 **Describe graphics by text alternatives**
+3. 🙏 **Describe graphics through alternative text**
 
     - https://www.gov.uk/guidance/content-design/images#alt-text | https://www.w3.org/WAI/tutorials/images/ | https://www.abilitynet.org.uk/blog/five-golden-rules-compliant-alt-text | https://ux.shopify.com/considerations-when-writing-alt-text-a9c1985a8204
     - 💡 (Why) **Informative graphics need an alternative text**
@@ -98,7 +93,7 @@
           - Anti: https://shop.nuance.com/store/nuanceus/en_US/Content/pbPage.home?pgmid=4990661100&PID=100227173&CID=7010W000002GDURQA4&utm_source=commissionjunction&utm_medium=affiliate&utm_campaign=DHK-AO-2020-DragonPC_Ecom_Affiliate_CommisionJunction&cj_affiliate=5405963&adid=10793172&cjevent=7d2d72197a0511ed805b01290a18ba73 (kleines Fenster links oben)
       - 🧩 Interactivity available through tab stops → 🤔 *simples Dropdown-Menü (strikt gesehen wäre das aber ein Pattern für "Interactive elements should be focusable")*
       - 🧩 Interactivity available through arrow keys → 🤔 *ebenfalls simples Dropdown-Menü*
-    - 💡 (Why) **Interactive elements need clearly visible focus states** → 🤔 *different focus states for keyboard and mouse? (Luis Argüello hatte da eine kleine Library)*
+    - 💡 (Why) **Focus states of interactive elements should be clearly visible** → 🤔 *different focus states for keyboard and mouse? (Luis Argüello hatte da eine kleine Library)*
       - 🧩 Focus states with solid aesthetic attributes (`outline`, `border`, `text-decoration`, `font-weight`, etc.) → 🤔 *Hinweis auch auf HCM und Dark Mode!* 🤔 Ggf. leichte Animationen benutzen, um Sichtbarkeit zu erhöhen (z.B. ein Häkchen in einer Checkbox "poppt auf", statt einfach nur zu erscheinen in einer Millisekunde)?
         - Der Tastaturfokus ist genügend sichtbar, z.B. durch einen gut sichtbaren Rahmen (für alle fokussierbaren Elemente wie Links, Schaltflächen, Radio-Buttons, Checkboxen, Ausklapplisten, verlinkte grafische Elemente, etc.). (81, 2.4.7)
     - 💡 (Why) **The sequence of interactive elements should be meaningful**
@@ -124,7 +119,7 @@
     - **Others**
       - Elemente, die einzeln ausgegeben werden sollen, sind als display: block ausgezeichnet, sonst können sie im Browse-Mode (normale Inhaltsnavigation mittels Pfeil-Tasten) nicht einzeln angesteuert werden. Dies gilt hauptsächlich für interaktive Elemente (Links, Buttons, etc.). (64, 2.1.1)
       - Elemente, die von Screenreadern zusammen ausgegeben werden sollen (etwa eine Überschrift, die sowohl eine Kategorie als auch ein Datum enthält), sind als display: inline bzw. display: inline-block ausgezeichnet und befinden sich zusammen in einem display: block-Container. (65, 2.1.1)
-5. 🙏 **Define a coherent page structure and heading hierarchy ** → Concept "Semantics"
+5. 🙏 **Define a coherent page structure and headings ** → Concept "Semantics"
 
     - https://www.gov.uk/guidance/content-design/writing-for-gov-uk#structuring-content
     - 💡 (Why) **Landmarks should encompass page areas**
@@ -173,7 +168,8 @@
             - Fussnoten sind barrierefrei umgesetzt: Auch mit einem Screenreader ist beim Fussnoten-Zeichen der Zugriff auf den Fussnotentext gegeben, ohne dass der ursprüngliche Kontext verloren geht. (24, 1.3.1)
     - **Others**
         - Zeichenverwendung: Inhalte befinden sich innerhalb semantisch bedeutsamer HTML-Elemente (z.B. `<h#>`, `<p>`, `<ul>`, `<ol>`, etc.); das Verwenden von `<div>`- oder `<span>`-Elementen (die keine semantische Relevanz aufweisen) ist nicht ausreichend. (43, 1.3.1e)
-7. 🙏 **Enhance screen reader compatibility**
+        - Zeichenverwendung: Schriftformatierungen mit Informationsgehalt (z.B. durchgestrichen) sind auch nicht-visuell zugänglich. (45, 1.3.1e)
+7. 🙏 **Optimise screen reader compatibility**
     - *See https://www.tpgi.com/basic-screen-reader-commands-for-accessibility-testing/*
     - 💡 (Why) **Every page needs a unique, self-speaking title**
       - 🧩 Home page
@@ -201,7 +197,7 @@
       - 🧩 Time-sensitive notification as live region → 🤔 *Careful with auto-rotating sliders or newstickers!* → 🤔 *Or move the focus to a notification? (vgl. Virtue "Keyboard only")*
         - Statusmeldungen sind für assistierende Technologien zugänglich und überstrapazieren den Audiokanal nicht. (111, 4.1.3)
         - https://www.youtube.com/watch?v=5lzAj1ahRSI | https://web.dev/hiding-and-updating-content/#aria-live
-8. 🙏 **Provide tabular data as tables**
+8. 🙏 **Mark up tabular data as tables**
 
     - 💡 (Why) **Tabular data should be marked up as `<table>`** → 🤔 *Keine Grids o.ä.! Tabellen sind Tabellen! Punkt. Mann...*
         - 🧩 A simple table
@@ -255,7 +251,7 @@
         - Nutzereingaben müssen überprüfbar sein vor Prozess-Abschluss mit finanziellen/rechtlichen Folgen. Es ist sichergestellt, dass die Gelegenheit besteht, eingegebenen Daten zu überprüfen und gegebenenfalls zu korrigieren, bevor ein endgültiger Abschluss erfolgt. (98, 3.3.4)
         - Eingabefelder zu Nutzerdaten können automatisch ausgefüllt werden. (50, 1.3.5)
         - *🤔 Was ist mit 4.1.3 Status Messages?*
-10. 🙏 **Choose accessible components**
+10. 🙏 **Choose accessible web components**
     - 💡 (Why) **Accordions should behave accessibly**
       - Akkordeons sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «reduziert» bzw. «erweitert»).  (100, 4.1.2)
     - 💡 (Why) **Autocompletes should behave accessibly**
@@ -277,7 +273,7 @@
       - Weitere JavaScript-Widgets sind barrierefrei zugänglich, d.h. so programmiert, dass sie mittels assistierender Technologien verstanden und uneingeschränkt verwendet werden können. Sie werden z.B. durch Screenreader korrekt angesagt; Funktion, Rolle und Status werden korrekt und aktuell vermittelt. (108, 4.1.2)
       - Der Einsatz von ARIA ist sinnvoll und korrekt. Wann immer möglich werden Standard-HTML-Elemente verwendet; ARIA wird eingesetzt wenn kein entsprechendes HTML-Element existiert oder weil eine technische Notwendigkeit dafür besteht. (109, 4.1.2)
       - Captchas?
-11. 🙏 **Add audio transcripts and video subtitles**
+11. 🙏 **Provide audio transcripts and video subtitles**
 
      - https://www.paciellogroup.com/blog/2017/03/sounding-out-the-web-accessibility-for-deaf-and-hard-of-hearing-people-part-2
      - "Transcripts facilitate easier production of subtitles in a number of languages and also improve the indexing of online content" (https://www.w3.org/WAI/people-use-web/user-stories/)
@@ -297,6 +293,8 @@
        - Es gibt keine Elemente, die öfter als dreimal in einer Sekunde blitzen, oder der Blitz ist unterhalb eines definierten Grenzwerts für Blitze. (70, 2.3.1)
 12. 🙏 **Build a robust yet flexible experience**
 
+     - 💡 (Why) **Indications should be understandable with different senses**
+       - Inhalte weisen nicht ausschliesslich auf sensorische Eigenschaften (rein visuell erkennbar, rein akustisch verständlich) hin, z.B. «Den grünen Schalter links betätigen», «Korrigieren Sie die Eingaben in den rot umrandeten Feldern», «Mit Klick auf das Bild rechts …». (48, 1.3.3) → Verweis auf Virtue "Forms (required)"
      - Inhalte sind in beiden Bildschirmorientierungen (Hoch- und Querformat) korrekt dargestellt und nutzbar. Passt sich der Inhalt nicht automatisch an die Bildschirmorientierung an, steht ein Schalter zur Verfügung zum manuellen Drehen des Bildschirminhalts (für Websites vom Browser sichergestellt, für Mobile Apps durch Design und Entwicklung sicherzustellen). (49, 1.3.4) → 🤔 *Einfach nur richtig responsiv machen!*
      - Automatisch abspielender Audio-Inhalt von mehr als 3 Sekunden wird nach Möglichkeit vermieden. Ist er doch vorhanden, ist er steuerbar (Wiedergabe stoppen, Lautstärke unabhängig von der Systemlautstärke regeln). Die Steuerung befindet sich am Anfang der Seite. (53, 1.4.2)
      - Elemente sind auf mindestens 200% zoombar, entweder der Text allein oder die komplette Seite (für Websites in der Regel vom Browser sichergestellt, für Mobile Apps durch Design und Entwicklung sicherzustellen). (56, 1.4.4)
@@ -312,6 +310,10 @@
      - Die Navigation ist konsistent, d.h. innerhalb einer Anwendung gleichbleibend angeordnet und aufgebaut. (91, 3.2.3)
      - Bestandteile mit gleicher Funktion sind konsistent umgesetzt, sowohl auf visueller wie auch auf semantischer Ebene. (92, 3.2.4)
      - Der HTML-Code weist keine für die Barrierefreiheit relevanten Fehler auf. (99, 4.1.1)
+
+**Offene Punkte:**
+
+- Elemente sind korrekt versteckt und zwar so, dass sie auch durch assistierende Technologien nicht ausgegeben werden, wenn sie visuell nicht sichtbar sind. (76, 2.4.3) ⁉️ Was macht das hier? Würde ich für WCAG 2.2 Checkliste unbedingt umformulieren/entfernen!
 
 **Master classes:**
 

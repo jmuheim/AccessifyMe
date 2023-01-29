@@ -13,6 +13,7 @@
   - Colour contrast analyser
   - ZoomText → wie relevant ist das noch, jetzt wo es Responsive Webdesign (RWD) gibt?!
   - Windows High Contrast Mode (HCM)
+    - `@media`: https://polypane.app/blog/forced-colors-explained-a-practical-guide/
 - Semi-automated
   - WAVE toolbar
 - Automated
@@ -50,6 +51,7 @@ Vielleicht macht es Sinn, einfach nur den Screenreader-Teil in einer eigenen sep
   - Keine leeren Container, z.B. `<p>&nbsp;</p>`!
   - Wer profitiert sonst noch? Extensions wie Link-Lists (Vi-ähnlich), Überschriften-Anspringer für Keyboard-only
 - **Solid aesthetics** (z.B. `text-decoration: underline`) vs. **transient aesthetics** (`background-color`)
+  - Wichtig: um Win HCM etc. nicht zu "breaken", müssen default "solid aesthetics" (z.B. `outline` bei Fokus, `underline` bei Links, aber auch wenn etwa Checkboxen visuell ersetzt werden durch SVG o.ä.) stets durch ein weiteres "solides" Merkmal ersetzt werden, ODER die Änderungen werden durch ein `@media` Query von solchen Modi (wie eben z.B. Win HCM) ausgeschlossen (falls das überhaupt verlässlich möglich ist)
 - **ARIA**
 - **1 solution for all** sowie **All information for all** (nicht das Gefühl haben, ein ausführlicher alt-Text sei nur für Screenreader sinnvoll)
 - **Meaningful sequence** (of interactive elements and content/headings)
