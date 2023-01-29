@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 8.0.31)
 # Database: AccessifyMe_development
-# Generation Time: 2023-01-29 12:40:07 +0000
+# Generation Time: 2023-01-29 12:42:15 +0000
 # ************************************************************
 
 
@@ -90,25 +90,6 @@ CREATE TABLE `insights` (
   CONSTRAINT `fk_rails_cca645e907` FOREIGN KEY (`virtue_id`) REFERENCES `virtues` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-LOCK TABLES `insights` WRITE;
-/*!40000 ALTER TABLE `insights` DISABLE KEYS */;
-
-INSERT INTO `insights` (`id`, `virtue_id`, `name`, `short_name`, `general_value`, `description`, `created_at`, `updated_at`)
-VALUES
-	(1,3,'Interactive elements shall be focusable','Focusable','This enables keyboard-only users to reach all functionalities.',NULL,'2022-08-24 15:43:18.000000','2022-08-24 15:43:18.000000'),
-	(2,3,'Interactive elements shall be fully operable via keyboard alone','Operable','This enables keyboard-only users to operate all functionalities.',NULL,'2022-08-24 15:53:43.000000','2022-08-24 15:53:43.000000'),
-	(3,3,'Focus states of interactive elements shall be clearly visible','Focus visible','This enables keyboard-only users to identify the currently focused element.',NULL,'2022-08-24 15:57:42.000000','2022-08-24 15:57:42.000000'),
-	(4,3,'States of interactive elements shall be easily distinguishable','States distinguishable','This enables keyboard-only users to distinguish between different statuses of an element and interact accordingly with it.','Ist das überhaupt sinnvoll platziert hier? Hat ja nicht unbedingt nur was mit Keyboard zu tun...!','2022-08-24 16:00:52.000000','2022-08-24 16:00:52.000000'),
-	(5,3,'The sequence of interactive elements shall be meaningful','Sequence meaningful','This enables keyboard-only users to intuitively locate and interact with elements.',NULL,'0000-00-00 00:00:00.000000','0000-00-00 00:00:00.000000'),
-	(6,3,'Expandable interactive elements shall be hidden properly','Expandable hidden','This prevents keyboard-only users from confusion due to losing track of the focus.',NULL,'2022-11-15 17:26:55.000000','2022-11-15 17:26:55.000000'),
-	(7,4,'Informative graphics shall be described with an equivalent alternative text','Informative graphics','This enables screen reader users to understand graphical content.',NULL,'2022-11-28 19:24:28.000000','2022-11-28 19:24:28.000000'),
-	(8,4,'Decorative graphics shall be ignored by screen readers','Decorative graphics','This prevents screen reader users from being interrupted in their flow.',NULL,'2022-11-28 19:32:49.000000','2022-11-28 19:32:49.000000'),
-	(9,1,'Microsoft High Contrast Mode shall be supported','Win HCM','This enables users of Windows High Contrast Mode to perceive all informative graphics.',NULL,'2022-11-28 22:07:37.000000','2022-11-28 22:07:37.000000'),
-	(10,5,'Heading levels shall not be skipped','Skipped levels','This prevents screen reader users from overlooking the subheadings.',NULL,'2022-12-01 22:42:29.000000','2022-12-01 22:42:29.000000'),
-	(11,5,'Headings and subheadings shall be meaningfully related to each other','Meaningful relation','This allows screen reader users to intuitively navigate through a headings outline.',NULL,'2022-12-02 21:20:04.000000','2022-12-02 21:20:04.000000');
-
-/*!40000 ALTER TABLE `insights` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table patterns
