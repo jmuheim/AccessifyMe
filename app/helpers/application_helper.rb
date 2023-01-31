@@ -6,10 +6,6 @@ module ApplicationHelper
   end
 
   def introduction_image_tag(virtue)
-    if virtue.id <= 7
-      image_tag("virtues/" + virtue.short_name.parameterize)
-    else
-      image_tag("Accessify.me-main-title")
-    end
+    image_tag("virtues/#{virtue.id}-#{virtue.short_name.parameterize}")
   end
 end

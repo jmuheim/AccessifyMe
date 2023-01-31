@@ -16,7 +16,7 @@ module Locale
     end
 
     def enforce_locale_in_path
-      binding.pry
+      # binding.pry
       redirect_to root_path if params[:locale].blank?
     end
 

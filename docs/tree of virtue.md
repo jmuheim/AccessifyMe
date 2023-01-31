@@ -1,6 +1,20 @@
 # 🙏 Virtues, 💡 insights, and 🧩 patterns
 
-1. 🙏 **Offer enough color contrast**
+Some explanation on the used wording:
+
+- In general, I avoided words that are already used by WCAG, so "principle", "guideline", and "criterion" are out of the game.
+
+- **Virtues:** I want to focus on the inner wish of web-creatives to deliver high quality work (craftsmanship), for whom accessibility is not only a moral imperative, but also a solid compass for creating well structured (meaningful) HTML code. So I use the word "virtue" to highlight this inner wish, to attract people who genuinely *want* to learn about accessibility and see value in it; rather than people who are sent (forced) to learn about "another difficult, maybe annoying" topic from an outside authority (i.e. their boss, or some legal requirement).
+  - For the formulation of the specific virtues, I use short and concise imperative statements (starting with a verb, followed by the content of the virtue). It focuses on the web-creatives who are called to do something quite specific.
+  - *Other words that I considered:* principle, commandment, code (like in a "codex"), law. I liked "virtue" most because it appeals to the personal/emotional part of this very humane topic of accessibility, yet it doesn't remind too much on religiosity (compared to i.e. commandment). Also, the nice word "virtuoso" comes from "virtue" → "become an accessibility virtuoso!"
+- **Insights:** Instead of something "hard" and emotionless like "rule" or "requirement", I use the word "insight" to focus on the web-creatives' *inherent* understanding of the necessity (and utility) of these points.
+  - For the formulation of the specific insights, I use "must", because I want to encourage people to *want* to incorporate them into their daily work, like a moral imperative; rather than highlighting an external authority that enforces them (where rather "have to" would be used). See https://www.speakconfidentenglish.com/have-to-need-to-must/.
+  - *Other words that I considered:* rule, guideline, requirement, task...
+- **Patterns:** As described in my "Epiphany" idea, I feel there's always one "best by far" solution to a requirement/problem.
+  - For the formulation of the specific patterns... TODO
+  - *Other words that I considered:* best practice, recipe, puzzle piece...
+
+1. 🙏 **Offer sufficient color contrast**
    - 💡 (Why) **Text needs a contrast of `4.5:1` to its background (or `3:1` for large text).** → 🤔 *Aufteilen in "normal" text and "large" text?*
         - 🧩 Texts have a contrast of `4.5:1`
 
@@ -25,6 +39,7 @@
    - 💡 (Why) **Custom color and contrast modes should be supported** → 🤔 *Like Windows HCM and dark mode*
 
         - Informative Grafiken sind bei benutzerdefinierten Farbeinstellungen sichtbar. (9, 1.1.1)
+
 2. 🙏 **Complement meaningful color with visual cues**
 
     1. 💡 (Why) **Meaningful object-color should be complemented with label, icon, or pattern**
@@ -43,9 +58,9 @@
         - 🧩 Colored status indicators have individual shapes
           - *Like a green tick that conveys "in stock" vs. a red cross that conveys "out of stock", or an alert with a red or green background color and a smiling or frowning "smiley"*
           - *What about red validation errors? Is the red color an important information? I would say: yes, it makes the message quickly interpretable!*
+
 3. 🙏 **Describe graphics through alternative text**
 
-    - https://www.gov.uk/guidance/content-design/images#alt-text | https://www.w3.org/WAI/tutorials/images/ | https://www.abilitynet.org.uk/blog/five-golden-rules-compliant-alt-text | https://ux.shopify.com/considerations-when-writing-alt-text-a9c1985a8204
     - 💡 (Why) **Informative graphics need an alternative text**
         - 🧩 A "Coupon 10%" image
             - Informative Grafiken weisen einen Alternativtext auf, der äquivalente Informationen vermittelt. (1, 1.1.1)
@@ -77,49 +92,84 @@
         - Als Webfont eingebundene Symbole sind so umgesetzt, dass sie nicht zu unverständlichen Ausgaben durch Screenreader führen. (5, 1.1.1)
         - Sonderzeichen vermitteln Informationen auf zugängliche Weise. (11, 1.1.1)
         - Grafische CAPTCHAs sind barrierefrei umgesetzt oder es gibt eine Alternative. (14, 1.1.1)
-4. 🙏 **Ensure keyboard-only operability**
-    - *See https://webaim.org/techniques/keyboard/* | *See https://www.w3.org/WAI/test-evaluate/preliminary/#interaction* | https://www.nngroup.com/articles/keyboard-accessibility/ | https://accessibility.18f.gov/keyboard/
-    - Deckt eine ganze Reihe von assistiven Geräten ab, die über Keyboard-API funktionieren → benötigen aber natürlich oft extrem viel Zeit! Verweis zu Virtue "Robust and flexible (Timeouts)"
-    - 💡 (Why) **Interactive elements should be focusable**
-      - 🧩 A link implemented as `<a href>`
+
+4. 🙏 **Provide audio transcripts and video subtitles**
+
+     - 💡 (Why) **Pure audio content should have a text transcript**
+       - Video- und Audio-Inhalte weisen einen Alternativtext auf, der den Titel und/oder eine kurze Umschreibung vermittelt. (2, 1.1.1)
+       - Für aufgezeichnete reine Audio-Inhalte (z.B. Podcasts) existieren Textabschriften oder eine Audiodeskription. Ausnahme: Wenn der reine Audio-Inhalt eine Alternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textabschrift erforderlich. (15, 1.2.1)
+     - 💡 (Why) **Pure video content should have a text transcript**
+       - Für aufgezeichnete reine Video-Inhalte (z.B. Stummfilme) existieren Textabschriften oder gleichwertige Alternativen als Audio-Inhalt. Ausnahme: Wenn der reine Video-Inhalt eine Alternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textabschrift oder gleichwertige Alternative als Audio-Inhalt erforderlich. (16, 1.2.1)
+     - 💡 (Why) **Video with audio should have closed captioning**
+       - Für aufgezeichnete Video-Inhalte mit Audio (z.B. Spielfilme) existieren gleichwertige, synchrone Untertitel. (17, 1.2.2)
+       - Für synchronisierte Video-Inhalte (Videos, in denen Audio- und Videospur zusammen die komplette Information ergeben) existieren Textabschriften oder Audiodeskriptionen. Für die Audiodeskription gilt: Wenn alle Informationen der Videospur bereits in der Audiospur enthalten sind, ist keine Audiodeskription erforderlich. Ausnahme: Wenn der synchronisierte Video-Inhalt eine Medienalternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textalternative oder Audiodeskription erforderlich. (Dieser Checkpunkt kann vernachlässigt werden, falls Level AA angestrebt wird und damit 1.2.5 in Kraft tritt. Um Konformitätsstufe A zu erreichen, benötigen synchronisierte Video-Inhalte entweder eine Textabschrift oder eine Audiodeskription. Für Konformitätsstufe AA ist immer eine Audiodeskription erforderlich.) (18, 1.2.3)
+         - 🤔 *Gute Wortwahl: "text in multimedia not covered by narration"*
+         - *See https://www.3playmedia.com/learn/popular-topics/closed-captioning/* | http://mindfulresearch.co.uk/2011/08/29/autistic-spectrum-captions-and-audio-description/
+     - **Others**
+       - Für Live Video-Inhalte mit Audio (z.B. Nachrichtensendung) existieren gleichwertige, synchrone Untertitel. (19, 1.2.4)
+       - Für synchronisierte Video-Inhalte (Videos, in denen Audio- und Videospur zusammen die komplette Information ergeben) existieren Audiodeskriptionen für inhaltlich relevante, rein visuelle Inhalte. Für die Audiodeskription gilt: Wenn alle Informationen der Videospur bereits in der Audiospur enthalten sind, ist keine Audiodeskription erforderlich. (Dieser Checkpunkt kann vernachlässigt werden, falls Konformitätsstufe A angestrebt wird und damit 1.2.3 in Kraft ist. Um Konformitätsstufe A zu erreichen, benötigen synchronisierte Video-Inhalte entweder eine Textabschrift oder eine Audiodeskription. Für Konformitätsstufe AA ist immer eine Audiodeskription erforderlich.) (20, 1.2.5)
+       - Es gibt keine Elemente, die öfter als dreimal in einer Sekunde blitzen, oder der Blitz ist unterhalb eines definierten Grenzwerts für Blitze. (70, 2.3.1)
+
+5. 🙏 **Ensure keyboard-only operability**
+
+    - 💡 (Why) **Interactive elements must be focusable**
+      - 🧩 A link implemented as `<a href>` (Anti: `<div/span tabindex="0">`, `<a>` ohne `href`)
         - Inhalte/Funktionalitäten (Seitenfunktionalitäten, Seitenelemente, Formularfelder, Kontrollelemente, Schalter, Links, Dialoge, Multimedia-Steuerungen, etc.) sind mit der Tastatur alleine (d.h. ohne Zeigegerät) bedienbar. Elemente sind in der logischen Tab-Reihenfolge erreichbar und können erwartungsgemäss bedient werden. (63, 2.1.1) ⁉️ Letzter Punkt wird ansich schon durch 2.4.3 abgedeckt?
-      - 🧩 A button implemented as `<button>` or `<input type="submit">`
+      - 🧩 A button implemented as `<button>` or `<input type="submit">` (Anti: `<div/span> tabindex="0"` → mal ganz abgesehen davon, dass dadurch das autom. Abschicken eines Formulars nicht möglich ist)
         - Formular-Schalter sind korrekt umgesetzt (als `<button>`-Element oder `<input type="submit">`-Element). (4.1.2)
         - Zeigergesten erfordern keinen bestimmten Pfad oder Mehrfach-Touch oder es bestehen konventionelle Alternativen dazu. (83, 2.5.1)
         - Zeigereingaben sind abbrechbar oder können rückgängig gemacht werden. (84, 2.5.2)
-    - 💡 (Why) **Interactive elements should be operable via keyboard alone** → 🤔 *Wird schnell sehr komplex, das Thema, darum Verweis auf Virtue "Accessible Components"*
+
+    - 💡 (Why) **Interactive elements must be operable via keyboard alone** → 🤔 *Wird schnell sehr komplex, das Thema, darum Verweis auf Virtue "Accessible Components"*
       - 🧩 Interactivity implemented with keyboard-compatible events
         - Durch Gerätebewegung ausgeführte Funktionalität kann auch durch konventionelle Eingabemethoden angesteuert und deaktiviert werden. (86, 2.5.4) → 🤔 *Grundsatz: alles, was nicht Keyboard-kompatibel ist (z.B. auch Drag&Drop), benötigt eine entsprechende alternative Funktionalität!*
           - Anti: https://shop.nuance.com/store/nuanceus/en_US/Content/pbPage.home?pgmid=4990661100&PID=100227173&CID=7010W000002GDURQA4&utm_source=commissionjunction&utm_medium=affiliate&utm_campaign=DHK-AO-2020-DragonPC_Ecom_Affiliate_CommisionJunction&cj_affiliate=5405963&adid=10793172&cjevent=7d2d72197a0511ed805b01290a18ba73 (kleines Fenster links oben)
+          - 🚀 WCAG 2.2, 2.5.7: Dragging Movements (Level AA)
       - 🧩 Interactivity available through tab stops → 🤔 *simples Dropdown-Menü (strikt gesehen wäre das aber ein Pattern für "Interactive elements should be focusable")*
       - 🧩 Interactivity available through arrow keys → 🤔 *ebenfalls simples Dropdown-Menü*
-    - 💡 (Why) **Focus states of interactive elements should be clearly visible** → 🤔 *different focus states for keyboard and mouse? (Luis Argüello hatte da eine kleine Library)*
+
+    - 💡 (Why) **Focused interactive elements must clearly stand out** → 🤔 *different focus states for keyboard and mouse? (Luis Argüello hatte da eine kleine Library)*
       - 🧩 Focus states with solid aesthetic attributes (`outline`, `border`, `text-decoration`, `font-weight`, etc.) → 🤔 *Hinweis auch auf HCM und Dark Mode!* 🤔 Ggf. leichte Animationen benutzen, um Sichtbarkeit zu erhöhen (z.B. ein Häkchen in einer Checkbox "poppt auf", statt einfach nur zu erscheinen in einer Millisekunde)?
         - Der Tastaturfokus ist genügend sichtbar, z.B. durch einen gut sichtbaren Rahmen (für alle fokussierbaren Elemente wie Links, Schaltflächen, Radio-Buttons, Checkboxen, Ausklapplisten, verlinkte grafische Elemente, etc.). (81, 2.4.7)
-    - 💡 (Why) **The sequence of interactive elements should be meaningful**
+        - 🚀 WCAG 2.2, 2.4.11: Focus Appearance
+
+      - 🧩 Skip links appear on focus → 🤔 *Verweis auf  Concept "Hiding elements properly"*
+
+        - Sprunglinks werden bei Tastaturbedienung sichtbar. (82, 2.4.7)
+
+        - 🚀 WCAG 2.2, 2.4.12: Focus Not Obscured (Minimum)
+
+    - *We don't need an insight like "States of interactive elements should be distinct", because we already have such a rule in "Contrasts"!*
+
+    - 💡 (Why) **The sequence of interactive elements must be meaningful**
       - 🧩 Interactive elements are aligned in a meaningful sequence → 🤔 *Verweis auf Concept "Meaningful sequence"*
         - Die Fokus-Reihenfolge ist sinnvoll, d.h. intuitiv verständlich und nachvollziehbar. (2.4.3) → 🤔 *vgl. Virtue "Optimise for screen reader" (alternative to live regions)*
-      - 🧩 Focus is managed in a meaningful way → 🤔 *Verweis auf Dialog Component* → Focus Management ist auch wichtig für Leute, die Zoomen (und z.B. Fehlermeldungen bei Formular-Eingabe sonst übersehen)!
+
+    - 💡 (Why) **Focus must be managed in a meaningful way**
+
+      - 🧩 Focus is managed in a meaningful way → 🤔 *Verweis auf Dialog Component* → Focus Management ist auch wichtig für Leute, die Zoomen (und z.B. Fehlermeldungen bei Formular-Eingabe sonst übersehen)! → Verweis auf Forms & Validations (Fokus ins erste fehlerhafte Feld bzw. auf erste Fehlermeldung in Liste "3 Fehler gefunden")
         - Der Tastatur-Fokus wird sinnvoll geführt, wenn jemand mit Elementen auf der Seite interagiert, die zu einer Veränderung innerhalb der Seite führen (ohne Page-Refresh), z.B. nach dem Klick auf einen Schalter, der einen Dialog anzeigt (Erreichen des Dialogs und Interagieren im Dialog, Verlassen desselben, Fokus zurück auf das dialog-auslösende Element, Weiternavigieren auf der Seite). (74, 2.4.3)
-    - 💡 (Why) **Interactive elements should be visible**
-      - 🧩 Skip links appear on focus → 🤔 *Verweis auf  Concept "Hiding elements properly"*
-        - Sprunglinks werden bei Tastaturbedienung sichtbar. (82, 2.4.7)
-    - 💡 (Why) **States of interactive elements should be distinct** → 🤔 *I'm a bit unsure where this is placed best. It could also be in Contrasts, Use of Color, or similar → maybe give advice that we should not rely on color alone anyway?*
-    - 💡 (Why) **Excessive tab stops should be avoidable**
+
+    - 💡 (Why) **Excessive tab stops must be be avoidable**
       - 🧩 A skip link allows to jump directly to the content
         - Sprunglinks ermöglichen das einfache Überspringen von sich wiederholenden Informationsblöcken (z.B. Navigation, Headerbereich) mit der Tastatur. (71, 2.4.1)
       - 🧩 Submenu entries that can be skipped
         - Unternavigationspunkte können mit der Tastatur übersprungen werden. Unternavigationen werden entweder erst auf Auslösen geöffnet (z.B. mittels Enter- oder Pfeil-nach unten-Taste) oder Unternavigationen werden zwar angezeigt, mit der Tabulator-Taste wird aber zum nächsten Hauptnavigationspunkt gesprungen (Hineinnavigieren in die Unternavigation nur mit Pfeil-Tasten). (75, 2.4.3)
-    - 💡 (Why) **The keyboard focus should not be overly restricted (trapped)**
+
+    - 💡 (Why) **Movement of the focus must not be overly restricted (trapped)**
       - 🧩 A dialog that restricts focus to itself but doesn't prevent moving the focus outside the document → 🤔 *A bit clunky*
         - Es treten keine Tastaturfallen auf. Alle Bedienelemente können mit der Tastatur erreicht und wieder verlassen werden. Die uneingeschränkte Navigation rückwärts mit Shift+Tab ist sichergestellt. (66, 2.1.2)
-    - 💡 (Why) **Single letter keyboard shortcuts should be avoidable**
+
+    - 💡 (Why) **Single letter keyboard shortcuts must be avoidable**
       - 🧩 Single letter keyboard shortcut that can be disabled
         - Einzeltasten-Kurzbefehle (bestehend aus einer einzelnen Buchstaben-, Interpunktions-, Zahlen- oder Symbolzeichentaste) sind entweder deaktivierbar oder veränderbar oder nur bei Fokus aktiv. (67, 2.1.4)
+
     - **Others**
+
       - Elemente, die einzeln ausgegeben werden sollen, sind als display: block ausgezeichnet, sonst können sie im Browse-Mode (normale Inhaltsnavigation mittels Pfeil-Tasten) nicht einzeln angesteuert werden. Dies gilt hauptsächlich für interaktive Elemente (Links, Buttons, etc.). (64, 2.1.1)
       - Elemente, die von Screenreadern zusammen ausgegeben werden sollen (etwa eine Überschrift, die sowohl eine Kategorie als auch ein Datum enthält), sind als display: inline bzw. display: inline-block ausgezeichnet und befinden sich zusammen in einem display: block-Container. (65, 2.1.1)
-5. 🙏 **Apply semantics to structure content (HTML 101)** → Concept "Semantics" → Natürlich stützen sich einige vorangehende Tugenden auch auf Semantik, deshalb klar gegenseitig referenzieren!
+
+6. 🙏 **Apply semantics to structure content (HTML 101)** → Concept "Semantics" → Natürlich stützen sich einige vorangehende Tugenden auch auf Semantik, deshalb klar gegenseitig referenzieren!
 
     - 💡 (Why) **Paragraphs should be marked up as `<p>`**
         - 🧩 Paragraphs (`<p>`)
@@ -145,9 +195,9 @@
     - **Others**
         - Zeichenverwendung: Inhalte befinden sich innerhalb semantisch bedeutsamer HTML-Elemente (z.B. `<h#>`, `<p>`, `<ul>`, `<ol>`, etc.); das Verwenden von `<div>`- oder `<span>`-Elementen (die keine semantische Relevanz aufweisen) ist nicht ausreichend. (43, 1.3.1e)
         - Zeichenverwendung: Schriftformatierungen mit Informationsgehalt (z.B. durchgestrichen) sind auch nicht-visuell zugänglich. (45, 1.3.1e)
-6. 🙏 **Define a coherent page structure and headings ** → Concept "Semantics"
 
-    - https://www.gov.uk/guidance/content-design/writing-for-gov-uk#structuring-content
+7. 🙏 **Define a coherent page structure and headings ** → Concept "Semantics"
+
     - 💡 (Why) **Landmarks should encompass page areas**
       - 🧩 A typical website's higher level landmarks
         - Landmark Roles (HTML5-Elemente wie `<header>`, `<main>`, etc. sowie ARIA-Rollen) werden korrekt vergeben. Sie werden mit Bedacht verwendet und konsistent eingesetzt (möglichst keine Mehrfach-Verwendung derselben Rolle, konsistentes Auszeichnen aller wichtigen Seitenbereiche). (22, 1.3.1)
@@ -169,7 +219,8 @@
       - Überschriften: Überschriften sind semantisch korrekt mit dem Überschriften-Element (`<h1>` bis `<h6>`) ausgezeichnet. (31, 1.3.1a) → Concept "Semantics"
       - Überschriften: Überschriften für Akkordeons sind als solche ausgezeichnet. (30, 1.3.1a)
       - Überschriften: Überschriften weisen nachfolgenden Inhalt (bzw. darunter liegende Überschriften) auf. (28, 1.3.1a)
-7. 🙏 **Mark up tabular data as tables**
+
+8. 🙏 **Mark up tabular data as tables**
 
     - 💡 (Why) **Tabular data should be marked up as `<table>`** → 🤔 *Keine Grids o.ä.! Tabellen sind Tabellen! Punkt. Mann...*
       - 🧩 A simple table
@@ -186,9 +237,9 @@
         - Tabellen: Daten-Tabellen weisen Tabellenüberschriften (`<caption>`) auf. (38, 1.3.1d)
     - 💡 (Why) **Tables should be responsive** → 🤔 *Problem des horizontalen Scrollens möglichst umgehen (für Keyboard-only User generell schwierig, wenn nichts fokussierbar)*
       - 🧩 Responsive tables → 🤔 *Gibt's verschiedene Möglichkeiten, u.a. jene im ADG, aber ggf. auch Luis' Variante!*
-8. 🙏 **Build robust forms and validations**
 
-    - https://www.w3.org/WAI/tutorials/forms/ | https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/
+9. 🙏 **Build robust forms and validations**
+
     - 💡 (Why) **Form inputs should have a `<label>`**
       - 🧩 Form inputs with labels (incl. Floating-Label Pattern)
         - Formulare: Formularfelder weisen korrekt verknüpfte Labels auf. (37, 1.3.1c)
@@ -223,8 +274,10 @@
       - Nutzereingaben müssen überprüfbar sein vor Prozess-Abschluss mit finanziellen/rechtlichen Folgen. Es ist sichergestellt, dass die Gelegenheit besteht, eingegebenen Daten zu überprüfen und gegebenenfalls zu korrigieren, bevor ein endgültiger Abschluss erfolgt. (98, 3.3.4)
       - Eingabefelder zu Nutzerdaten können automatisch ausgefüllt werden. (50, 1.3.5)
       - *🤔 Was ist mit 4.1.3 Status Messages?*
-9. 🙏 **Optimise screen reader compatibility**
-    - *See https://www.tpgi.com/basic-screen-reader-commands-for-accessibility-testing/*
+      - 🚀 WCAG 2.2, 3.3.9: Redundant Entry → keine doppelte Eingabe von Information notwendig (z.B. Checkout)
+
+10. 🙏 **Optimise screen reader compatibility**
+
     - 💡 (Why) **Every page needs a unique, self-speaking title**
       - 🧩 Home page
         - Seiten haben einen eindeutigen, aussagekräftigen Titel, der Thema oder Zweck der Seite sowie den Betreiber enthält (Muster: "Thema/Zweck der Seite - Seitenbetreiberin") (72, 2.4.2)
@@ -247,50 +300,36 @@
         - Link-Texte sind selbstsprechend, d.h. aus sich selbst heraus oder über den Kontext (gleiches `<p>`-Element, gleiches Listenelement, gleiche Tabellenzelle, Spalten- oder Zeilenüberschrift in Tabelle) verständlich. (77, 2.4.4)
       - 🧩 A single link encompassing different elements → 🤔 *vgl. Cards?!*
         - Mehrfache, unterschiedliche Links (z.B. eine Überschrift, eine Grafik und ein zusätzlicher Textlink) auf dasselbe Ziel werden vermieden. (78, 2.4.4)
-    - 💡 (Why) **Asynchronous notifications should be marked as `[aria-live]` regions**
-      - 🧩 Time-sensitive notification as live region → 🤔 *Careful with auto-rotating sliders or newstickers!* → 🤔 *Or move the focus to a notification? (vgl. Virtue "Keyboard only")*
+    - 💡 (Why) **Notifications should be accessible**
+      - 🧩 Notification after page reload using prefix in the `<title>`
+      - 🧩 Notification after page reload by setting focus → *vgl. Forms & Validation / Keyboard-only*
+      - 🧩 Asynchronous notification as `live` region → 🤔 *Careful with auto-rotating sliders or newstickers!* → 🤔 *Or move the focus to a notification? (vgl. Virtue "Keyboard only")*
         - Statusmeldungen sind für assistierende Technologien zugänglich und überstrapazieren den Audiokanal nicht. (111, 4.1.3)
         - https://www.youtube.com/watch?v=5lzAj1ahRSI | https://web.dev/hiding-and-updating-content/#aria-live
-10. 🙏 **Choose accessible web components**
-    - 💡 (Why) **Accordions should behave accessibly**
-      - Akkordeons sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «reduziert» bzw. «erweitert»).  (100, 4.1.2)
-    - 💡 (Why) **Autocompletes should behave accessibly**
-      - Autocompletes sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, die Anzahl aktuell verfügbarer Vorschläge, der aktuelle Eintrag beim Navigieren der Optionen sowie die schlussendlich gewählte Option werden durch Screenreader vermittelt. (101, 4.1.2)
-    - 💡 (Why) **Date pickers should behave accessibly**
-      - Datumswähler sind barrierefrei umgesetzt, sofern keine Alternative dazu besteht (z.B. manuelle Datumseingabe in Formularfeld). Sie werden durch Screenreader korrekt angesagt, der aktuelle Eintrag beim Navigieren der Optionen sowie die schlussendlich gewählte Option werden durch Screenreader vermittelt. (102, 4.1.2)
-    - 💡 (Why) **Dialogs should behave accessibly**
-      - Dialoge (auch Modale, Overlays, Lightboxes, etc. genannt) sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt; das Element, das den Dialog öffnet, weist auf den Dialog hin. (103, 4.1.2)
-    - 💡 (Why) **Dropdowns should behave accessibly**
-      - Dropdowns (auch Mega-Dropdowns) sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «erweitert» bzw. «reduziert»), der aktuelle Eintrag beim Navigieren der Optionen wird durch Screenreader vermittelt. (104, 4.1.2)
-    - 💡 (Why) **Carousels should behave accessibly**
-      - Karusselle (Slider) sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt. (105, 4.1.2)
-    - 💡 (Why) **Tabs should behave accessibly**
-      - Tabs (Registerkarten) sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «aktiv» bzw. «nicht aktiv»). (106, 4.1.2)
-    - 💡 (Why) **Tooltips should behave accessibly**
-      - Tooltips sind barrierefrei umgesetzt. Einfache, kurze Inhalte werden durch Screenreader sogleich angesagt. Beinhalten Tooltips komplexe Inhalte, so müssen diese manuell gelesen werden können (in diesem Fall handelt es sich eher um einen Dialog). (107, 4.1.2)
-    - **Others**
-      - Should "non-interactive" elements like cards and breadcrumbs also be here (non-interactive in the way that they can be activated, but not "changed" in some way, at least not without page reload)?
-      - Weitere JavaScript-Widgets sind barrierefrei zugänglich, d.h. so programmiert, dass sie mittels assistierender Technologien verstanden und uneingeschränkt verwendet werden können. Sie werden z.B. durch Screenreader korrekt angesagt; Funktion, Rolle und Status werden korrekt und aktuell vermittelt. (108, 4.1.2)
-      - Der Einsatz von ARIA ist sinnvoll und korrekt. Wann immer möglich werden Standard-HTML-Elemente verwendet; ARIA wird eingesetzt wenn kein entsprechendes HTML-Element existiert oder weil eine technische Notwendigkeit dafür besteht. (109, 4.1.2)
-      - Captchas?
-11. 🙏 **Provide audio transcripts and video subtitles**
 
-      - https://www.paciellogroup.com/blog/2017/03/sounding-out-the-web-accessibility-for-deaf-and-hard-of-hearing-people-part-2
-      - "Transcripts facilitate easier production of subtitles in a number of languages and also improve the indexing of online content" (https://www.w3.org/WAI/people-use-web/user-stories/)
-      - 💡 (Why) **Pure audio content should have a text transcript**
-        - Video- und Audio-Inhalte weisen einen Alternativtext auf, der den Titel und/oder eine kurze Umschreibung vermittelt. (2, 1.1.1)
-        - Für aufgezeichnete reine Audio-Inhalte (z.B. Podcasts) existieren Textabschriften oder eine Audiodeskription. Ausnahme: Wenn der reine Audio-Inhalt eine Alternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textabschrift erforderlich. (15, 1.2.1)
-      - 💡 (Why) **Pure video content should have a text transcript**
-        - Für aufgezeichnete reine Video-Inhalte (z.B. Stummfilme) existieren Textabschriften oder gleichwertige Alternativen als Audio-Inhalt. Ausnahme: Wenn der reine Video-Inhalt eine Alternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textabschrift oder gleichwertige Alternative als Audio-Inhalt erforderlich. (16, 1.2.1)
-      - 💡 (Why) **Video with audio should have closed captioning**
-        - Für aufgezeichnete Video-Inhalte mit Audio (z.B. Spielfilme) existieren gleichwertige, synchrone Untertitel. (17, 1.2.2)
-        - Für synchronisierte Video-Inhalte (Videos, in denen Audio- und Videospur zusammen die komplette Information ergeben) existieren Textabschriften oder Audiodeskriptionen. Für die Audiodeskription gilt: Wenn alle Informationen der Videospur bereits in der Audiospur enthalten sind, ist keine Audiodeskription erforderlich. Ausnahme: Wenn der synchronisierte Video-Inhalt eine Medienalternative für bereits bestehenden Text (und als solche deutlich gekennzeichnet) ist, dann ist keine zusätzliche Textalternative oder Audiodeskription erforderlich. (Dieser Checkpunkt kann vernachlässigt werden, falls Level AA angestrebt wird und damit 1.2.5 in Kraft tritt. Um Konformitätsstufe A zu erreichen, benötigen synchronisierte Video-Inhalte entweder eine Textabschrift oder eine Audiodeskription. Für Konformitätsstufe AA ist immer eine Audiodeskription erforderlich.) (18, 1.2.3)
-          - 🤔 *Gute Wortwahl: "text in multimedia not covered by narration"*
-          - *See https://www.3playmedia.com/learn/popular-topics/closed-captioning/* | http://mindfulresearch.co.uk/2011/08/29/autistic-spectrum-captions-and-audio-description/
-      - **Others**
-        - Für Live Video-Inhalte mit Audio (z.B. Nachrichtensendung) existieren gleichwertige, synchrone Untertitel. (19, 1.2.4)
-        - Für synchronisierte Video-Inhalte (Videos, in denen Audio- und Videospur zusammen die komplette Information ergeben) existieren Audiodeskriptionen für inhaltlich relevante, rein visuelle Inhalte. Für die Audiodeskription gilt: Wenn alle Informationen der Videospur bereits in der Audiospur enthalten sind, ist keine Audiodeskription erforderlich. (Dieser Checkpunkt kann vernachlässigt werden, falls Konformitätsstufe A angestrebt wird und damit 1.2.3 in Kraft ist. Um Konformitätsstufe A zu erreichen, benötigen synchronisierte Video-Inhalte entweder eine Textabschrift oder eine Audiodeskription. Für Konformitätsstufe AA ist immer eine Audiodeskription erforderlich.) (20, 1.2.5)
-        - Es gibt keine Elemente, die öfter als dreimal in einer Sekunde blitzen, oder der Blitz ist unterhalb eines definierten Grenzwerts für Blitze. (70, 2.3.1)
+11. 🙏 **Choose accessible web components**
+     - 💡 (Why) **Accordions should behave accessibly**
+       - Akkordeons sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «reduziert» bzw. «erweitert»).  (100, 4.1.2)
+     - 💡 (Why) **Autocompletes should behave accessibly**
+       - Autocompletes sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, die Anzahl aktuell verfügbarer Vorschläge, der aktuelle Eintrag beim Navigieren der Optionen sowie die schlussendlich gewählte Option werden durch Screenreader vermittelt. (101, 4.1.2)
+     - 💡 (Why) **Date pickers should behave accessibly**
+       - Datumswähler sind barrierefrei umgesetzt, sofern keine Alternative dazu besteht (z.B. manuelle Datumseingabe in Formularfeld). Sie werden durch Screenreader korrekt angesagt, der aktuelle Eintrag beim Navigieren der Optionen sowie die schlussendlich gewählte Option werden durch Screenreader vermittelt. (102, 4.1.2)
+     - 💡 (Why) **Dialogs should behave accessibly**
+       - Dialoge (auch Modale, Overlays, Lightboxes, etc. genannt) sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt; das Element, das den Dialog öffnet, weist auf den Dialog hin. (103, 4.1.2)
+     - 💡 (Why) **Dropdowns should behave accessibly**
+       - Dropdowns (auch Mega-Dropdowns) sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «erweitert» bzw. «reduziert»), der aktuelle Eintrag beim Navigieren der Optionen wird durch Screenreader vermittelt. (104, 4.1.2)
+     - 💡 (Why) **Carousels should behave accessibly**
+       - Karusselle (Slider) sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt. (105, 4.1.2)
+     - 💡 (Why) **Tabs should behave accessibly**
+       - Tabs (Registerkarten) sind barrierefrei umgesetzt. Sie werden durch Screenreader korrekt angesagt, ihr Status wird vermittelt (z.B. «aktiv» bzw. «nicht aktiv»). (106, 4.1.2)
+     - 💡 (Why) **Tooltips should behave accessibly**
+       - Tooltips sind barrierefrei umgesetzt. Einfache, kurze Inhalte werden durch Screenreader sogleich angesagt. Beinhalten Tooltips komplexe Inhalte, so müssen diese manuell gelesen werden können (in diesem Fall handelt es sich eher um einen Dialog). (107, 4.1.2)
+     - **Others**
+       - Should "non-interactive" elements like cards and breadcrumbs also be here (non-interactive in the way that they can be activated, but not "changed" in some way, at least not without page reload)?
+       - Weitere JavaScript-Widgets sind barrierefrei zugänglich, d.h. so programmiert, dass sie mittels assistierender Technologien verstanden und uneingeschränkt verwendet werden können. Sie werden z.B. durch Screenreader korrekt angesagt; Funktion, Rolle und Status werden korrekt und aktuell vermittelt. (108, 4.1.2)
+       - Der Einsatz von ARIA ist sinnvoll und korrekt. Wann immer möglich werden Standard-HTML-Elemente verwendet; ARIA wird eingesetzt wenn kein entsprechendes HTML-Element existiert oder weil eine technische Notwendigkeit dafür besteht. (109, 4.1.2)
+       - Captchas?
+
 12. 🙏 **Build a robust yet flexible experience**
 
       - 💡 (Why) **Indications should be understandable with different senses**
@@ -310,10 +349,19 @@
       - Die Navigation ist konsistent, d.h. innerhalb einer Anwendung gleichbleibend angeordnet und aufgebaut. (91, 3.2.3)
       - Bestandteile mit gleicher Funktion sind konsistent umgesetzt, sowohl auf visueller wie auch auf semantischer Ebene. (92, 3.2.4)
       - Der HTML-Code weist keine für die Barrierefreiheit relevanten Fehler auf. (99, 4.1.1)
+      - 🚀 WCAG 2.2, 3.3.7: Accessible Authentication → Z.B. wenn Copy&Paste eines Passworts disabled ist (manuelle Eingabe erzwungen) *🤔 → als "flexible" kann/sollte durchaus auch verstanden werden, dass keine Standard-Funktionalitäten unterbunden werden* 
 
-**Offene Punkte:**
+**Offene Checklisten-Punkte:**
 
 - Elemente sind korrekt versteckt und zwar so, dass sie auch durch assistierende Technologien nicht ausgegeben werden, wenn sie visuell nicht sichtbar sind. (76, 2.4.3) ⁉️ Was macht das hier? Würde ich für WCAG 2.2 Checkliste unbedingt umformulieren/entfernen!
+
+**"Fehlende" WCAG-Kriterien:**
+
+Alles WCAG 2.2-Kriterien. Diese könnten aber eigentlich "gäbig" unter einer Virtue "Common Sense" oder so gruppiert werden:
+
+- 🚀 WCAG 2.2, 2.5.8: Target Size (Minimum) → Mindestgrösse von klickbaren Elementen, plus Abstand zwischen ihnen
+- 🚀 WCAG 2.2, 3.2.6 Consistent Help → Z.B. Hilfe-Links in Footer müssen immer am selben Ort sein
+- 🚀 WCAG 2.2, 3.2.7: Any important controls should remain visible/available while that control is relevant
 
 **Master classes:**
 

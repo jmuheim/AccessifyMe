@@ -93,63 +93,63 @@ article.virtue id=dom_id(@virtue)
           .right
             figure.video_player
               = far_icon('play-circle')
-              = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+              = introduction_image_tag(@virtue)
 
-        - Pattern.do_or_dont.values.each do |type|
-          - patterns = insight.patterns.send(type)
-          - if patterns.any?
-            details.patterns class=type
-              summary
-                h5
-                  => patterns.count
-                  => Pattern.do_or_dont.send(type).text.pluralize
-
-                  sup
-                    | with
-                    mark<> ? demos
-                    | and
-                    mark< class=(type == :do ? :green : :red)
-                      | ? #{type == :do ? "wins" : "fails"}
-
-              - patterns.each_with_index do |pattern, i|
-                hr
-
-                article.pattern id=dom_id(pattern)
-                  .two_columns
-                    .left
-                      h6
-                        = do_or_dont_icon(pattern)
-                        = link_to pattern
-                          = inline_markdown(pattern.name)
-
-                      = markdown(pattern.description)
-
-                      .horizontal-tags
-                        ul
-                          li
-                            strong> Demos:
-                            mark = pattern.bloopers.demos.count
-                          li
-                            strong> Real world:
-
-                            mark class=(pattern.do? ? :green : :red) #{pattern.bloopers.real.count}
-
-                    .right
-                      figure.video_player
-                        = far_icon('play-circle')
-                        = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
+        / - Pattern.do_or_dont.values.each do |type|
+        /   - patterns = insight.patterns.send(type)
+        /   - if patterns.any?
+        /     details.patterns class=type
+        /       summary
+        /         h5
+        /           => patterns.count
+        /           => Pattern.do_or_dont.send(type).text.pluralize
+        /
+        /           sup
+        /             | with
+        /             mark<> ? demos
+        /             | and
+        /             mark< class=(type == :do ? :green : :red)
+        /               | ? #{type == :do ? "wins" : "fails"}
+        /
+        /       - patterns.each_with_index do |pattern, i|
+        /         hr
+        /
+        /         article.pattern id=dom_id(pattern)
+        /           .two_columns
+        /             .left
+        /               h6
+        /                 = do_or_dont_icon(pattern)
+        /                 = link_to pattern
+        /                   = inline_markdown(pattern.name)
+        /
+        /               = markdown(pattern.description)
+        /
+        /               .horizontal-tags
+        /                 ul
+        /                   li
+        /                     strong> Demos:
+        /                     mark = pattern.bloopers.demos.count
+        /                   li
+        /                     strong> Real world:
+        /
+        /                     mark class=(pattern.do? ? :green : :red) #{pattern.bloopers.real.count}
+        /
+        /             .right
+        /               figure.video_player
+        /                 = far_icon('play-circle')
+        /                 = image_tag("Accessify.me-main-title", alt: "Accessify.me main title slide")
 
   h2 Used tools 🛠
 
   p The following tools have proven useful when developing for and testing keyboard-only accessibility:
 
-  ul
-    - @video.video_to_tools.each do |through|
-      li
-        / == material_icon.send(through.tool.icon)
-        =<> link_to through.tool.name, through.tool
-        | to
-        =< through.purpose
+  / ul
+  /   - @video.video_to_tools.each do |through|
+  /     li
+  /       / == material_icon.send(through.tool.icon)
+  /       =<> link_to through.tool.name, through.tool
+  /       | to
+  /       =< through.purpose
 
   h2 Related <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> criteria 📜
 
@@ -161,11 +161,11 @@ article.virtue id=dom_id(@virtue)
         option selected=true AA
         option AAA
 
-  ul
-    - @video.video_to_wcag_elements.each do |through|
-      li
-        =<> link_to through.wcag_element.name_with_tree_prefix, through.wcag_element
-        =< through.wcag_element.explains_why
+  / ul
+  /   - @video.video_to_wcag_elements.each do |through|
+  /     li
+  /       =<> link_to through.wcag_element.name_with_tree_prefix, through.wcag_element
+  /       =< through.wcag_element.explains_why
 
   h2 Reactions 🙋‍♀️🙋‍♂️
 

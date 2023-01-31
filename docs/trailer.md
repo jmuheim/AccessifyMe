@@ -1,5 +1,7 @@
 # Trailer
 
+**Become an accessibility virtuoso!**
+
 - Prämisse: Accessibility is complex, ugly, and expensive!
 - Video is so much more accessible to 99% of target audience!
   - 99% of web professionals have no disability (and therefore lack awareness about the topic) and thus are used to / capable of watching video tutorials

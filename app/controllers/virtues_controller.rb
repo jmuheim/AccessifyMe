@@ -10,10 +10,6 @@ class VirtuesController < ApplicationController
     end
   end
 
-  def show
-    @video = Video.find(2)
-  end
-
   def create
     @virtue = Virtue.new(virtue_params)
 
