@@ -14,6 +14,8 @@ Some explanation on the used wording:
   - For the formulation of the specific patterns... TODO
   - *Other words that I considered:* best practice, recipe, puzzle piece...
 
+Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-difference/
+
 1. 🙏 **Offer sufficient color contrast**
    - 💡 (Why) **Text needs a contrast of `4.5:1` to its background (or `3:1` for large text).** → 🤔 *Aufteilen in "normal" text and "large" text?*
         - 🧩 Texts have a contrast of `4.5:1`
@@ -379,3 +381,5 @@ Alles WCAG 2.2-Kriterien. Diese könnten aber eigentlich "gäbig" unter einer Vi
 4. PDF
 5. Building accessible components (with and without ARIA)
 6. Automated testing
+7. Responsive Tabellen → bzw. `display` übersteuert Semantik! Kann aber mittels `role="tablerow"` o.ä. wieder rück-übersteuert werden 😅
+   1. Hinweis: `display: none` "entfernt" Element für Nutzende aus der Sichtbarkeit, aber Formular-Elemente werden weiterhin verschickt! Ist etwas un-intuitiv...

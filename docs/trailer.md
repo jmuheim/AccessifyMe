@@ -1,5 +1,70 @@
 # Trailer
 
+
+
+- "Creating accessible websites is difficult."
+  - At least, that's what most web designers and developers believe.
+- But accessibility has become a key requirement in more and more digital projects.
+  - So gone are the days where it could simply be ignored.
+- Admittedly, the WCAG indeed are quite complex and extensive.
+  - And since they are very theory-heavy, it's difficult to put them into practice.
+- I, at least, wouldn't want to learn them from scratch, either.
+
+
+
+
+- Hence it's time for a radically different approach to learning accessibility!
+
+  - Hi! I'm Joshua, an accessibility consultant and fullstack developer.
+
+- I learned first hand during my years at the Swiss foundation "Access for all".
+
+  - There I have initiated and authored the ADG and the Swiss Government's Accessibility Checklist 2.1.
+
+- I accompanied dozens of web projects for local and international clients.
+
+  - I figured out how to achieve accessibility in the most simple yet effective ways.
+  - And I want to teach those skills to you, dear designers and developers!
+
+
+
+- So: welcome to the Accessify Training 2023!
+- Over the course of a year I will introduce you to 12 practical virtues
+  - For example: Colors and contrasts, keyboard-only operability, forms and validations, and web components
+- You will learn the concepts and tools that empower you to assess accessibility on your own!
+  - Including the ominous, terrifying (but honestly quite simple and charming) screen reader!
+- Life-like personas will make the requirements technically and empathically comprehensible.
+  - Ultimately, you will understand why accessibility matters to each and everyone of us
+  - And that it benefits both UX and SEO, while improving code readability and performance.
+
+
+
+- Each month
+  - You will receive a 10mins video, introducing a virtue
+  - Followed by several 5min videos, revealing advanced insights and best practices
+  - Snackable content, made to fit into your busy workdays!
+- Small homework assignments will deepen your experience
+  - Apply them to your current projects so you can optimise them on-the-fly!
+- At the end of each month
+  - You can share experiences and ask questions in our virtual classroom (Zoom)
+
+
+
+- This is your chance to finally make friends with accessibility!
+- Thanks to deliberate guidance, with minimal effort
+  - You will learn how to simply fulfill the majority of WCAG requirements
+  - And how to avoid many remaining ones
+- After the training, you will be ready to design, implement and validate accessible websites!
+- Register now for a one-time fee of 1200 CHF (or EUR)
+  - At [accessify.me/training]()
+
+
+
+- Accessify.me - Become an accessibility virtuoso, now!
+
+
+
+
 **Become an accessibility virtuoso!**
 
 - Prämisse: Accessibility is complex, ugly, and expensive!

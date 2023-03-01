@@ -100,6 +100,12 @@ Solve for one, extend to many:
 - https://www.cdc.gov/visionhealth/basics/ced/fastfacts.htm
 - https://www.nhs.uk/conditions/colour-vision-deficiency/
 
+
+
+2.2 billion people have vision impairment: https://www.who.int/en/news-room/fact-sheets/detail/blindness-and-visual-impairment
+
+
+
 From https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles:
 
 - Statistics about sight loss (https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user)
