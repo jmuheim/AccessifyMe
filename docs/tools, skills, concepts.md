@@ -56,6 +56,7 @@ Vielleicht macht es Sinn, einfach nur den Screenreader-Teil in einer eigenen sep
 - **1 solution for all** sowie **All information for all** (nicht das Gefühl haben, ein ausführlicher alt-Text sei nur für Screenreader sinnvoll)
 - **Meaningful sequence** (of interactive elements and content/headings)
   - Ist content/headings nur für Screenreader relevant, oder auch für andere? (Z.B. Selektieren von Text kann counter-intuitiv sein, wenn DOM und visuelle Anordnung nicht ähnlich sind)
+  - Warum gibt es für Inhalte (1.3.2 Meaningful Sequence) und interaktive Elemente (2.4.3 Focus Order) zwei unterschiedliche Erfolgskriterien?! Eigentlich würde 1.3.2 doch genügen?!
 - **Hiding elements properly** (to everybody, from vision, from screen readers)
 - **Alternative methods** → z.B. HTML-Variante bei unzugänglichem PDF (aber eher vermeiden!)
   - Eng verwandt mit **2-senses principle**, vielleicht sogar (zumindest manchmal) "dasselbe"?!

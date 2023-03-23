@@ -70,6 +70,7 @@ Carly Fiorina: "Human potential is the only limitless resource we have on this e
 - https://www.w3.org/WAI/people-use-web/user-stories/
   - https://www.w3.org/WAI/people-use-web/abilities-barriers/
   - https://www.w3.org/WAI/people-use-web/tools-techniques/
+  - https://www.w3.org/WAI/older-users/literature/ → da hat's diverse %-Angaben
 - https://www.abilitynet.org.uk/sites/abilitynet.org.uk/files/Barclays-Diverse-Personas-Issue-1.pdf
 
 ## Microsoft Inclusive Design

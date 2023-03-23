@@ -1,68 +1,119 @@
 # Trailer
 
+Feedbacks:
 
+- ✅ WCAG erklären!
+- ✅ Teleprompter!
+- ❌  12 Tugenden kürzen? Auf 1 Seite?
+- ✅ Preis erst am Schluss zeigen (Braut schmücken)
+- ✅ QR-Code deutlich länger zeigen
+- ❌ Rabatt nennen? → künstlich verknappen
+- ✅ Background-Pattern entfernen?
+- ✅ "Anfreunden..." → jetzt Experte werden für Barrierefreiheit!
+  - ✅ Was bekommt der Kunde? "Du bekommst 2h Direktberatung, 12 Video-Sessions..." → Die Leute catchen!
+- Haltung vor Computer verbessern (nicht so schräg aufs Pult lehnen, weniger nach unten kucken)
+- 4min wäre besser als 5min
+- Tugenden 2, 6,7,8 werden übersprungen, vielleicht fragen sich andere auch warum.
+  - ✅ Bei dem Teil passiert visuell einfach zu viel für mich. Hier würde ich nur die Visuals und Josh nur als Stimme machen.
+  - ✅ Video in Video ist irritierend
+- ❌ Übersicht wäre als Kartografierung / Iconisierung der Tugenden besser. Man könnte dann eine Map interaktiv aufbauen, während Du sie erläuterst.
+- ✅ Die Animationen und (Sound-)Effekte sind für mich am obersten Limit (vor allem am Anfang). Manchmal wirkt es mir fast etwas zu wild.
+  - Teil Grafiken machen es etwas überladen
+- Teilweise kann ich die Texte nicht zu Ende lesen, weil sie schon wieder wechseln. Ist nicht soo schlimm, weil die Info ja auf der Tonspur ebenfalls vermittelt wird.
+- Bei den 12 Tugenden würde ich mir noch eine Übersicht wünschen. Auf die meisten gehst du ein, z.T. wirkt die Reihenfolge etwas willkürlich.
+- ✅ Der Übergang zwischen Lösungsansätzen und Personas würde ich anders formulieren, z.B. "Wir arbeiten mit lebensnahen Personas. Sie ermöglichen die technische und emotionale Nachvollziehbarkeit..."
+- Du sagst, der Start sei im Mai. Ich habe das so verstanden, dass man später nicht mehr einsteigen kann. Ist das so? Wenn ein späterer Einstieg jederzeit möglich ist, würde ich es explizit erwähnen.
+- ✅ Mai 2023!!!
+- ✅ "Das muss nicht sein!!" → weniger schwer
+- ❌ Preis besser monatlich? Oder erst auf Website?
+- Hand-Gesten (1, 2, 3...)!
 
-- "Creating accessible websites is difficult."
-  - At least, that's what most web designers and developers believe.
-- But accessibility has become a key requirement in more and more digital projects.
-  - So gone are the days where it could simply be ignored.
-- Admittedly, the WCAG indeed are quite complex and extensive.
-  - And since they are very theory-heavy, it's difficult to put them into practice.
-- I, at least, wouldn't want to learn them from scratch, either.
+## Finales Drehbuch
 
-
-
-
-- Hence it's time for a radically different approach to learning accessibility!
-
-  - Hi! I'm Joshua, an accessibility consultant and fullstack developer.
-
-- I learned first hand during my years at the Swiss foundation "Access for all".
-
-  - There I have initiated and authored the ADG and the Swiss Government's Accessibility Checklist 2.1.
-
-- I accompanied dozens of web projects for local and international clients.
-
-  - I figured out how to achieve accessibility in the most simple yet effective ways.
-  - And I want to teach those skills to you, dear designers and developers!
-
-
-
-- So: welcome to the Accessify Training 2023!
-- Over the course of a year I will introduce you to 12 practical virtues
-  - For example: Colors and contrasts, keyboard-only operability, forms and validations, and web components
-- You will learn the concepts and tools that empower you to assess accessibility on your own!
-  - Including the ominous, terrifying (but honestly quite simple and charming) screen reader!
-- Life-like personas will make the requirements technically and empathically comprehensible.
-  - Ultimately, you will understand why accessibility matters to each and everyone of us
-  - And that it benefits both UX and SEO, while improving code readability and performance.
-
-
-
-- Each month
-  - You will receive a 10mins video, introducing a virtue
-  - Followed by several 5min videos, revealing advanced insights and best practices
-  - Snackable content, made to fit into your busy workdays!
-- Small homework assignments will deepen your experience
-  - Apply them to your current projects so you can optimise them on-the-fly!
-- At the end of each month
-  - You can share experiences and ask questions in our virtual classroom (Zoom)
+- 🔴 "Barrierefreie Websites erstellen ist schwer."
+  - 🔴 Zumindest **glauben** das viele Webdesigner- und Entwickler:innen. **Aber das muss nicht sein!**
+- 🔴 Denn Barrierefreiheit ist längst eine **Schlüsselanforderung** vieler digitaler Produkte...
+  - ...und die Zeiten, in denen man sie einfach ignorieren konnte, sind **definitiv** vorbei.
+- 🔴 Zugegeben, die **Web Content Accessibility Guidelines** sind leider ziemlich komplex und dazu extrem umfangreich.
+  - 🔴 Sie sind sehr **theorielastig**... 🎞
+  - 🔴 ...und deshalb schwierig in die **Praxis** umzusetzen.
+- 🔴 **Ganz ehrlich:** auch ich hätte keine Lust, sie von Grund auf erarbeiten zu müssen.
 
 
 
-- This is your chance to finally make friends with accessibility!
-- Thanks to deliberate guidance, with minimal effort
-  - You will learn how to simply fulfill the majority of WCAG requirements
-  - And how to avoid many remaining ones
-- After the training, you will be ready to design, implement and validate accessible websites!
-- Register now for a one-time fee of 1200 CHF (or EUR)
-  - At [accessify.me/training]()
+
+- 🔴 Es ist also Zeit für einen **radikal neuen Ansatz**, wie Barrierefreiheit gelernt wird!
 
 
 
-- Accessify.me - Become an accessibility virtuoso, now!
+
+- ↖️🔴 **Grüezi mitenand!** Ich bin Josua Muheim, Accessibility Consultant und Fullstack Entwickler.
+  - 🫵 Ich möchte **euch** einladen zu meinem Online Jahrestraining in Barrierefreiheit!
+- 🔴 Als **Frontender** und ehemaliger Mitarbeiter der 🔴 Schweizer Stiftung **"Zugang für alle"** verfüge ich über breite Expertise aus erster Hand.
+- 🔴 Ich war **Initiator** des Accessibility Developer Guides...
+  - 🔴 ...habe die Accessibility Studie 2020 begleitet...
+  - 🔴 ...und die WCAG Checkliste 2.1 des **Schweizer Bundes** mitverfasst.
+- Beim Begleiten 🔴 **Dutzender** Projekte habe ich gelernt...
+  - ...wie man 🔴 Barrierefreiheit **einfach und effektiv** erreichen kann.
+  - 🫵 Nun möchte ich **euch**, liebe Designer- und Entwickler:innen, diese Expertise weiter geben!
 
 
+
+- 🔴 Ich werde euch **12 grundlegende Tugenden** vorstellen, um Barrierefreiheit **reibungslos** zu erreichen...
+  - 🔴 ...einige davon sind: Wie man optimale **Farben** wählt und **Kontraste** testet
+  - 🔴 Wie man **Grafiken** mit aussagekräftigen **Text-Alternativen** beschreibt
+  - 🔴 Wie **Tastatur-Bedienbarkeit** sicher gestellt werden kann
+  - 🔴 Weiter: Wie man **Seitenbereiche** und **Inhalte semantisch** gliedert
+  - 🔴 Wie man **Formulare** implementiert, die von allen verstanden und bedient werden können
+  - 🔴 Und wie man heraus findet, welche Web Komponenten **tatsächlich** barrierefrei sind.
+- 🔴 Was zudem natürlich nicht fehlen darf: Die **Handhabung von Screenreadern**...
+  - ...welche von 🔴 vielen Entwicklern gefürchtet werden...
+  -  🔴...die aber **deutlich** sympathischer sind als ihr Ruf.
+  - Vor allem 🔴 aber sind sie **hervorragende Tools** zur Qualitätssicherung - weit über Barrierefreiheit hinaus!
+
+
+
+- 🔴 Damit ausgerüstet, untersuchen wir im Internet gemeinsam **Lösungsansätze**...
+  - 🔴 ...und finden **Best Practices**...
+  - 🔴 ...aber auch **Anti-Patterns**.
+  - 🫵 Kurz: 🔴 **Bald** bist **du** fähig, Barrierefreiheit selber zu prüfen und optimieren!
+  
+
+
+
+- 🔴 Unterwegs lernen wir lebensnahe **Personas** kennen.
+  - Sie ermöglichen die **technische und emotionale Nachvollziehbarkeit** ihrer jeweiligen Anliegen.
+  - 🔴 Wir sehen, warum Barrierefreiheit wichtig **für uns alle** ist
+  - 🔴 ...dass sie UX und SEO fördert, sowie die generelle Qualität des Codes.
+  
+
+
+
+- 🔴 Jeden Monat also...
+  - ...erhältst du mehrere Videos, die **prägnant** und **praxisorientiert** die aktuelle Tugend vorstellen.
+  - 🔴 **"Snackable content"**, der sich **perfekt** in geschäftige Arbeitswochen integrieren lässt.
+- 🔴 Kleine Hausaufgaben ermöglichen **praktische** Erfahrung und schaffen Routine
+  - 🫵 Wende sie auf **deine** laufenden Projekte an, um diese gleich zu optimieren!
+- 🔴 Am Monatsende können wir **live** Erfahrungen austauschen und Fragen diskutieren.
+
+
+
+- Doch das ist nicht alles: 🔴 du erhältst **2h 1:1 Direkt-Consulting** obendrein!
+  - Für Anliegen und Fragen, die keinen Aufschub dulden...
+
+
+
+- ↖️🔴 Werde **jetzt** Experte für Barrierefreiheit...
+  - 🔴 ...und melde dich an auf [accessify.me/training]()!
+
+- 🔴 Für **1200 CHF** kriegst du **viele** Stunden Videos, live Unterricht und 1:1 Beratung. Du lernst in **deinem** Tempo und so intensiv wie du magst.
+- Im Mai geht's los. **Ich freu mich auf dich!**
+
+
+
+- 🔴 Accessify.me - Level up, now!
+
+## Allgemeine Notizen
 
 
 **Become an accessibility virtuoso!**
@@ -87,7 +138,7 @@
 - **WCAG 2.2 ready!!** 🎉🚀
 - Essence of WCAG, without its complexity
   - Map von Utopia aufzeigen (rauszoomen)
-  - Beispiel aufzeigen von Tastaturbedienbarkeit
+  - Beispiel aufzeigen von Tastaturbedienbarkeit (oder noch besser: Forms and Validations)
     - Unterschiedlichste WCAG Kriterien damit verknüpft, ziemlich "random"
       - Das "Pferd von hinten aufzäumen"
 - And: it's always about a few blind people, isn't it?!
