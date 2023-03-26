@@ -28,16 +28,17 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
    - 📚 https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/
    - 📚 https://michelf.ca/projects/sim-daltonism/
    - 📚 https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast
+   - 📽 https://youtu.be/FvpUNiB-2T0?t=614 → nette Veranschaulichung, ob etwas lesbar ist oder nicht?
    - 💡 (Why) **Text needs a contrast of `4.5:1` to its background (or `3:1` for large text).** → 🤔 *Aufteilen in "normal" text and "large" text?*
         - 🧩 Texts have a contrast of `4.5:1`
    
              - Das Kontrastverhältnis bei Text und Bildern von Text zum Hintergrund beträgt mindstens 4.5:1 bei normaler Schriftgrösse und mindestens 3:1 bei grosser Schrift (definiert als mindestens 18pt oder 14pt + fett). Das gilt sowohl für normale Schrift zur Hintergrundfarbe (alle Texte und Hinweise) als auch für Texte in informativen grafischen Elementen, ist aber nicht zwingend für Logos oder rein dekorative Grafiken. (54, 1.4.3)
-   
+
              - Interaktive Textelemente (z.B. Schalterbeschriftungen) erfüllen die Kontrastanforderung von 4.5:1 in allen Zuständen (fokussiert, bei Mouseover, etc.) gleichermassen. Für die Unterscheidbarkeit zwischen den Zuständen eines interaktiven Elements gelten keine strikten Kontrastanforderungen. (55, 1.4.3)
    
         - 🧩 Large texts have a contrast of `3:1`
    - 💡 (Why) **Graphical info needs a contrast of `3:1` to its background.**
-   
+
         - 🧩 Parts of diagrams have a contrast of `3:1`
    
              - Das Kontrastverhältnis bei informativen grafischen Elementen (z.B. Linien und Kurven in Diagrammen) zu den umgebenden Farben beträgt mindestens 3:1. Das gilt für alle visuellen Hinweise, die für die Wahrnehmung und Bedienung erforderlich sind (z.B. Schalter zum Anpassen der Kurven). Der Hover-Zustand eines Elements muss nicht unterscheidbar sein vom Standard-Zustand. (60, 1.4.11)
@@ -58,6 +59,7 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
 
     - 📚 https://webdesign.tutsplus.com/articles/accessibility-basics-designing-for-visual-impairment--cms-27634
     - 📚 https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Use_of_color
+    - 📽 https://www.youtube.com/watch?v=qQcg1xAC5JQ → Gestaltung informativer Grafiken (netz-barrierefrei.de)
     - 💡 (Why) **Meaningful object-color should be complemented with label, icon, or pattern**
         - 🧩 Colored lines in a line chart are marked with individual labels → 🤔 *i.e. "Zürich", "New York", etc.*
           - Information wird nicht durch Farbe allein vermittelt. Das gilt auch für Hover- und Fokus-Zustände. Wenn Information farblich übermittelt wird (z.B. rot hervorgehobene Teile eines Texts, um deren Wichtigkeit zu markieren), ist ein weiterer visueller Reiz vorhanden, um diese Information zu vermitteln (z.B. Fettschrift oder Unterstreichung, unterschiedliche Symbole, zusätzlicher Text). (51, 1.4.1)
@@ -76,6 +78,7 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
           - *What about red validation errors? Is the red color an important information? I would say: yes, it makes the message quickly interpretable!*
 3. 🙏 **Describe graphics through alternative text**
 
+    - 📽 https://www.youtube.com/watch?v=pUAsiZXYSE0 → Alternativtexte - alles, was Du über Bildbeschreibungen für Blinde wissen solltest (netz-barrierefrei.de)
     - Sollen wir hier auch beschreiben, wie man ein Bild richtig umsetzt? Denn `<svg>`-Elemente benötigen ein `role="image"`!
         - 📚 https://webdesign.tutsplus.com/tutorials/accessible-svg-methods-for-adding-alternative-content--cms-32205
         - 📚 https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#text_alternatives
@@ -133,6 +136,7 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
 5. 🙏 **Ensure keyboard-only operability**
 
     - 📚 https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#using_native_keyboard_accessibility
+      - Inkl. Anleitung, wie man Tabbing in macOS und FF aktiviert
     - 📚 https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Keyboard
     - 📚 https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Operable
     - 📚 https://axesslab.com/hand-tremors/
@@ -161,6 +165,9 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
         - 📚 https://webaim.org/techniques/keyboard/#navigation: hat eindeutigen Hinweis auf <mark>The interaction uses standardized keystrokes.</mark>
       - 🧩 Interactivity available through arrow keys → 🤔 *ebenfalls simples Dropdown-Menü*
     - 💡 (Why) **Focused interactive elements must clearly stand out** → 🤔 *different focus states for keyboard and mouse? (Luis Argüello hatte da eine kleine Library)* → vielleicht später verschieben in Tugend "Contrast"? Würde diese hier etwas verkleinern (ist die mit Abstand umfangreichste Tugend).
+      - 🤔 Wie sieht es aus mit Animationen, um fokussierte Elemente hervorzuheben? https://youtu.be/5emPH8J6hCE?t=162
+        - Das W3C hat zumindest mancherorts auch leichte Animationen: https://www.w3.org/WAI/WCAG21/Understanding/keyboard
+      - `border: 2px solid currentColor` benutzen, um aktuelle Textfarbe zu wählen! https://www.w3schools.com/colors/colors_currentcolor.asp / https://caniuse.com/currentcolor
       - 🧩 Focus states with solid aesthetic attributes (`outline`, `border`, `text-decoration`, `font-weight`, etc.) → 🤔 *Hinweis auch auf HCM und Dark Mode!* 🤔 Ggf. leichte Animationen benutzen, um Sichtbarkeit zu erhöhen (z.B. ein Häkchen in einer Checkbox "poppt auf", statt einfach nur zu erscheinen in einer Millisekunde)?
         - 📚 https://webaim.org/techniques/keyboard/#focus: kurze generelle Einführung, inkl.
           - <mark>Avoid `outline: 0` or `outline: none` or other styles that remove or limit visibility of keyboard focus indicators.</mark>
@@ -168,8 +175,13 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
         - 📚 https://github.com/ten1seven/what-input (vs. `:focus-visible`)
         - 📚 https://github.com/NV/flying-focus/ → seit 2014 nicht mehr geupdated, aber klappt auf den ersten Blick ganz ordentlich
         - 📚 https://developer.mozilla.org/en-US/docs/Web/CSS/:focus
+        - 📚 https://developer.mozilla.org/en-US/docs/Web/CSS/outline → MDN hat stets nette Demos der jeweiligen Funktionalitäten! Kann man auch gut kurz in Videos einblenden.
+        - 📚 https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset
+        - Often it is sufficient to re-use the `:hover` for the `:focus` style → but needs enough contrast, etc.!
+        - 📽 https://www.youtube.com/watch?v=cMO5maAcgQ8 → User "Silktide" macht nette kurze animierte Videos
+          - "This doesn't fit my design!" → macht nix! `:focus` ist nicht dasselbe wie `:hover`, und nur Keyboard-only Nutzende werden den Fokus sehen! → ist das wirklich so? Wird `focus` nicht auch gesetzt, wenn man einen Button anklickt?
         - Der Tastaturfokus ist genügend sichtbar, z.B. durch einen gut sichtbaren Rahmen (für alle fokussierbaren Elemente wie Links, Schaltflächen, Radio-Buttons, Checkboxen, Ausklapplisten, verlinkte grafische Elemente, etc.). (81, 2.4.7)
-        - 🚀 WCAG 2.2, 2.4.11: Focus Appearance
+        - 🚀 WCAG 2.2, 2.4.11 (https://www.w3.org/TR/WCAG22/#focus-appearance): Focus Appearance → 🤔 *Müssten 2.4.7 und 2.4.11 eigentlich nicht in "1 - Perceivable" drin sein?! 😉*
       - 🧩 Skip links appear on focus → 🤔 *Verweis auf  Concept "Hiding elements properly"*
         - 📚 http://webaim.org/techniques/skipnav/
         - 📚 https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#skip_links
@@ -184,6 +196,7 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
           - <mark>Do not use `tabindex` values of 1 or greater to change the default keyboard navigation order.</mark>
             - Auch interessant: https://adrianroselli.com/2014/11/dont-use-tabindex-greater-than-0.html und https://www.tpgi.com/using-the-tabindex-attribute/
             - Attribute stets verlinken mit MDN! https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
+          - `tabindex` mit Wert >0 ist auf Dauer nicht wartbar/skalierbar!
         - 📚 https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html
         - 📚 https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow
         - 📚 https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
@@ -203,8 +216,9 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
       - 🧩 A dialog that restricts focus to itself but doesn't prevent moving the focus outside the document → 🤔 *A bit clunky*
         - Es treten keine Tastaturfallen auf. Alle Bedienelemente können mit der Tastatur erreicht und wieder verlassen werden. Die uneingeschränkte Navigation rückwärts mit Shift+Tab ist sichergestellt. (66, 2.1.2)
     - 💡 (Why) **Single letter keyboard shortcuts must be avoidable**
-      - 🧩 Single letter keyboard shortcut that can be disabled
+      - 🧩 Single letter keyboard shortcuts can be disabled and/or remapped
         - Einzeltasten-Kurzbefehle (bestehend aus einer einzelnen Buchstaben-, Interpunktions-, Zahlen- oder Symbolzeichentaste) sind entweder deaktivierbar oder veränderbar oder nur bei Fokus aktiv. (67, 2.1.4)
+        - *🤔 Ggf. noch Hinweis darauf, dass komplexere Shortcuts mit assistiven Devices kollidieren können, und dass nur wirklich komplexe Web-Apps sowas implementieren sollten*
     - **Others**
     
       - Elemente, die einzeln ausgegeben werden sollen, sind als display: block ausgezeichnet, sonst können sie im Browse-Mode (normale Inhaltsnavigation mittels Pfeil-Tasten) nicht einzeln angesteuert werden. Dies gilt hauptsächlich für interaktive Elemente (Links, Buttons, etc.). (64, 2.1.1)
@@ -265,6 +279,7 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
       - 🧩 Lower level landmarks
     - 💡 (Why) **The page's `<main>` landmark should be structured meaningfully by headings**
       - 🧩 Main content is structured by headings (like a book)
+        - Anti-Pattern: Headings are used for styling rather than structure
         - Überschriften: Eigenständige Seitenbereiche weisen eine eigene Überschrift auf, da sie sonst der vorausgehenden Überschrift falsch untergeordnet werden. Für Inhalts- und Funktionsblöcke wie Kopf- und Fussbereich, Navigation, Breadcrumb, etc. können visuell unsichtbare Überschriften eingesetzt werden. (27, 1.3.1a)
         - Überschriften: Die Hierarchie der Überschriften-Ebenen ist inhaltlich-logisch korrekt und vermittelt die Struktur der Inhalte. (25, 1.3.1a)
         - Überschriften und Labels (z.B. in Eingabefeldern, bei Schaltern, etc.) sind ausreichend informativ und korrekt und bezeichnen den zugeordneten Web-Inhalt verständlich. Es gibt keine gleichlautenden Überschriften oder Labels auf einer Seite. (80, 2.4.6) (❗️Auch bei "Forms")
@@ -341,6 +356,7 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
       - 🚀 WCAG 2.2, 3.3.9: Redundant Entry → keine doppelte Eingabe von Information notwendig (z.B. Checkout)
 10. 🙏 **Optimise screen reader compatibility**
 
+    - 🤔 *Vielleicht mal noch ChromeVox anschauen?*
     - 💡 (Why) **Every page needs a unique, self-speaking title**
       - 🧩 Home page
         - Seiten haben einen eindeutigen, aussagekräftigen Titel, der Thema oder Zweck der Seite sowie den Betreiber enthält (Muster: "Thema/Zweck der Seite - Seitenbetreiberin") (72, 2.4.2)
@@ -398,6 +414,8 @@ Coach vs. **Mentor**: https://www.uopeople.edu/blog/coach-vs-mentor-whats-the-di
        - Captchas?
 12. 🙏 **Build a robust yet flexible experience**
 
+      - WIR BRAUCHEN IRGENDWO (GGF. IN DIESER TUGEND HIER) EINEN FETTEN ABSCHNITT WO ES UM RESPONSIVENESS GEHT, denn dadurch wird vieles automatisch barrierefreier, und es hebt viele typische Konzepte von Barrierefreiheit hervor (z.B. Zoom-Geschichten, Problematik mit fix positionierten Elementen, das Designen von Experiences welche auf unterschiedlichen Ein- und Ausgabegeräten funktioniert, etc.)
+      - 📚 https://alistapart.com/article/responsive-web-design/ → einer der ersten Artikel, die Responsiveness fordern?
       - 📚 https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
       - 📚 https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
       - 📚 https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Mobile
@@ -447,6 +465,9 @@ Alles WCAG 2.2-Kriterien. Diese könnten aber eigentlich "gäbig" unter einer Vi
    3. https://ia.net/topics/100e2r/
 4. PDF
 5. Building accessible components (with and without ARIA)
+   1. https://www.youtube.com/watch?v=REVxMvdBYMw → 3-part Series from Google Chrome Devs
+   2. https://www.youtube.com/watch?v=12ZzSG3RrRI → Yatil: How ARIA fits in the Layers of Accessibility Technologies
 6. Automated testing
+   1. https://silktide.com/
 7. Responsive Tabellen → bzw. `display` übersteuert Semantik! Kann aber mittels `role="tablerow"` o.ä. wieder rück-übersteuert werden 😅
    1. Hinweis: `display: none` "entfernt" Element für Nutzende aus der Sichtbarkeit, aber Formular-Elemente werden weiterhin verschickt! Ist etwas un-intuitiv...

@@ -100,6 +100,12 @@ Solve for one, extend to many:
 - https://wearepurple.org.uk/the-purple-pound-infographic/
 - https://www.cdc.gov/visionhealth/basics/ced/fastfacts.htm
 - https://www.nhs.uk/conditions/colour-vision-deficiency/
+- https://www.powermapper.com/blog/website-accessibility-disability-statistics/
+  - Ganz unterschiedliche, z.B. "7% of working age adults have a severe dexterity difficulty"
+
+- https://www.disabled-world.com/disability/types/mobility/
+  - Percent of adults with at least one basic action's difficulty or complex activity limitation: 31.9% (2012)
+
 
 
 
